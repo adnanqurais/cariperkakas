@@ -1,0 +1,23 @@
+.menu-vertical {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.menu-vertical li{
+    padding: 10px;
+
+
+}
+
+.menu-vertical li:hover{
+    background-color: #e5e5e5;
+    border-left: 2px solid #1DB7EB;
+}
+
+.menu-vertical > li > a {
+    color: #666;
+    text-decoration: none;
+    display: block;
+}

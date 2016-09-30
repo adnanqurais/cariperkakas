@@ -1,0 +1,15 @@
+.box{
+    background-color: #fff;
+    border-top-color: #00ff90;
+    
+    
+}
+
+
+.box-category  .ic{
+    
+    border-radius: 50%;
+    padding: 30px;
+    border: 1px solid #00ff21;
+    background-color: #f00;
+}

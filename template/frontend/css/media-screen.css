@@ -1,0 +1,509 @@
+
+
+/* (<768px)	Extra small devices => Phones */
+/* (≥769px) Small devices => Tablets  */
+/* (≥992px) Medium devices =>  Medium Desktops */
+/* (≥1200px)Large devices => Large Desktops */
+@media (max-width:768px){
+   .logo{
+   width: 120px;
+   text-align: center;
+    }
+    /*.navbar-header{
+      background-color: #ffffff;
+      position: fixed;
+    }*/
+    .top-menu{
+        display: none;
+    }
+
+    .text-promo-mobile{
+
+        display:block;
+    }
+
+    .text-promo-dekstop{
+
+        display: none;
+    }
+    .categorytophover{
+    display: none;
+    }
+    .dekstop-top-right{
+        display: none;
+    }
+    .bottom-logo{
+        display: none;
+    }
+    .mobile-toggle{
+    margin: 10px;
+    }
+    .mobile-bag{
+    font-size: 32;
+    }
+    .navbar-default .navbar-form{
+        background: rgba(255, 255, 255, 0.952941);
+    }
+    .button-search{
+    float: right;
+    background: none;
+    top: 0px;
+    color: #333;
+    margin-top: -39px;
+    }
+
+    .dekstop-category{
+        display: none;
+    }
+
+    .mobile-category{
+        display: block;
+    }
+    .dekstop-productdetail-image{
+        display: none;
+    }
+
+    .categorymenudekstop{
+        display: none;
+    }
+    .mobile-menu-page{
+    display: block;
+
+    }
+
+    .dekstop-menu-page{
+    display: none;
+
+    }
+
+    .categorymenumobile{
+        display: block;
+        text-align: center;
+    }
+
+    .categorymenudekstop{
+        display: none;
+    }
+    .dekstop-menu-account{
+
+        display: none;
+    }
+
+    .dekstop-menu-account{
+        display: none;
+    }
+
+    .mobile-menu-account{
+        display: block;
+    }
+    .cart-img{
+        width: 60px;
+    }
+    .step-checkout {
+        padding-top: 13%;
+    }
+    .web-content{
+      padding-top: 103px;
+      /*background-color: red;*/
+      -webkit-transition: all 200ms ease;
+      -webkit-transition:all 300ms ease-in-out;
+      -moz-transition:all 300ms ease-in-out;
+      -o-transition:all 300ms ease-in-out;
+      transition:all 300ms ease-in-out;
+    }
+    /*#search-keyword{
+        width: 80% !important;
+    }*/
+}
+
+@media (min-width: 768px) {
+
+    .logo{
+       width: 150px;
+       margin-left: 20px;
+    }
+
+    .top-menu{
+        display: none;
+    }
+
+    .text-promo-mobile{
+
+        display:block;
+    }
+
+    .text-promo-dekstop{
+
+        display: none;
+    }
+
+    .mobile-toggle{
+    margin-top: 10px;
+    }
+    .mobile-search{
+        display: block;
+    }
+    .categorytophover{
+        display: none;
+    }
+    .box-category{
+        display: none;
+    }
+    .bottom-logo{
+        display: none;
+    }
+    .dekstop-top-right{
+    display: none;
+    }
+
+    .dekstop-category{
+        display: none;
+    }
+
+    .mobile-category{
+        display: block;
+    }
+    .dekstop-productdetail-image{
+        display: none;
+    }
+
+    #search-keyword{
+        width: 100% !important;
+    }
+
+
+
+
+    .categorymenudekstop{
+        display: none;
+    }
+
+    .mobile-menu-page{
+    display: block;
+
+    }
+
+    .dekstop-menu-page{
+    display: none;
+
+    }
+
+
+    .categorymenumobile{
+        display: block;
+        text-align: center;
+    }
+
+    .categorymenudekstop{
+        display: none;
+    }
+
+    .dekstop-menu-account{
+        display: none;
+    }
+
+    .mobile-menu-account{
+        display: block;
+    }
+
+    .cart-img{
+        width: 90px;
+
+    }
+
+    .cart-img{
+        width: 100px;
+
+    }
+}
+@media (min-width:992px){
+    .logo{
+   width: 250px;
+    }
+
+    .top-menu{
+        display: block;
+    }
+
+    .text-promo-mobile{
+
+        display: none;
+    }
+
+    .text-promo-dekstop{
+
+        display: block;
+    }
+    .bottom-logo{
+        display: block;
+    }
+    .navbar {
+    height: 150px;
+    padding-top: 25px;
+    }
+    .categorytophover{
+        display: block;
+    }
+    .mobile-search{
+        display: none;
+    }
+    .mobile-bag{
+        display: none;
+    }
+    #menu-toggle{
+    display: none;
+    }
+
+    .bag{
+        display: none;
+    }
+    .sidebar-wrapper{
+        display: none;
+    }
+
+    .dekstop-top-right{
+    display: block;
+    }
+
+    .dekstop-category{
+        display:block;
+    }
+
+    .mobile-category{
+        display: none;
+    }
+    .dekstop-productdetail-image{
+        display: block;
+    }
+    .mobile-detail-image{
+        display: none;
+    }
+    #search-keyword{
+    min-width: 250px;
+    }
+
+
+    .categorymenudekstop{
+        display: block;
+    }
+
+    .mobile-menu-page{
+    display: none;
+
+    }
+
+    .dekstop-menu-page{
+    display: block;
+
+    }
+
+    .categorymenumobile{
+        display: none;
+    }
+
+    .categorymenudekstop{
+        display: block;
+    }
+
+    .dekstop-menu-account{
+        display: block;
+    }
+
+    .mobile-menu-account{
+        display: none;
+    }
+
+    .cart-img{
+        width: 120px;
+
+    }
+
+}
+@media (min-width:1200px){
+    .logo{
+    width: 250px;
+    }
+
+    .top-menu{
+        display: block;
+    }
+
+    .text-promo-mobile{
+
+        display: none;
+    }
+
+    .text-promo-dekstop{
+
+        display: block;
+    }
+    .bag{
+        display: none;
+    }
+    .mobile-bag{
+        display: none;
+    }
+    .mobile-search{
+        display: none;
+    }
+    #menu-toggle{
+    display: none;
+
+    }
+
+    #search-keyword{
+    min-width: 400px;
+    }
+    .categorytophover{
+        display: block;
+    }
+
+    .dekstop-category{
+        display:block;
+    }
+
+    .mobile-category{
+        display: none;
+    }
+    .dekstop-productdetail-image{
+        display: block;
+    }
+    .mobile-detail-image{
+        display: none;
+    }
+    #search-keyword{
+        width: 400px;
+    }
+
+    .categorymenudekstop{
+        display: block;
+    }
+
+
+    .mobile-menu-page{
+    display: none;
+
+    }
+
+    .dekstop-menu-page{
+    display: block;
+
+    }
+
+    .categorymenumobile{
+        display: none;
+    }
+
+    .categorymenudekstop{
+        display: block;
+    }
+
+    .dekstop-menu-account{
+        display: block;
+    }
+
+    .mobile-menu-account{
+        display: none;
+    }
+
+}
+
+
+
+@media (min-width:300px){
+
+
+
+    /*Owl Carousel Prev Next*/
+    .owl-theme .owl-controls .owl-buttons .owl-prev{
+      left: 5px;
+      top: 5px;
+    }
+    .owl-theme .owl-controls .owl-buttons .owl-next{
+      right: 5px;
+      top: 5px;
+    }
+}
+
+
+@media (min-width:500px){
+
+
+    /*Owl Carousel Prev Next*/
+    .owl-theme .owl-controls .owl-buttons .owl-prev{
+      left: 5px;
+      top: 50px;
+    }
+    .owl-theme .owl-controls .owl-buttons .owl-next{
+      right: 5px;
+      top: 50px;
+    }
+
+}
+
+
+@media (min-width:900px){
+
+
+    /*Owl Carousel Prev Next*/
+    .owl-theme .owl-controls .owl-buttons .owl-prev{
+      left: 5px;
+      top: 125px;
+    }
+    .owl-theme .owl-controls .owl-buttons .owl-next{
+      right: 5px;
+      top: 125px;
+    }
+
+
+}
+
+@media (min-width:1200px){
+
+
+    /*Owl Carousel Prev Next*/
+    .owl-theme .owl-controls .owl-buttons .owl-prev{
+      left: 5px;
+      top: 170px;
+    }
+    .owl-theme .owl-controls .owl-buttons .owl-next{
+      right: 5px;
+      top: 170px;
+    }
+}
+
+
+@media (min-width:1500px){
+
+    /*Owl Carousel Prev Next*/
+    .owl-theme .owl-controls .owl-buttons .owl-prev{
+      left: 5px;
+      top: 200px;
+    }
+    .owl-theme .owl-controls .owl-buttons .owl-next{
+      right: 5px;
+      top: 200px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px){
+  .web-content{
+    padding-top: 230px;
+    /*background-color: red;*/
+    -webkit-transition: all 200ms ease;
+    -webkit-transition:all 300ms ease-in-out;
+    -moz-transition:all 300ms ease-in-out;
+    -o-transition:all 300ms ease-in-out;
+    transition:all 300ms ease-in-out;
+  }
+}
+@media (max-width:462px){
+  .web-content{
+    padding-top: 123px;
+    /*background-color: red;*/
+    -webkit-transition: all 200ms ease;
+    -webkit-transition:all 300ms ease-in-out;
+    -moz-transition:all 300ms ease-in-out;
+    -o-transition:all 300ms ease-in-out;
+    transition:all 300ms ease-in-out;
+  }
+}

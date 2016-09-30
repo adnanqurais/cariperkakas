@@ -1,0 +1,18 @@
+.menu-footer{
+    
+    line-height: 2;
+    text-align: left;
+    padding-left: 0;
+}
+.menu-footer li{
+    list-style: none;
+    
+    
+}
+
+.menu-footer li a{
+    color: #666;
+    letter-spacing: 1px;
+    
+    
+}

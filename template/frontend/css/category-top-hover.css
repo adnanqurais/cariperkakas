@@ -1,0 +1,189 @@
+
+    /*Category top Hover*/
+    .level-1{
+        list-style: none;/* Remove list bullets */
+        padding: 0;
+        font-family: 'Lato';
+        margin-bottom: 0;
+
+    }
+    .level-1 li{
+        background-color: #1DB7EB;
+        padding: 8px 0;
+        text-align: center;
+        width: 270px;
+    }
+    .level-1 li a {
+        color: #fff;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-decoration: none;
+    }
+    .level-1 li ul.level-2{
+        display: none;
+        position: absolute;
+        z-index: 7;
+        margin-top: 8px;
+        -webkit-transition: all 300ms ease;
+        -webkit-transition:all 300ms ease-in-out;
+        -moz-transition:all 300ms ease-in-out;
+        -o-transition:all 300ms ease-in-out;
+        transition:all 300ms ease-in-out;
+
+    }
+    .level-1 li ul.level-2 li{
+        background-color:#EAF3F9;
+        text-align: left;
+        padding: 0px;
+        /*cursor: pointer;*/
+        border-bottom: 1px solid #ddd;
+    }
+    .level-1 li ul.level-2 li a{
+        color:#666;
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-weight: 400;
+        display: block;
+        padding: 4px 8px;
+    }
+    .level-1 li ul.level-2 li:hover{
+      -webkit-transition: all 0.4s ease;
+      -moz-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+    }
+    .level-1 > li > ul.level-2 > li:hover > a{
+        color: #fff;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+    .level-1 li:hover ul.level-2 {
+        display: block;
+        list-style: none;
+        padding: 0;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+    .level-2 li ul.level-3{
+        display: none;
+        position: absolute;
+        z-index: 7;
+        top: 0;
+        margin-top: 0px;
+        left: 230px;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+
+    .level-2 li ul.level-3 li {
+        width: 735px;
+        min-height: 432px;
+        /*max-height: 900px;*/
+        color: #eee;
+        list-style: none;
+        text-align: left;
+        overflow-y: hidden !important;
+    }
+
+    /*.level-2 li ul.level-3 li a{
+        border-bottom: 1px solid red;
+    }*/
+
+    .level-2 li ul.level-3 li:hover{
+        background-color: #EAF3F9;
+        color: #666;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+    .level-2 li:hover ul.level-3 {
+        display: block;
+        float: left;
+        color: #666;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+
+    .level-2 li:hover ul.level-3 li ul.level-4 li a {
+        color: #666;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+
+    .level-2 li:hover ul.level-3 li ul.level-4 li:hover a{
+            color: #fff;
+            -webkit-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+    }
+
+    .level-3 > li > ul.level-4{
+        list-style: none;/* Remove list bullets */
+        padding: 0;
+        margin: 0;
+    }
+    /*.level-3 li ul.level-4 li{
+        min-height: 0;
+        border: none;
+        color: #666;
+        background: none;
+        width: auto !Important;
+    }*/
+    ul.level-4 > li {
+        min-height: 0 !important;
+        float: left;
+        border: none !important;
+        background: none;
+        width:33% !important;
+    }
+    .level-3 > li > ul.level-4 > li > a{
+            color: #666;
+    }
+
+    .level-3 li ul.level-4 li:hover{
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        background-color: #f7921e;
+    }
+
+    .level-3 li ul.level-4 li a:hover{
+        background-color: none;
+        color: #fff;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+
+    .level-3 li ul.level-4 li:hover{
+        color: #666;
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+    }
+
+
+    @media (min-width:992px){
+
+        .level-2 li ul.level-3 li {
+            width: 735px;
+        }
+
+
+    }
+
+    @media (min-width:1200px){
+
+        .level-2 li ul.level-3 li {
+            width: 900px;
+        }
+
+    }
+
+    .paddingLeft{
+      padding-left: 10px;
+    }

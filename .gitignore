@@ -1,0 +1,5 @@
+/laravel/vendor
+/laravel/node_modules
+/laravel/.env
+/laravel/nbproject/
+/laravel/config/database.php
