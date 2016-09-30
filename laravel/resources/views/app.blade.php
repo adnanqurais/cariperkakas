@@ -761,7 +761,6 @@
                 var sideBar = $('.sidebar-nav');
                 var pad = content.css("padding-top");
                 var sideBarPad = sideBar.css("padding-top");
-                var promo = $('#toppromo');
 
                 var pad_f = parseInt(pad) - parseInt(44);
                 var pad_f2 = parseInt(sideBarPad) - parseInt(40);
@@ -769,6 +768,7 @@
                 sideBar.css("padding-top", pad_f2);
             }
             $(window).load(function () {
+              var promo = $('#toppromo');
                 // alert($('#top-menu').height());
                 if (!promo.hasClass('in')) {
                     changePadTop();
