@@ -8,13 +8,13 @@
 
 <div class="main-area container" style="letter-spacing:1px;">
   <div class="row">
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
       <ul class="breadcrumb">
           <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
           <li class="active">Detail Produk</li>
           <li class="active">{{ $products->producttitle}}</li>
       </ul>
-    </div>
+    </div> --}}
   </div>
     <div class="row">
         <!--Product Image-->
@@ -23,9 +23,9 @@
               <!-- <div class="o">
               </div> -->
                 <?php if(!empty($products_img_primary->image_small)){ ?>
-                  <img id="zoom_img" class="img-responsive" src="{{ url('img/product/small/'.$products_img_primary->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$products_img_primary->image_large.'') }}"/>
+                  <img id="zoom_img" class="img-responsive" src="{{ url('img/product/small/'.$products_img_primary->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$products_img_primary->image_large.'') }}" />
                 <?php } else{?>
-                  <img class="grid-img" src="{{ url('img/no-image.jpg') }}"style="border: 2px solid #ddd"/>
+                  <img class="grid-img" src="{{ url('img/no-image.jpg') }}" style="border: 2px solid #ddd"/>
                 <?php } ?>
             </div><!--./Dekstop-product-image-->
             <div id="gal1" class="col-md-12">

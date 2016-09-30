@@ -213,10 +213,10 @@
 
 <!--Top Menu-->
 <div id="top-menu" class="top-menu">
-	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999;">
+	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; padding-bottom: 0px !important; ">
 
 
-		<div class="col-sm-6 pull-left">
+		<div class="col-sm-6 pull-left" style="padding-bottom: 0;">
 			<ul class="list-inline ">
 
 				<li class="dropdown">
@@ -257,7 +257,7 @@
 
 						</ul>
 					</div>
-					<div class="col-sm-6" style="text-align:right;">
+					<div class="col-sm-6" style="text-align:right; padding-bottom: 0px;">
 						<ul class="list-inline ">
 							<li><a  href="{{ url('page/Panduan-Belanja') }}"> Panduan Cariperkakas.com </a></li>    |
 							<li><a  href="{{ url('payment-confirmation') }}"> Pembayaran </a></li>    |

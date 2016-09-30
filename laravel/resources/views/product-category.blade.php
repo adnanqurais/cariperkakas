@@ -108,10 +108,10 @@
     <div class="testing col-md-9">
         <div class="col-xs-12">
         <!--Breadcumb-->
-        <ul class="breadcrumb">
+        {{-- <ul class="breadcrumb">
             <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
             <li class="active">Produk Kategori</li>
-        </ul>
+        </ul> --}}
 
         {!! $products->render() !!}
 
