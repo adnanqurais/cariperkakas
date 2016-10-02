@@ -103,7 +103,7 @@ class AjaxController extends Controller {
         $data = json_decode($response, true);
         $i = 0;
         echo "<div class='row'>";
-            echo "<div class='col-sm-5 col-sm-offset-7'>";
+            echo "<div class='col-md-12'>";
                 echo "<select class='form-control input-flat' name='province' id='province' onchange=\"get_city();\">";
                   echo "<option value='0'>Pilih Provinsi</option>";
                   foreach($data['rajaongkir']['results'] as $row){
@@ -178,7 +178,7 @@ class AjaxController extends Controller {
             $i = 0;
             echo "<div class='row'>";
 
-                echo "<div class='col-sm-5 col-sm-offset-7'>";
+                echo "<div class='col-md-12'>";
                     echo "<select class='form-control input-flat' name='city' id='city' onchange=\"getSubDistrict();\">";
                         echo "<option value='0'".$check.">Pilih Kota</option>";
                         foreach($data['rajaongkir']['results'] as $row){
@@ -196,7 +196,7 @@ class AjaxController extends Controller {
         }
         else{
             echo "<div class='row'>";
-                echo "<div class='col-sm-5 col-sm-offset-7'>";
+                echo "<div class='col-md-12'>";
                   echo "<select class='form-control' name='city' id='city_input'>";
                   echo "<option value='0'>Pilih Kota</option>";
                   echo "</select>";
@@ -264,7 +264,7 @@ class AjaxController extends Controller {
             $i = 0;
             echo "<div class='row'>";
 
-                echo "<div class='col-sm-5 col-sm-offset-7'>";
+                echo "<div class='col-md-12'>";
                     echo "<select class='form-control input-flat' name='subdistrict' id='subdistrict' onchange=\"get_cost();\">";
                         echo "<option value='0'".$check.">Pilih Kecamatan</option>";
                         foreach($data['rajaongkir']['results'] as $row){

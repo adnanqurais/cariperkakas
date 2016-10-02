@@ -31,7 +31,7 @@
             <div id="gal1" class="col-md-12">
               <div class="row">
                 @foreach($products_img as $prod_img)
-                <a class="col-md-3 hidden-sm hidden-xs" href="#" data-image="{{ url('img/product/small/'.$prod_img->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$prod_img->image_large.'') }}" >
+                <a class="col-md-2 hidden-sm hidden-xs" href="#" data-image="{{ url('img/product/small/'.$prod_img->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$prod_img->image_large.'') }}" >
                     <img id="zoom_img" class="img-responsive" src="{{ url('img/product/thumb/'.$prod_img->image_thumb.'')}}" style="border: 2px solid #ddd;"/>
                 </a>
                 @endforeach

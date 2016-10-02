@@ -40,6 +40,7 @@
 	<link rel="stylesheet" href="{{ url('template/frontend/css/pagination/jPages.css') }}">
 	<link rel="stylesheet" href="{{ url('template/frontend/css/pagination/animate.css') }}">
 	<link rel="stylesheet" href="{{ url('template/frontend/css/pagination/github.css') }}">
+	<link rel="stylesheet" href="{{ url('template/frontend/css/perfect-scrollbar.min.css') }}">
 
 	<!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 	<!-- jQuery 2.1.4 -->
@@ -297,13 +298,20 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon ion-bag" style="font-size:20px; margin-top: -30px;"></i><span id="cart_count" class="badge" style="margin-top: -30px; margin-left:-15px; #fff; background-color: #17B7EB;"><?php echo Cart::count(false);  ?></span>
 						</a>
 						<ul class="dropdown-menu" style="width: auto;">
+							  <div class="shopping-cart" >
+							    <ul class="shopping-cart-items" id="skrol">
+							    <?php foreach($cart as $row) :?>
+							      <li class="clearfix">
+							        <img src="img/product/thumb/<?php echo ($row->options->has('image') ? $row->options->image : '');?>" alt="item1" />
+							        <span class="item-name"><?php echo $row->name;?></span>
+							        <span class="item-price price_format"><?php echo $row->subtotal;?></span>
+							        <span class="item-quantity">Quantity: <?php echo $row->qty;?></span>
+							      </li>
+							  <?php endforeach;?>
+							    </ul>
 
-							<?php foreach($cart as $row) :?>
-								<li><a href="{{ url('cart') }}"><?php echo $row->name;?> (<?php echo $row->qty;?>)<span class="price_format"><?php echo $row->subtotal;?></a></li>
-
-								<?php endforeach;?>
-
-								<li class="text-center"><a href="{{ url('cart') }}">Lihat Semua</a></li>
+							    <a href="{{ url('cart') }}" class="button">Lihat Semua</a>
+							  </div> <!--end shopping-cart -->
 
 							</ul>
 						</li>
@@ -541,6 +549,7 @@
 		<script type="text/javascript" src="{{ asset('template/frontend/js/jquery.dcverticalmegamenu.1.3.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('template/frontend/js/jquery.price_format.2.0.js') }}"></script>
         <script type="text/javascript" src="{{ asset('template/frontend/js/jquery.unveil.js') }}"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<!-- App Java Scripts -->
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="{{ asset('template/frontend/js/owl.carousel.js') }}"></script>
@@ -550,6 +559,8 @@
 		<script type="text/javascript" src="{{ asset('template/frontend/js/bootstrap-datepicker.js') }}"></script>
         <script type="text/javascript" src="{{ asset('template/frontend/jquery-lazyload/jquery.lazyload.js') }}"></script>
         <script type="text/javascript" src="{{ asset('template/frontend/jquery-lazyload/jquery.scrollstop.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('template/frontend/js/perfect-scrollbar.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('template/frontend/js/perfect-scrollbar.jquery.min.js') }}"></script>
 
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<!-- AdminLTE App -->
@@ -810,6 +821,11 @@
                 menuContent.css("display", "none");
             }
         }
+   </script>
+   <script>
+   	$(function() {
+    $('#skrol').perfectScrollbar();
+	});
    </script>
     </body>
 </html>
