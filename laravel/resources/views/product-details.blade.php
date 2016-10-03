@@ -12,7 +12,7 @@
       <ul class="breadcrumb">
           <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
           <li class="active">Detail Produk</li>
-          <li class="active">{{ $products->producttitle}}</li>
+          <li class="active">{{ $products->producttitle}}</li>HAIHAI
       </ul>
     </div>
   </div>
