@@ -3,16 +3,13 @@
 @section('content')
 <div class="main-area container">
     <input type="hidden" id="token" name="_token" value="<?php echo csrf_token(); ?>">
-	<div class="row">
-		<div class="col-xs-6">
-
-		</div>
-		<div class="col-xs-6">
-			<a href="{{ url('product') }}" type="button" class="btn btn-primary btn-sm btn-block">
-				 Lanjut Belanja
-			</a>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="{{ url('product') }}" type="button" class="btn btn-primary btn-sm btn-block">
+                 Lanjut Belanja
+            </a>
+        </div>
+    </div>
     @if(Session::has('success-delete'))
             <div class="alert alert-success">{{ Session::get('success-delete') }}</div>
     @endif
@@ -32,7 +29,9 @@
         echo "Tas Anda masih kosong.";
     }else{
     ?>
-     <table class="table table-hover table-rotation" >
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-hover table-rotation" >
         <thead>
             <tr>
                 <th>Gambar</th>
@@ -85,21 +84,21 @@
          <?php } ?>
         </tbody>
     </table>
-
-    <div class="row">
-        <div class="col-sm-5 col-sm-offset-7">
-            <h4>Kode Voucer</h4>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-5 col-sm-offset-7">
-            <form class=" form-inline" action="{{ url('cart/getvoucher') }}" method="post">
+        <div class="col-md-4" style="padding-left:25px">
+            <form class=" form-inline" style="margin-left:-15px" action="{{ url('cart/getvoucher') }}" method="post">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-              <div class="form-group">
-                <label class="sr-only" >Amount (in dollars)</label>
+            <div class="col-md-12">
+            <br>
+            <h4 class="center-text">Kode Voucher</h4>
+            </div>
+              <div class="form-group col-md-12">
+
                 <div class="input-group">
+
                   <!--<div class="input-group-addon"><i class="fa fa-check"></i></div>-->
-                  <input name="code" type="text" class="form-control input-flat" id="" placeholder="Kode Voucer" value="{{ old('code') }}" <?php if($ccart==0){echo "disabled"; } ?> required>
+
+                  <input name="code" type="text" class="form-control input-flat" id="" placeholder="Kode Voucher" value="{{ old('code') }}" <?php if($ccart==0){echo "disabled"; } ?> required>
                   <div class="input-group-addon">- Rp
                     <?php
                     if(Session::get('vouchercode')) {
@@ -116,21 +115,21 @@
                     }
                     ?>
                 </div>
-                </div>
-              </div>
-                <button type="submit" class="btn btn-primary <?php if($ccart==0){echo "disabled"; } ?>">Cek</button>
-            </form>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm-5 col-sm-offset-7">
-            <h4>Shipping</h4>
-        </div>
+                </div>
+                <button type="submit" class="btn btn-primary <?php if($ccart==0){echo "disabled"; } ?>">Cek</button>
+              </div>
+                
+            </form> 
+            <div class="row">
+            <div class="col-md-12">
+            <br>
+            <h4 class="center-text">Shipping</h4>
+            </div>
     </div>
     <div id="shippingprovince">
          <div class="row" id="loadingprov" >
-            <div class="col-sm-5 col-sm-offset-7 text-center">
+            <div class="col-md-12 text-center">
                 <img src="{{ asset('img/small_loading.gif') }}" alt="loading">
             </div>
         </div>
@@ -138,7 +137,7 @@
 
     <div id="shippingcity">
         <div class="row" id="loadingcit" style="display: none;">
-            <div class="col-sm-5 col-sm-offset-7 text-center">
+            <div class="col-md-12 text-center">
                 <img src="{{ asset('img/small_loading.gif') }}" alt="loading">
             </div>
         </div>
@@ -146,7 +145,7 @@
 
     <div id="shippingsubdistrict">
         <div class="row" id="loadingsub" style="display: none;">
-            <div class="col-sm-5 col-sm-offset-7 text-center">
+            <div class="col-md-12 text-center">
                 <img src="{{ asset('img/small_loading.gif') }}" alt="loading">
             </div>
         </div>
@@ -154,18 +153,18 @@
 
     <div id="shippingcost">
          <div class="row" id="loadingcost" style="display: none;">
-            <div class="col-sm-5 col-sm-offset-7 text-center">
+            <div class="col-md-12 text-center">
                 <img src="{{ asset('img/small_loading.gif') }}" alt="loading">
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-5 col-sm-offset-7" style=""><hr style="border: 0; width: 100%; margin: 0px auto; height: 2px; background-color: #808080;"></div>
+        <div class="col-md-12" style=""><hr style="border: 0; width: 100%; margin: 0px auto; height: 2px; background-color: #808080;"></div>
     </div>
 
     <div class="row">
-        <div id="carttotal" class="col-sm-5 col-sm-offset-7">
+        <div id="carttotal" class="col-md-12">
             <table class="table table-hover">
                 <tr>
                     <td><p>TOTAL</p></td>
@@ -214,20 +213,22 @@
                 </strong></td>
                 </tr>
             </table>
-		</div>
-    </div>
-
-	<div class="row text-center">
-		<div class="col-sm-5 col-sm-offset-7">
+        </div>
+        </div>
+        <div class="row text-center">
+        <div class="col-md-12">
             <div id="checkoutbtn">
                 <?php if(Session::get('shoptotal')){?>
-			    			<a href="checkout/information" type="button" class="btn btn-success btn-block">Checkout</a>
+                            <a href="checkout/information" type="button" class="btn btn-success btn-block">Checkout</a>
                 <?php } else{?>
                 <a href="checkout/information" type="button" class="btn btn-success btn-block"  disabled>Checkout</a>
                 <?php } ?>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
+    </div>
+    
+    </div>
 
     <?php   }   ?>
 </div>

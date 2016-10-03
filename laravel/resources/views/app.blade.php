@@ -40,6 +40,7 @@
 	<link rel="stylesheet" href="{{ url('template/frontend/css/pagination/jPages.css') }}">
 	<link rel="stylesheet" href="{{ url('template/frontend/css/pagination/animate.css') }}">
 	<link rel="stylesheet" href="{{ url('template/frontend/css/pagination/github.css') }}">
+	<link rel="stylesheet" href="{{ url('template/frontend/css/perfect-scrollbar.min.css') }}">
 
 	<!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 	<!-- jQuery 2.1.4 -->
@@ -212,11 +213,11 @@
 
 
 <!--Top Menu-->
-<div id="top-menu" class="top-menu">
-	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999;">
+<div id="top-menu" class="top-menu" style="padding-bottom: 0px;">
+	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; ">
 
 
-		<div class="col-sm-6 pull-left">
+		<div class="col-sm-6 pull-left"  style="padding-bottom: -50px;">
 			<ul class="list-inline ">
 
 				<li class="dropdown">
@@ -230,7 +231,7 @@
 							</li>
 						</ul>
 					</li>
-					|
+					
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#"> GRATIS PENGIRIMAN
 							<span class="caret"></span></a>
@@ -257,7 +258,7 @@
 
 						</ul>
 					</div>
-					<div class="col-sm-6" style="text-align:right;">
+					<div class="col-sm-6" style="text-align:right; padding-bottom: -50px;">
 						<ul class="list-inline ">
 							<li><a  href="{{ url('page/Panduan-Belanja') }}"> Panduan Cariperkakas.com </a></li>    |
 							<li><a  href="{{ url('payment-confirmation') }}"> Pembayaran </a></li>    |
@@ -297,14 +298,20 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon ion-bag" style="font-size:20px; margin-top: -30px;"></i><span id="cart_count" class="badge" style="margin-top: -30px; margin-left:-15px; #fff; background-color: #17B7EB;"><?php echo Cart::count(false);  ?></span>
 						</a>
 						<ul class="dropdown-menu" style="width: auto;">
+							  <div class="shopping-cart" >
+							    <ul class="shopping-cart-items" id="Demo">
+							    <?php foreach($cart as $row) :?>
+							      <li class="clearfix">
+							        <img src="{{asset('img/product/thumb/'.$row->options->image)}}" alt="item1" />
+							        <span class="item-name"><?php echo $row->name;?></span>
+							        <span class="item-price price_format"><?php echo $row->subtotal;?></span>
+							        <span class="item-quantity">Quantity: <?php echo $row->qty;?></span>
+							      </li>
+							  <?php endforeach;?>
+							    </ul>
 
-							<?php foreach($cart as $row) :?>
-								<li><a href="{{ url('cart') }}"><?php echo $row->name;?> (<?php echo $row->qty;?>)<span class="price_format"><?php echo $row->subtotal;?></a></li>
-
-								<?php endforeach;?>
-
-								<li class="text-center"><a href="{{ url('cart') }}">Lihat Semua</a></li>
-
+							    <a href="{{ url('cart') }}" class="button">Lihat Semua</a>
+							  </div> <!--end shopping-cart -->
 							</ul>
 						</li>
 						<?php if(Session::get('sessionmember')){?>
@@ -550,6 +557,8 @@
 		<script type="text/javascript" src="{{ asset('template/frontend/js/bootstrap-datepicker.js') }}"></script>
         <script type="text/javascript" src="{{ asset('template/frontend/jquery-lazyload/jquery.lazyload.js') }}"></script>
         <script type="text/javascript" src="{{ asset('template/frontend/jquery-lazyload/jquery.scrollstop.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('template/frontend/js/perfect-scrollbar.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('template/frontend/js/perfect-scrollbar.jquery.min.js') }}"></script>
 
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<!-- AdminLTE App -->
@@ -558,6 +567,12 @@
 		<script src="{{ asset('template/admin/dist/js/app.min.js') }}"></script>
 		<!-- AdminLTE for demo purposes -->
 		<script src="{{ asset('template/admin/dist/js/demo.js') }}"></script>
+		   <script>
+		   	$(function() {
+		    $('#Demo').perfectScrollbar();
+
+			});
+		   </script>
 		<script>
 		    //$(document).ready(function () {
 		    $.ajaxSetup({
