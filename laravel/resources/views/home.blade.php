@@ -38,7 +38,7 @@
 <!--Mobile Category-->
 <div class="mobile-category container text-center">
 
-    <h3 class="featured-brand text-center" style="margin-bottom: 20px; letter-spacing:5px; font-weight:600;">SHOP CATEGORY</h3>
+    <h3 class="featured-brand text-center" style="margin-bottom: 20px; letter-spacing:5px; font-weight:600;">SHOP CATEGORY TEST LAGI</h3>
 
 
         @if ($category_view[0]->parent == '' || $category_view[0]->parent == '0' || $category_view[0]->parent == ' ')
