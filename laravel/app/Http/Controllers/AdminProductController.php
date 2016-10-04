@@ -252,7 +252,7 @@ class AdminProductController extends Controller {
               ->where('productid', $productid)
               ->update([
                   'enable'                => $enable,
-                  'featured_status'       => $feat,
+                  'product_featured_status'       => $feat,
                   'category'              => $imp_cate,
                   'brands'                => $brands,
                   'producttitle'          => $title,
@@ -401,7 +401,7 @@ class AdminProductController extends Controller {
               'stock'                 => $stock,
               'price'                 => $price,
               'enable'                => $enable,
-              'featured_status'       => $feat,
+              'product_featured_status'       => $feat,
               'weight'                => $weight,
               'length'                => $length,
               'width'                 => $width,
@@ -692,13 +692,13 @@ class AdminProductController extends Controller {
 
   public function updateFeaturedStatus($id){
       $fStat = DB::table('product')->where('productid', '=', $id)->first();
-      if($fStat->featured_status == 1){
+      if($fStat->product_featured_status == 1){
           DB::table('product')->where('productid', '=', $id)->update([
-            'featured_status' => 0
+            'product_featured_status' => 0
           ]);
       }else{
           DB::table('product')->where('productid', '=', $id)->update([
-            'featured_status' => 1
+            'product_featured_status' => 1
           ]);
       }
   }

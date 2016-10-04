@@ -93,7 +93,7 @@
                         <td data-label="Featured" style="text-align:center;">
                           <div class="form-group">
                             <label>
-                              <input type="checkbox" class="featured-switch" <?php if($prod->featured_status == 1){echo "checked";} ?> onchange="switchStatus({{ $prod->productid }})">
+                              <input type="checkbox" class="featured-switch" <?php if($prod->product_featured_status == 1){echo "checked";} ?> onchange="switchStatus({{ $prod->productid }})">
                             </label>
                           </div>
                         </td>
