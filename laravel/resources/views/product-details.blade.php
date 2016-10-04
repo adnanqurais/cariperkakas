@@ -19,7 +19,7 @@
     <div class="row">
         <!--Product Image-->
         <div class="col-md-5 hidden-sm hidden-xs">
-            <div class="dekstop-productdetail-image col-md-12" style="border: 2px solid #ddd;">
+            <div class="dekstop-productdetail-image col-md-12">
               <!-- <div class="o">
               </div> -->
                 <?php if(!empty($products_img_primary->image_small)){ ?>
@@ -32,7 +32,7 @@
               <div class="row">
                 @foreach($products_img as $prod_img)
                 <a class="col-md-3 hidden-sm hidden-xs" href="#" data-image="{{ url('img/product/small/'.$prod_img->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$prod_img->image_large.'') }}" >
-                    <img id="zoom_img" class="img-responsive" src="{{ url('img/product/thumb/'.$prod_img->image_thumb.'')}}" style="border: 2px solid #ddd;"/>
+                    <img id="zoom_img" class="img-responsive" src="{{ url('img/product/thumb/'.$prod_img->image_thumb.'')}}" style="border: 1px solid #ddd; margin-left: 5px;"/>
                 </a>
                 @endforeach
               </div>
@@ -40,7 +40,7 @@
         </div><!--./col Product Image-->
 
         <!--Product Info-->
-        <div class="col-md-7">
+        <div class="col-md-7 col-md-push-1">
 
 
             @if(Session::has('stocknull'))
@@ -50,8 +50,8 @@
             <div class="alert alert-success">{{ Session::get('success-addcart') }}</div>
             @endif
             <h3 style="font-weight:900;">{{ $products->producttitle}}</h3>
-            <div><span>Brand :&nbsp;</span><span>{{ $products->name}} &nbsp;</span></div>
-            <div><span>Kategori :</span><span style="display: none;"></div>
+            <div><span>Brand :&nbsp;</span><span>{{ $products->name}} &nbsp;</span> | <span>Kategori :</span><span style="display: none;"></div>
+            
             <?php
                 $cateExpl = explode(",", $products->category);
 
@@ -117,8 +117,6 @@
 
         </div><!--./Product Info-->
     </div><!--./rows-->
-
-
     <div class="row">
       <div class="col-md-12">
         <hr>

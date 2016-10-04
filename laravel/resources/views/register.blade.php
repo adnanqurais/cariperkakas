@@ -49,11 +49,11 @@
   </div>
 </div>
 <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  style="margin-top: 250px;"
-     aria-hidden="true">
+     aria-hidden="false">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
-                <a type="button" class="close hide-t-c" aria-hidden="true" data-dismiss="modal">×</a>
+                <a type="button" class="close hide-t-c" aria-hidden="false" data-dismiss="modal">×</a>
                 <h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
             </div>
             <div class="modal-body">
@@ -63,7 +63,7 @@
                    2015, it was the most-starred project on GitHub.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary hide-t-c" aria-hidden="true" data-dismiss="modal">I Agree</button>
+                <button type="button" class="btn btn-primary hide-t-c" aria-hidden="false" data-dismiss="modal">I Agree</button>
             </div>
         </div>
     </div>

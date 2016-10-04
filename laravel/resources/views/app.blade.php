@@ -213,11 +213,11 @@
 
 
 <!--Top Menu-->
-<div id="top-menu" class="top-menu" style="padding-bottom: 0px;">
-	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; ">
+<div id="top-menu" class="top-menu" style="">
+	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; padding-bottom: 0px;">
 
 
-		<div class="col-sm-6 pull-left"  style="padding-bottom: -50px;">
+		<div class="col-sm-6 pull-left"  style="padding-bottom: 0px;">
 			<ul class="list-inline ">
 
 				<li class="dropdown">
@@ -258,7 +258,7 @@
 
 						</ul>
 					</div>
-					<div class="col-sm-6" style="text-align:right; padding-bottom: -50px;">
+					<div class="col-sm-6" style="text-align:right; padding-bottom: 0px;">
 						<ul class="list-inline ">
 							<li><a  href="{{ url('page/Panduan-Belanja') }}"> Panduan Cariperkakas.com </a></li>    |
 							<li><a  href="{{ url('payment-confirmation') }}"> Pembayaran </a></li>    |
@@ -394,7 +394,7 @@
 										<!-- Category top Hover-->
 
 										<div class="categorytophover container">
-											<div class="row">
+											<div class="row" style="margin-top: -40px;">
 												<ul class="level-1">
 													<li><a id="catMobileHead" href="#">KATEGORI BELANJA  <span class="caret"></span></a>
 														<?php echo AllMenuCategory();?>

@@ -127,7 +127,7 @@
               @foreach ($products as $product)
               <li class="col-md-4 col-sm-4 col-xs-6">
                   <a class=" product-frame" href="{{ url('product-details/'.$product->productname.'') }}" title="getdetails">
-                      <?php if(!empty($products_img['image_small'][$product->productid])){?><div id="product-image" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$product->productid]) }}'); background-repeat: no-repeat; background-position: center; background-size: contain; height:200px;"></div> <?php } else {?> <div id="product-image" class="clearfix col-md-12" style="background-image:url('{{ asset('img/no-image_1.jpg')}}'); background-repeat: no-repeat; background-position: center; background-size: contain; height:200px;"></div> <?php } ?>
+                      <?php if(!empty($products_img['image_small'][$product->productid])){?><div class="lazy" id="product-image" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$product->productid]) }}'); background-repeat: no-repeat; background-position: center; background-size: contain; height:200px;"></div> <?php } else {?> <div id="product-image" class="clearfix col-md-12" style="background-image:url('{{ asset('img/no-image_1.jpg')}}'); background-repeat: no-repeat; background-position: center; background-size: contain; height:200px;"></div> <?php } ?>
 
                       <div class="col-md-12 product-general-detail"><p class="productname"><strong> {{ $product->producttitle }}</strong></p>
                           <p>{{ $product->categorytitle }}</p>
