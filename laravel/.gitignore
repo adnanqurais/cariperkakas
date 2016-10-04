@@ -3,3 +3,4 @@
 .env
 .env.example
 .htaccess
+/config/database.php
