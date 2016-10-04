@@ -40,7 +40,7 @@
 
     <h3 class="featured-brand text-center" style="margin-bottom: 20px; letter-spacing:5px; font-weight:600;">SHOP CATEGORY</h3>
 
-    
+
         @if ($category_view[0]->parent == '' || $category_view[0]->parent == '0' || $category_view[0]->parent == ' ')
         <a href="{{ url('product/category/'.$category_view[0]->categoryname) }}">
             <div class="col-xs-6" style="text-align: center; margin-bottom: 20px;">
@@ -62,7 +62,7 @@
 <!--<div class="jscroll" style="height:600px; overflow:hidden;">-->
 
     @if ($category_view[0]->parent == '' || $category_view[0]->parent == '0' || $category_view[0]->parent == ' ')
-    <h4 align="left" style="margin-left:210px; margin-bottom: -50px;">FEATURED BRAND </h4>
+    <h4 align="left" style="margin-left:210px; margin-bottom: -50px;">FEATURED BRAND ADNAN</h4>
     <div class="dekstop-category container no-padding desktop-category-border" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
         <div class="col-md-12" style="padding:0px;">
             <div class="col-lg-12 col-sm-12 no-padding">
