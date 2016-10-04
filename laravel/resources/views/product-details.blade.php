@@ -8,13 +8,13 @@
 
 <div class="main-area container" style="letter-spacing:1px;">
   <div class="row">
-    <div class="col-md-12">
+{{--     <div class="col-md-12">
       <ul class="breadcrumb">
           <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
           <li class="active">Detail Produk</li>
           <li class="active">{{ $products->producttitle}}</li>HAIHAI
       </ul>
-    </div>
+    </div> --}}
   </div>
     <div class="row">
         <!--Product Image-->
@@ -113,21 +113,7 @@
               </div>
             </form>
 
-            <div style="bottom: 0px; ">
-                <h4>Informasi Produk</h4>
-                 <?php
-                    echo nl2br($products->productinformation, false);
-                 ?>
-                <table style="margin-top: 2.5%;">
-                    @foreach($prod_information_details as $pid)
-                    <tr>
-                        <td style="padding-right: 5px;">{{ $pid->title }}</td>
-                        <td style="padding-right: 5px;"> : </td>
-                        <td>{{ $pid->value }}</td>
-                    </tr>
-                    @endforeach
-                </table>
-            </div>
+          
 
         </div><!--./Product Info-->
     </div><!--./rows-->
@@ -137,12 +123,12 @@
       <div class="col-md-12">
         <hr>
         <ul class="nav nav-tabs">
-          <li class="active" ><a data-toggle="tab" href="#deskripsiProduct"><h4>Deskripsi Produk</h4></a></li>
-          <li><a data-toggle="tab" href="#spesifikasiProduct"><h4>Spesifikasi</h4></a></li>
+        <li class="active"><a data-toggle="tab" href="#spesifikasiProduct"><h4>Spesifikasi</h4></a></li>
+        <li><a data-toggle="tab" href="#deskripsiProduct"><h4>Deskripsi Produk</h4></a></li>
         </ul>
 
         <div class="tab-content box-line-detail">
-          <div id="deskripsiProduct" class="tab-pane fade in active">
+          <div id="deskripsiProduct" class="tab-pane fade">
             <p>
                <?php
                   if($products->productdescription == NULL){
@@ -153,7 +139,7 @@
                 ?>
             </p>
           </div>
-          <div id="spesifikasiProduct" class="tab-pane fade">
+          <div id="spesifikasiProduct" class="tab-pane fade in active">
             <p>
               Tidak ada spesifikasi lebih lanjut untuk produk ini
                <?php
