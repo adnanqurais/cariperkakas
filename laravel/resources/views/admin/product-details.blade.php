@@ -193,6 +193,12 @@
                                 <input type="checkbox" name="enable" checked="1"> Enable
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 text-left">Featured</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" name="featured"> Enable
+                            </div>
+                        </div>
 
                       </div><!--./row-->
 

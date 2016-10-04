@@ -6,7 +6,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Add Product 
+            Add Product
             <!--<small>advanced tables</small>-->
           </h1>
           <ol class="breadcrumb">
@@ -23,15 +23,15 @@
                 <div class="box-header">
                   <!--<h3 class="box-title">Data Table With Full Features</h3>-->
                 </div><!-- /.box-header -->
-                 
-                @if(Session::has('alert'))                    
+
+                @if(Session::has('alert'))
                     <div class="alert alert-danger alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h4>	<i class="icon fa fa-close"></i> Alert!</h4>
                         {{ Session::get('alert') }}
                     </div>
                 @endif
-                <form class="productInfo form-horizontal" action="{{ url('admin/product/add') }}" method="post" enctype="multipart/form-data">               
+                <form class="productInfo form-horizontal" action="{{ url('admin/product/add') }}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <input type="hidden" id="code" value="">
                 <div class="box-body">
@@ -71,30 +71,30 @@
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" placeholder="Product Code" name="code" required>
                             </div>
-                        </div>      
+                        </div>
                         <div class="form-group">
                             <label for="" class="col-sm-3 text-left">Product Title</label>
                             <div class="col-sm-9">
                                 <input id="addtitle" type="text" class="form-control" placeholder="Product Title" name="title" required>
                             </div>
-                        </div>                      
+                        </div>
                         <div class="form-group">
                             <label  class="col-sm-3 text-left">Product Name</label>
                             <div class="col-sm-9">
                                 <input id="addname" type="text" class="form-control" placeholder="Product Name" name="name" readonly required>
                             </div>
-                        </div>              
+                        </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 text-left">Brands</label>
                             <div class="col-sm-9">
                                 <select name="brands" class="form-control">
                                     <option value="0">-- Choose Brands --</option>
                                     @foreach($brands as $brand)
-                                    <option value="{{ $brand->brandsid }}">{{ $brand->name }}</option>    
-                                    @endforeach    
+                                    <option value="{{ $brand->brandsid }}">{{ $brand->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
-                        </div>                                  
+                        </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 text-left">Stock</label>
                             <div class="col-sm-9">
@@ -141,7 +141,7 @@
                             <div class="col-sm-9">
                                 <input id="volumeVal" type="text" class="form-control" placeholder=Volume name="volume" readonly>
                             </div>
-                        </div>                                                      
+                        </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 text-left">Price (Rp)</label>
                             <div class="col-sm-9">
@@ -165,7 +165,7 @@
                         </div>
 
                       </div><!--./row-->
-                             
+
                       <div class="checkbox">
                         <label>
                         </label>
@@ -224,7 +224,7 @@
                                             </td>-->
                                             <!--<td>
                                                 <input type="text" class="form-control" name="sale[]">
-                                            </td>                                           
+                                            </td>
                                             <td>
                                                 <input type="text" class="form-control" name="stock[]">
                                             </td>
@@ -245,7 +245,7 @@
                                 </table>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-12">
                         <ul class="nav nav-tabs">
@@ -270,11 +270,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!--./Col--> 
-                   
+                    </div><!--./Col-->
+
 
                 </div><!-- /.box-body -->
-               
+
                 </form>
                    <div class="box-footer">
                     <div class="col-md-12">

@@ -6,7 +6,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Add Brands 
+            Add Brands
             <!--<small>advanced tables</small>-->
           </h1>
           <ol class="breadcrumb">
@@ -23,8 +23,8 @@
                 <div class="box-header">
                   <!--<h3 class="box-title">Data Table With Full Features</h3>-->
                 </div><!-- /.box-header -->
-                  
-                <form class="form-horizontal" action="{{ url('admin/brands/add') }}" method="post" enctype="multipart/form-data">               
+
+                <form class="form-horizontal" action="{{ url('admin/brands/add') }}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <div class="box-body">
                     <div class="col-md-6">
@@ -34,27 +34,38 @@
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" placeholder="Brands name" name="brandsname" required>
                             </div>
-                        </div>                          
-                                                                                                
+                        </div>
+
                         <div class="form-group">
                             <label class="col-sm-3">Logo</label>
                             <div class="col-sm-9">
                                 <input type="file" class="form-control" name="brand" required>
                                 <!--<p class="help-block">Example block-level help text here.</p>-->
                             </div>
-                        </div>       
-                                                                                                               
+                        </div>
+
                         <div class="form-group">
                             <label class="col-sm-3 ">Public</label>
                             <div class="col-sm-9">
                                 <input type="checkbox" name="enable" checked="1"> Enable
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 text-left">Featured</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" name="featured"> Enable
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 text-left">Featured</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" name="featured" unchecked="1"> Enable
+                            </div>
+                        </div>
 
-                             
-                    </div><!--./Col--> 
-                   
-                   
+                    </div><!--./Col-->
+
+
 
                 </div><!-- /.box-body -->
                 <div class="box-footer">

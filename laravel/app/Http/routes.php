@@ -190,7 +190,7 @@ Route::post('admin/product/add/variation', 'AjaxAdminProductVariation@postProduc
 Route::get('admin/product/variation/details/edit', 'AjaxAdminProductVariation@editVariationDetails');
 Route::get('admin/product/variation/details/edit/post', 'AjaxAdminProductVariation@postEditVariationDetails');
 Route::get('admin/product/details/edit/post', 'AjaxAdminProductVariation@postEditVariationDetails');
-
+Route::get('admin/product/featured/status/productid={id}', 'AdminProductController@updateFeaturedStatus');
 
 //Route::get('admin/product/edit/variation', 'AjaxAdminProductVariation@editVariation');
 //Route::post('admin/product/edit/variation/post', 'AjaxAdminProductVariation@postEditVariation');
@@ -207,6 +207,7 @@ Route::get('admin/brands/view', 'AdminBrandsController@postbrandsdetails');
 Route::get('admin/brands/delete/{brandsid}', 'AdminBrandsController@getbrandsdelete');
 Route::get('admin/brands/add', 'AdminBrandsController@getbrandsadd');
 Route::post('admin/brands/add', 'AdminBrandsController@postbrandsadd');
+Route::get('admin/brands/featured-status/brandsid={id}', 'AdminBrandsController@updateBrandsFeatured');
 
 /*Users Page*/
 Route::get('admin/users', 'AdminController@getusers');
@@ -262,4 +263,3 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-?>
