@@ -6,7 +6,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            View Slider 
+            View Slider
             <!--<small>advanced tables</small>-->
           </h1>
           <ol class="breadcrumb">
@@ -23,28 +23,30 @@
                 <div class="box-header">
                   <!--<h3 class="box-title">Data Table With Full Features</h3>-->
                 </div><!-- /.box-header -->
-                  
-                <form class="form-horizontal" action="{{ url('admin/slider/view') }}" method="post" enctype="multipart/form-data">               
-                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">        
+
+                <form class="form-horizontal" action="{{ url('admin/slider/view') }}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <input type="hidden" name="id" value="{{ $slider->sliderid }}">
                 <div class="box-body">
                     <div class="col-md-6">
-                      <div class="row">                                            
-                        
+                      <div class="row">
+
                         <div class="form-group">
                             <label  class="col-sm-3 text-left">Position</label>
                             <div class="col-sm-9">
                                 <select id="position" name="position" class="form-control">
-                                    <option value="main"<?php if($slider->sliderid){ echo "selected"; } ?>>Main</option>    
+                                    <option value="main"<?php if($slider->sliderid){ echo "selected"; } ?>>Main</option>
+                                    <option value="featuredProducts" <?php if($slider->sliderid){ echo "selected"; } ?>>Featured Products</option>
+                                    <option value="featuredBrands" <?php if($slider->sliderid){ echo "selected"; } ?>>Featured Brands</option>
                                 </select>
                             </div>
-                        </div>                                                     
+                        </div>
                         <div class="form-group">
                             <label class="col-sm-3 text-left">Link</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" placeholder="Link" name="link" value="{{ $slider->link }}" required>
                             </div>
-                        </div>                                                                            
+                        </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 text-left">Image</label>
                             <div  class="col-sm-9">
@@ -53,9 +55,9 @@
                                         <input type="file" name="image" class="form-control" accept="image/*" onchange="$('#file_name').html(this.value);">
                                         <i class="fa fa-search"></i> Browse File
                                     </div>
-                                </span>                             
+                                </span>
                             </div>
-                        </div>                                                                                            
+                        </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 text-left">Public</label>
                             <div class="col-sm-9">
@@ -63,9 +65,9 @@
                             </div>
                         </div>
 
-                      </div><!--./row-->                             
-                    </div><!--./Col--> 
-                   
+                      </div><!--./row-->
+                    </div><!--./Col-->
+
 
                 </div><!-- /.box-body -->
                 <div class="box-footer">
@@ -83,5 +85,5 @@
 
 
 
-    
+
 @endsection
