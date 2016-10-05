@@ -117,7 +117,7 @@
                 </div>
 
                 </div>
-                <button type="submit" class="btn btn-primary <?php if($ccart==0){echo "disabled"; } ?>">Cek</button>
+                <button type="submit" class="btn btn-primary btn-flat <?php if($ccart==0){echo "disabled"; } ?>">Cek</button>
               </div>
                 
             </form> 
@@ -219,9 +219,9 @@
         <div class="col-md-12">
             <div id="checkoutbtn">
                 <?php if(Session::get('shoptotal')){?>
-                            <a href="checkout/information" type="button" class="btn btn-success btn-block">Checkout</a>
+                            <a href="checkout/information" type="button" class="btn btn-success btn-block btn-flat">Checkout</a>
                 <?php } else{?>
-                <a href="checkout/information" type="button" class="btn btn-success btn-block"  disabled>Checkout</a>
+                <a href="checkout/information" type="button" class="btn btn-success btn-block btn-flat"  disabled>Checkout</a>
                 <?php } ?>
             </div>
         </div>

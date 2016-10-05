@@ -310,7 +310,7 @@
 							  <?php endforeach;?>
 							    </ul>
 
-							    <a href="{{ url('cart') }}" class="button">Lihat Semua</a>
+							    <a href="{{ url('cart') }}" class="btn btn-flat btn-primary btn-block">Lihat Semua</a>
 							  </div> <!--end shopping-cart -->
 							</ul>
 						</li>
@@ -467,16 +467,16 @@
 																Pesan Berhasil dikirim
 															</div>
 
-															<div class="form-group">
-																<input id="msg_name" type="text" class="form-control input-flat" placeholder="Name" name="msg_name" required>
+															<div class="form-group col-sm-6 col-xs-6">
+																<input id="msg_name" type="text" class="form-control input-flat text-message" placeholder="Name" name="msg_name" required>
 															</div>
-															<div class="form-group">
-																<input id="msg_email" class="form-control input-flat" placeholder="Email Address / Phone Number" name="msg_email" required>
+															<div class="form-group col-sm-6 col-xs-6">
+																<input id="msg_email" class="form-control input-flat text-message" placeholder="Email Address" name="msg_email" required>
 															</div>
-															<div class="form-group">
-																<textarea id="msg_message" class="textarea-quick-message form-control input-flat" placeholder="Message" name="msg_message" required></textarea>
+															<div class="form-group col-sm-12 ">
+																<textarea id="msg_message" class="textarea-quick-message form-control input-flat text-message" placeholder="Message" name="msg_message" required></textarea>
 															</div>
-															<button id="sub" type="submit" class="btn btn-default pull-right">Send Message</button>
+															<button id="sub" type="submit" class="btn pull-right btn-send">Send Message</button>
 														</form>
 													</div>
 

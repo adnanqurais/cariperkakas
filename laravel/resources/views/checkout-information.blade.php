@@ -3,10 +3,10 @@
     
 <div id="checkoutPage"class="main-area container">
 
-    <ul class="breadcrumb">
+    {{-- <ul class="breadcrumb">
         <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
         <li class="active">Proses Checkout</li>
-    </ul>
+    </ul> --}}
 
     <div id="checkoutTabs" class="row">
         <div class="tabs">
@@ -27,10 +27,16 @@
                 <h4 style="font-size: 10pt;"></i><span>KONFIRMASI<br>DATA&nbsp;</span></h4>
             </label>
             <div id="tab-content1" class="tab-content">
-                    <div class="col-xs-12">
-                        <div class="col-md-6 col-md-offset-3">
-                            <h3>INFORMASI PENGIRIMAN</h3>
-                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="col-xs-12">
+            <div class="col-lg-7 col-md-12 col-xs-12">
+            <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">INFORMASI PENGIRIMAN</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+              <div class="box-body">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                               <div class="form-group">
                                 <label for="exampleInputEmail1">Nama Lengkap</label>
                                 <input type="text" class="form-control  input-flat" placeholder="Nama Lengkap" value="<?php if(Session::get('memberid')){ echo $users->fullname; }elseif(Session::get('fullnameSession')){echo Session::get('fullnameSession');}?>"  id="fullname" name="fullname" required>
@@ -56,18 +62,34 @@
                                 <textarea class="form-control input-flat" style="resize:vertical;" id="note" name="note" value="<?php if(Session::get('noteSession')){echo Session::get('noteSession');}?>"></textarea>
                               </div>
                               <div class="form-group" style="text-align: center;">
+                                
+                              </div>
+                              </div>
+                              <!-- /.box-body -->
+
+                              <div class="box-footer">
                                 <button id="btnTab" onclick="goToPaymentMethod()" type="buttons" class="btn btn-primary btn-flat">Berikutnya</button>
                               </div>
+                          </div>
+                          <!-- /.box -->
                         </div>
 
-                        <div class="col-md-6">
-                            <!--Delivery description here-->
-                            <!-- ? -->
+                        <div class="col-lg-5 col-md-12 col-xs-12">
+                          <div class="box box-warning">
+                            <div class="box-header with-border">
+                            <h3 class="box-title">Ringkasan Pemesanan</h3>
+                          </div>
+                          <div class="box-body">
+                            <p>
+                              Total Pembayaran : Rp. 2500000
+                            </p>
+                          </div>
+                          </div>
                         </div>
                     </div>
             </div> <!-- #tab-content1 -->
             <div id="tab-content2" class="tab-content">
-                <h3>METODE PEMBAYARAN</h3>
+                <h3>Pilih Metode Pembayaran</h3>
                 <form id="paymentOption" role="form">
                     <div style="width: auto; height: auto; padding: 2px 4px; float: left; cursor: pointer; margin: 0px 3px;">
                         <input type="radio" name="payment" value="transfer" style="cursor: pointer;"><label> Pembayaran Transfer</label>
@@ -129,12 +151,65 @@
                          </form>
                         <div class="clearfix" style="text-align: center; padding: 10px 0px; margin-top: 20px;">
                             <div style="display:inline-block; vertical-align: middle;">
-                                <button onclick="backBtn2()" class="btn btn-primary btn-flat" >Kembali</button>
-                                <button onclick="goToDataConfirmation()" class="btn btn-primary">Make a Payment</button>
+                                <button onclick="goToDataConfirmation()" class="btn btn-primary btn-flat">Make a Payment</button>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-7 col-md-12 col-sm-12">
+                    <div class="box box-primary">
+                      <div class="box-header with-border">
+                        <h4>Pilih Metode Pembayaran</h4>
+                      </div>
+                      <div class="box-body">
+                        <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                              Transfer Bank</a>
+                            </h4>
+                          </div>
+                          <div id="collapse1" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                              Kartu Visa/Mastercard</a>
+                            </h4>
+                          </div>
+                          <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="box-footer">
+                        <button onclick="backBtn2()" class="btn btn-primary btn-flat" >Kembali</button>
+                      </div>
+                    </div>
+                      
+                    </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12">
+                      <div class="box box-warning">
+                            <div class="box-header with-border">
+                            <h3 class="box-title">Ringkasan Pemesanan</h3>
+                          </div>
+                          <div class="box-body">
+                            <p>
+                              Total Pembayaran : Rp. 2500000
+                            </p>
+                          </div>
+                          </div>
+                    </div>
             </div> <!-- #tab-content2 -->
+
             <div id="tab-content3" class="tab-content">
 
               <div id="table-confirm">

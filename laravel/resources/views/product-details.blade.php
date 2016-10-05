@@ -23,9 +23,9 @@
               <!-- <div class="o">
               </div> -->
                 <?php if(!empty($products_img_primary->image_small)){ ?>
-                  <img id="zoom_img" class="img-responsive" src="{{ url('img/product/small/'.$products_img_primary->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$products_img_primary->image_large.'') }}"/>
+                  <img id="zoom_img" class="img-responsive img-product" src="{{ url('img/product/small/'.$products_img_primary->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$products_img_primary->image_large.'') }}"/>
                 <?php } else{?>
-                  <img class="grid-img" src="{{ url('img/no-image.jpg') }}"style="border: 2px solid #ddd"/>
+                  <img class="grid-img" src="{{ url('img/no-image.jpg') }}" style="border: 0px solid #ddd"/>
                 <?php } ?>
             </div><!--./Dekstop-product-image-->
             <div id="gal1" class="col-md-12">
@@ -109,7 +109,7 @@
                   <div class="form-group" style='padding-left:0px;'>
                     <input type="number" min="1"class="form-control" value="1" name="qty">
                   </div>
-                  <button type="submit" class="btn btn-warning">Beli</button>
+                  <button type="submit" class="btn btn-primary btn-flat">Beli</button>
               </div>
             </form>
 

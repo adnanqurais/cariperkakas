@@ -351,7 +351,6 @@ p{
 }
 
 .dropdown-menu{
-  width: 100%;
   text-align: center;
   box-shadow: 5px 5px 10px #888888 !important;
 }
@@ -486,9 +485,9 @@ break {
 }
 
 .dekstop-productdetail-image #zoom_img{
-  /*position: relative !important;*/
+  position: relative !important;
   width: 100% !important;
-  /*height: 100% !important;*/
+  height: 100% !important;
   background: #FFF !important;
 }
 
@@ -658,4 +657,31 @@ break {
   content: "";
   display: table;
   clear: both;
+}
+.hover:hover{
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.text-message{
+  border-radius: 10px !important;
+    box-shadow: 0 0 0 3px #000;
+    border: 5px solid transparent;
+}
+.btn-send{
+  border-radius: 10px !important;
+  box-shadow: 0 0 0 3px #000;
+  border: 5px solid transparent;
+  background-color : #FFFFFF;
+}
+.dropdown-menu|{
+  width:100px;
+}
+.img-product{
+  height: 30%;
+  width: 30%;
 }

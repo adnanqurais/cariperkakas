@@ -40,7 +40,7 @@
           <div class="form-group">
             <input type="checkbox"> <b>Saya setuju dengan <a href="#" data-toggle="modal" data-target="#t_and_c_m" id="btn-t-c">terms & condition</a> Cariperkakas.com</b>
           </div>
-          <button type="submit" class="btn btn-primary btn-block" pull-right>Daftar</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" pull-right>Daftar</button>
         </form>
           <hr>
         <!-- <center> -->

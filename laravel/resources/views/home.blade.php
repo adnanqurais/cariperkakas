@@ -84,9 +84,9 @@
 
                                 <?php if(!empty($products_img['image_small'][$prod_img->productid])){ ?>
                                     <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$prod_img->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
-                                    <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%"/>
+                                    <img class="lazy grid-img hover" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%"/>
                                 <?php } else{ ?>
-                                    <img class="lazy grid-img" data-original="{{ url('img/no-image.jpg') }}"/>
+                                    <img class="lazy grid-img hover" data-original="{{ url('img/no-image.jpg') }}"/>
                                 <?php } ?>
                                 <p style="text-transform:capitalize;"><?php echo strtolower($prod_img->producttitle); ?></p>
                                 </a>
@@ -121,9 +121,9 @@
 
                                 <?php if(!empty($products_img['image_small'][$prod_img->productid])){ ?>
                                     <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$prod_img->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
-                                    <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%"/>
+                                    <img class="lazy grid-img hover" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%"/>
                                 <?php } else{ ?>
-                                    <img class="lazy grid-img" data-original="{{ url('img/no-image.jpg') }}"/>
+                                    <img class="lazy grid-img hover" data-original="{{ url('img/no-image.jpg') }}"/>
                                 <?php } ?>
                                 <p style="text-transform:capitalize;"><?php echo strtolower($prod_img->producttitle); ?></p>
                                 </a>
