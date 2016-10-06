@@ -22,8 +22,10 @@
     .owl-theme .owl-controls {
          margin-top: 0px;
         text-align: center;
-    }
+    }  
 </style>
+
+
 
 
 <div id="dekstop-slide" class="owl-carousel owl-theme">
