@@ -26,6 +26,8 @@
 </style>
 
 
+
+
 <div id="dekstop-slide" class="owl-carousel owl-theme">
     @foreach($homeslider as $slide)
         <div class="item">
