@@ -34,6 +34,21 @@
         </div>
     @endforeach
 </div>
+{{-- <div class="cari-highlight-container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="highlight-title">
+                <span>FEATURED BRAND & STORES</span>
+            </div>
+            <div class="highlight-list">
+            <div class="col-lg-12">
+                tesajknhkd
+            </div>
+            
+            </div>
+        </div>
+    </div>
+</div> --}}
 
 <!--Mobile Category-->
 <div class="mobile-category container text-center">

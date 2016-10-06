@@ -685,3 +685,23 @@ break {
   height: 30%;
   width: 30%;
 }
+.cari-highlight-container {
+    background: #EDEDED;
+    padding-bottom: 20px;
+    margin-top: 0;
+}
+.cari-highlight-container {
+    margin: 5px auto 0;
+    max-width: 1370px;
+}
+.highlight-list .single-top-banner {
+    text-align: center;
+    display: table-cell;
+    background: #fff;
+    border-right: 2px solid #ededed;
+    padding: 10px;
+}
+.highlight-list .single-top-banner {
+    display: table-cell;
+    text-align: center;
+}
