@@ -204,6 +204,16 @@ class AdminProductController extends Controller {
               $enable=0;
           }
 
+          $featured=Input::get('$featured');
+
+          if(isset($featured)){
+              $feat=1;
+          }else{
+              $feat=0;
+          }
+
+          // echo $feat;
+          // exit();
            //Filename
           if(Input::hasFile('image')){
 
@@ -242,6 +252,7 @@ class AdminProductController extends Controller {
               ->where('productid', $productid)
               ->update([
                   'enable'                => $enable,
+                  'product_featured_status'       => $feat,
                   'category'              => $imp_cate,
                   'brands'                => $brands,
                   'producttitle'          => $title,
@@ -360,6 +371,16 @@ class AdminProductController extends Controller {
           }else{
               $enable=0;
           }
+
+          $featured=Input::get('$featured');
+          if(isset($featured)){
+              $feat=0;
+          }else{
+              $feat=1;
+          }
+
+          // echo $feat;
+          // exit();
           //var_dump($imp_cate);
 
            // checking file is valid.
@@ -380,6 +401,7 @@ class AdminProductController extends Controller {
               'stock'                 => $stock,
               'price'                 => $price,
               'enable'                => $enable,
+              'product_featured_status'       => $feat,
               'weight'                => $weight,
               'length'                => $length,
               'width'                 => $width,
@@ -666,6 +688,19 @@ class AdminProductController extends Controller {
   public function deleteProductDetails(){
       $id = Input::get('id');
       DB::table('product_details')->where('id', '=', $id)->delete();
+  }
+
+  public function updateFeaturedStatus($id){
+      $fStat = DB::table('product')->where('productid', '=', $id)->first();
+      if($fStat->product_featured_status == 1){
+          DB::table('product')->where('productid', '=', $id)->update([
+            'product_featured_status' => 0
+          ]);
+      }else{
+          DB::table('product')->where('productid', '=', $id)->update([
+            'product_featured_status' => 1
+          ]);
+      }
   }
 }
 ?>

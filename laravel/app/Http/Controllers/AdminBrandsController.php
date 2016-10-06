@@ -87,11 +87,19 @@ class AdminBrandsController extends Controller {
                     $enable=Input::get('enable');
                 }
 
+                $featured=Input::get('$featured');
+                if(isset($featured)){
+                    $feat=0;
+                }else{
+                    $feat=1;
+                }
+
                 if(empty(Input::file('image'))){//No update logo
 
                        $q=DB::table('brands')->update([
-                        'name' => $name,
-                        'enable' => $enable
+                        'name'            => $name,
+                        'featured_status' => $feat,
+                        'enable'          => $enable
                        ]);
 
                         return redirect('brands')->with('success-update', 'Success update Brands');
@@ -105,9 +113,10 @@ class AdminBrandsController extends Controller {
                       Input::file('image')->move($destinationPath, $fileName); // uploading file to given path    //
 
                        $q=DB::table('brands')->update([
-                        'name' => $name,
-                        'enable' => $enable,
-                        'logo' => $fileName
+                        'name'            => $name,
+                        'enable'          => $enable,
+                        'featured_status' => $feat,
+                        'logo'            => $fileName
                        ]);
 
                         return redirect('brands')->with('success-update', 'Success update Brands');
@@ -157,6 +166,13 @@ class AdminBrandsController extends Controller {
                 $enable=0;
             }
 
+            $featured=Input::get('$featured');
+            if(isset($featured)){
+                $feat=0;
+            }else{
+                $feat=1;
+            }
+
             if (Input::file('brand')->isValid()) {
                 $destinationPath_brand = 'img/brand/'; // upload path
                 $extension = Input::file('brand')->getClientOriginalExtension(); // getting image extension
@@ -165,9 +181,10 @@ class AdminBrandsController extends Controller {
             }
 
             DB::table('brands')->insert([
-            'enable' => $enable,
-            'name' => $brandsname,
-            'logo'  => $fileNamebrand
+            'enable'          => $enable,
+            'featured_status' => $feat,
+            'name'            => $brandsname,
+            'logo'            => $fileNamebrand
             ]
             );
             return redirect('admin/brands')->with('success-create', 'Success sumbit new brands');
@@ -177,5 +194,17 @@ class AdminBrandsController extends Controller {
 
     }
 
+    public function updateBrandsFeatured($id){
+        $fStat = DB::table('brands')->where('brandsid', '=', $id)->first();
+        if($fStat->featured_status == 1){
+            DB::table('brands')->where('brandsid', '=', $id)->update([
+              'featured_status' => 0
+            ]);
+        }else{
+            DB::table('brands')->where('brandsid', '=', $id)->update([
+              'featured_status' => 1
+            ]);
+        }
+    }
 }
 ?>

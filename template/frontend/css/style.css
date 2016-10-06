@@ -5,6 +5,10 @@ body{
 }
 .top-menu{
     box-shadow: 0 0 14px #1DB7EB;
+<<<<<<< HEAD
+=======
+    /* padding: 10px 0 10px 0; */
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
     border-bottom-color: #17B7EB;
     border-top: 2px solid #17B7EB;
 }
@@ -173,10 +177,6 @@ transition: all 300ms ease;
    margin-top:50px;
    margin-bottom: 50px;
    padding: 0px;
-   border-top: 1px solid #17B7EB;
-   border-left: 1px solid #E5E5E5;
-   border-right: 1px solid #E5E5E5;
-   border-bottom: 1px solid #E5E5E5;
 
 }
 
@@ -191,9 +191,9 @@ transition: all 300ms ease;
 }
 
 .desktop-category-border {
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-right: 0px solid #ddd;
+    border-left: 0px solid #ddd;
+    border-bottom: 0px solid #ddd;
 }
 
 .dekstop-category-list{
@@ -351,7 +351,6 @@ p{
 }
 
 .dropdown-menu{
-  width: 100%;
   text-align: center;
   box-shadow: 5px 5px 10px #888888 !important;
 }
@@ -438,7 +437,6 @@ break {
 .product-frame:hover{
   border: 1px solid #ddd;
 }
-
 .product-general-detail{
   text-align: left;
   /*margin-bottom:1%;*/
@@ -492,9 +490,9 @@ break {
 }
 
 .dekstop-productdetail-image #zoom_img{
-  /*position: relative !important;*/
+  position: relative !important;
   width: 100% !important;
-  /*height: 100% !important;*/
+  height: 100% !important;
   background: #FFF !important;
 }
 
@@ -568,6 +566,7 @@ break {
 /*.box-line-detail{
   display:block !important;
 }*/
+<<<<<<< HEAD
 
 .lighter-text {
   color: #ABB0BE;
@@ -605,6 +604,9 @@ nav ul li a:hover {
   width: 80%;
 }
 
+=======
+/*cart*/
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 .badge {
   background-color: #6394F8;
   border-radius: 10px;
@@ -642,6 +644,10 @@ nav ul li a:hover {
 }
 .shopping-cart .shopping-cart-items li {
   margin-bottom: 18px;
+<<<<<<< HEAD
+=======
+  max-height: 100px;
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 }
 .shopping-cart .shopping-cart-items img {
   float: left;
@@ -681,7 +687,11 @@ nav ul li a:hover {
 }
 
 .button {
+<<<<<<< HEAD
   background: #6394F8;
+=======
+  background: #1DB7EB;
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
   color: white;
   text-align: center;
   padding: 12px;
@@ -693,6 +703,10 @@ nav ul li a:hover {
 }
 .button:hover {
   background: #729ef9;
+<<<<<<< HEAD
+=======
+  color: white;
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 }
 
 .clearfix:after {
@@ -700,6 +714,7 @@ nav ul li a:hover {
   display: table;
   clear: both;
 }
+<<<<<<< HEAD
 /*login form*/
 form#login-form {
   background: #fff;
@@ -867,3 +882,82 @@ div.right a.google-plus {
 div.right a.google-plus:hover {
   background: rgba(233, 84, 79, 0.8);
 }
+=======
+.hover:hover{
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.text-message{
+  border-radius: 10px !important;
+    box-shadow: 0 0 0 3px #000;
+    border: 5px solid transparent;
+}
+.btn-send{
+  border-radius: 10px !important;
+  box-shadow: 0 0 0 3px #000;
+  border: 5px solid transparent;
+  background-color : #FFFFFF;
+}
+.dropdown-menu|{
+  width:100px;
+}
+.img-product{
+  height: 30%;
+  width: 30%;
+}
+.cari-highlight-container {
+    background: #EDEDED;
+    padding-bottom: 20px;
+    margin-top: 0;
+}
+.cari-highlight-container {
+    margin: 5px auto 0;
+    max-width: 1370px;
+}
+.highlight-list .single-top-banner {
+    text-align: center;
+    display: table-cell;
+    background: #fff;
+    border-right: 2px solid #ededed;
+    padding: 10px;
+    height: 10px;
+}
+.highlight-list .single-top-banner {
+    display: table-cell;
+    text-align: center;
+}
+.highlight-title {
+    text-align: left;
+}
+.highlight-title {
+    margin: 0 auto;
+    text-align: center;
+}
+.highlight-title .line-behind {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+.highlight-title .line-behind {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 30px 0;
+    font-size: 14px;
+}
+.highlight-title span {
+    font-weight: normal!important;
+    color: #8c8c8c;
+    text-transform: uppercase;
+    display: inline;
+}
+@media(min-width:2080px;){
+  .table-footer{
+    margin-left: -90px;
+  }
+}
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c

@@ -48,36 +48,32 @@
                   <div class="text-right" style="margin-bottom:20px;">
                       <a href="{{ url('admin/product/add') }}" class="btn btn-primary"><i class="icon ion-android-add"></i> Add product</a>
                   </div>
-                  <table id="example1" class="table table-bordered table-striped table-rotation">
+                  <table id="example1" class="table table-bordered table-rotation">
                     <thead>
                       <tr>
-                        <th>Code</th>
+                        <th style="width: 8%;">Code</th>
                         <th>Image</th>
                         <th>Category</th>
-                        <th>Brands</th>
+                        <th style="width:90px;">Brands</th>
                         <!--<th>Product Name</th>-->
                         <th style="width: 250px;">Product Title</th>
-                        <th>Stock</th>
-                        <th>Price</th>
-                        <th>Action</th>
+                        <th style="width: 5%;">Stock</th>
+                        <th style="width:50px;">Price</th>
+                        <th style="width:20px;">Featured</th>
+                        <th style="width:80px;">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                     @foreach($product as $prod)
                       <tr>
                         <td data-label="Code">{{ $prod->code }} &nbsp;</td>
-                        <td data-label="Image">
+                        <td data-label="Image" style="width:15px;">
 
                         <?php if(!empty($product_img['image_thumb'][$prod->productid])){ ?>
-                        <img src="{{ url('img/product/thumb/'.$product_img['image_thumb'][$prod->productid].' ') }}" width="100" height="auto"/>
+                        <img src="{{ url('img/product/thumb/'.$product_img['image_thumb'][$prod->productid].' ') }}" width="80" height="auto"/>
                         <?php }else{?>
-                          <img src="{{ url('img/no-image_1.jpg') }}" width="100" height="60"/>
+                          <img src="{{ url('img/no-image_1.jpg') }}" width="80" height="60"/>
                         <?php } ?>
-
-
-
-                          <!--<img src="{{ url('img/product/thumb/') }}"> -->
-                          &nbsp;
                         </td>
                         <!--<td data-label="Enable" class="text-center">
                           <?php
@@ -92,8 +88,15 @@
                         <td data-label="Product Brands">{{ $prod->name }} &nbsp;</td>
                         <!--<td data-label="Product Name">{{ $prod->productname }} &nbsp;</td>-->
                         <td class="" data-label="Product Title" style="">{{ $prod->producttitle }} &nbsp;</td>
-                        <td data-label="Stock">{{ $prod->stock }} &nbsp;</td>
+                        <td data-label="Stock" style="text-align:center;">{{ $prod->stock }} &nbsp;</td>
                         <td data-label="Price" class="text-right"><span class="price_format">{{ $prod->price }}</span> &nbsp;</td>
+                        <td data-label="Featured" style="text-align:center;">
+                          <div class="form-group">
+                            <label>
+                              <input type="checkbox" class="featured-switch" <?php if($prod->product_featured_status == 1){echo "checked";} ?> onchange="switchStatus({{ $prod->productid }})">
+                            </label>
+                          </div>
+                        </td>
                         <td data-label="Action">
                             <div class="btn-group">
                                <a href="{{ url('admin/product/view/'.$prod->productid.'') }}" class="btn btn-sm btn-info" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
@@ -104,19 +107,6 @@
                       </tr>
                     @endforeach
                     </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>Code</th>
-                        <th>Image</th>
-                        <th>Category</th>
-                        <th>Brands</th>
-                        <!--<th>Product Name</th>-->
-                        <th>Product Title</th>
-                        <th>Stock</th>
-                        <th>Price</th>
-                        <th>Action</th>
-                      </tr>
-                    </tfoot>
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
@@ -124,4 +114,16 @@
           </div><!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
+      <script>
+          // $(window).load(function() {
+          //     //Flat red color scheme for iCheck
+          //     $('input[type="checkbox"].flat-red').iCheck({
+          //       checkboxClass: 'icheckbox_flat-green'
+          //     });
+          // });
+
+          function switchStatus(id) {
+              $('.featured-switch').load('{{ url('admin/product/featured/status/productid=')}}' + id);
+          }
+      </script>
 @endsection

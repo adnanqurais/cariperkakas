@@ -3,10 +3,10 @@
     
 <div id="checkoutPage"class="main-area container">
 
-    <ul class="breadcrumb">
+    {{-- <ul class="breadcrumb">
         <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
         <li class="active">Proses Checkout</li>
-    </ul>
+    </ul> --}}
 
     <div id="checkoutTabs" class="row">
         <div class="tabs">
@@ -27,10 +27,16 @@
                 <h4 style="font-size: 10pt;"></i><span>KONFIRMASI<br>DATA&nbsp;</span></h4>
             </label>
             <div id="tab-content1" class="tab-content">
-                    <div class="col-xs-12">
-                        <div class="col-md-6 col-md-offset-3">
-                            <h3>INFORMASI PENGIRIMAN</h3>
-                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="col-xs-12">
+            <div class="col-lg-7 col-lg-push-3 col-md-12 col-xs-12">
+            <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">INFORMASI PENGIRIMAN</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+              <div class="box-body">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                               <div class="form-group">
                                 <label for="exampleInputEmail1">Nama Lengkap</label>
                                 <input type="text" class="form-control  input-flat" placeholder="Nama Lengkap" value="<?php if(Session::get('memberid')){ echo $users->fullname; }elseif(Session::get('fullnameSession')){echo Session::get('fullnameSession');}?>"  id="fullname" name="fullname" required>
@@ -56,26 +62,31 @@
                                 <textarea class="form-control input-flat" style="resize:vertical;" id="note" name="note" value="<?php if(Session::get('noteSession')){echo Session::get('noteSession');}?>"></textarea>
                               </div>
                               <div class="form-group" style="text-align: center;">
+                                
+                              </div>
+                              </div>
+                              <!-- /.box-body -->
+
+                              <div class="box-footer">
                                 <button id="btnTab" onclick="goToPaymentMethod()" type="buttons" class="btn btn-primary btn-flat">Berikutnya</button>
                               </div>
+                          </div>
+                          <!-- /.box -->
                         </div>
 
-                        <div class="col-md-6">
-                            <!--Delivery description here-->
-                            <!-- ? -->
-                        </div>
                     </div>
             </div> <!-- #tab-content1 -->
             <div id="tab-content2" class="tab-content">
-                <h3>METODE PEMBAYARAN</h3>
-                <form id="paymentOption" role="form">
-                    <div style="width: auto; height: auto; padding: 2px 4px; float: left; cursor: pointer; margin: 0px 3px;">
+                <h3>Pilih Metode Pembayaran</h3>
+                  <form id="paymentOption" role="form" align="center" style="display: inline-block; text-align: center;">
+                    <div style="width: auto; height: auto; padding: 2px 4px; float: left; cursor: pointer; margin: 0px 3px; text-align: center;">
                         <input type="radio" name="payment" value="transfer" style="cursor: pointer;"><label> Pembayaran Transfer</label>
-                    </div>
+                    </div><br>
                     <div style="width: auto; height: auto; padding: 4px; float: left; cursor: pointer;">
                         <input type="radio" name="payment" value="creditcard" style="cursor: pointer;"><label> Pembayaran Credit Card
                     </div></label>
                 </form>
+                
                 <div class="col-sm-10 col-sm-offset-1" style="margin-top: 2%;">
                      <form id="form-payment-transfer" class="form-horizontal" action="{{ url('checkout/information') }}" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -129,12 +140,15 @@
                          </form>
                         <div class="clearfix" style="text-align: center; padding: 10px 0px; margin-top: 20px;">
                             <div style="display:inline-block; vertical-align: middle;">
-                                <button onclick="backBtn2()" class="btn btn-primary btn-flat" >Kembali</button>
-                                <button onclick="goToDataConfirmation()" class="btn btn-primary">Make a Payment</button>
+                            <button onclick="backBtn2()" class="btn btn-primary btn-flat" >Kembali</button>
+                            <button onclick="goToDataConfirmation()" class="btn btn-primary btn-flat">Make a Payment</button>
+
                             </div>
                         </div>
                     </div>
+                   
             </div> <!-- #tab-content2 -->
+
             <div id="tab-content3" class="tab-content">
 
               <div id="table-confirm">

@@ -8,31 +8,46 @@
 
 <div class="main-area container" style="letter-spacing:1px;">
   <div class="row">
+<<<<<<< HEAD
     {{-- <div class="col-md-12">
+=======
+{{--     <div class="col-md-12">
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
       <ul class="breadcrumb">
           <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
           <li class="active">Detail Produk</li>
-          <li class="active">{{ $products->producttitle}}</li>
+          <li class="active">{{ $products->producttitle}}</li>HAIHAI
       </ul>
     </div> --}}
   </div>
     <div class="row">
         <!--Product Image-->
         <div class="col-md-5 hidden-sm hidden-xs">
-            <div class="dekstop-productdetail-image col-md-12" style="border: 2px solid #ddd;">
+            <div class="dekstop-productdetail-image col-md-12">
               <!-- <div class="o">
               </div> -->
                 <?php if(!empty($products_img_primary->image_small)){ ?>
+<<<<<<< HEAD
                   <img id="zoom_img" class="img-responsive" src="{{ url('img/product/small/'.$products_img_primary->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$products_img_primary->image_large.'') }}" />
                 <?php } else{?>
                   <img class="grid-img" src="{{ url('img/no-image.jpg') }}" style="border: 2px solid #ddd"/>
+=======
+                  <img id="zoom_img" class="img-responsive img-product" src="{{ url('img/product/small/'.$products_img_primary->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$products_img_primary->image_large.'') }}"/>
+                <?php } else{?>
+                  <img class="grid-img" src="{{ url('img/no-image.jpg') }}" style="border: 0px solid #ddd"/>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
                 <?php } ?>
             </div><!--./Dekstop-product-image-->
             <div id="gal1" class="col-md-12">
               <div class="row">
                 @foreach($products_img as $prod_img)
+<<<<<<< HEAD
                 <a class="col-md-2 hidden-sm hidden-xs" href="#" data-image="{{ url('img/product/small/'.$prod_img->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$prod_img->image_large.'') }}" >
                     <img id="zoom_img" class="img-responsive" src="{{ url('img/product/thumb/'.$prod_img->image_thumb.'')}}" style="border: 2px solid #ddd;"/>
+=======
+                <a class="col-md-3 hidden-sm hidden-xs" href="#" data-image="{{ url('img/product/small/'.$prod_img->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$prod_img->image_large.'') }}" >
+                    <img id="zoom_img" class="img-responsive" src="{{ url('img/product/thumb/'.$prod_img->image_thumb.'')}}" style="border: 1px solid #ddd; margin-left: 5px;"/>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
                 </a>
                 @endforeach
               </div>
@@ -40,7 +55,7 @@
         </div><!--./col Product Image-->
 
         <!--Product Info-->
-        <div class="col-md-7">
+        <div class="col-md-7 col-md-push-1">
 
 
             @if(Session::has('stocknull'))
@@ -50,8 +65,8 @@
             <div class="alert alert-success">{{ Session::get('success-addcart') }}</div>
             @endif
             <h3 style="font-weight:900;">{{ $products->producttitle}}</h3>
-            <div><span>Brand :&nbsp;</span><span>{{ $products->name}} &nbsp;</span></div>
-            <div><span>Kategori :</span><span style="display: none;"></div>
+            <div><span>Brand :&nbsp;</span><span>{{ $products->name}} &nbsp;</span> | <span>Kategori :</span><span style="display: none;"></div>
+            
             <?php
                 $cateExpl = explode(",", $products->category);
 
@@ -109,40 +124,24 @@
                   <div class="form-group" style='padding-left:0px;'>
                     <input type="number" min="1"class="form-control" value="1" name="qty">
                   </div>
-                  <button type="submit" class="btn btn-warning">Beli</button>
+                  <button type="submit" class="btn btn-primary btn-flat">Beli</button>
               </div>
             </form>
 
-            <div style="bottom: 0px; ">
-                <h4>Informasi Produk</h4>
-                 <?php
-                    echo nl2br($products->productinformation, false);
-                 ?>
-                <table style="margin-top: 2.5%;">
-                    @foreach($prod_information_details as $pid)
-                    <tr>
-                        <td style="padding-right: 5px;">{{ $pid->title }}</td>
-                        <td style="padding-right: 5px;"> : </td>
-                        <td>{{ $pid->value }}</td>
-                    </tr>
-                    @endforeach
-                </table>
-            </div>
+          
 
         </div><!--./Product Info-->
     </div><!--./rows-->
-
-
     <div class="row">
       <div class="col-md-12">
         <hr>
         <ul class="nav nav-tabs">
-          <li class="active" ><a data-toggle="tab" href="#deskripsiProduct"><h4>Deskripsi Produk</h4></a></li>
-          <li><a data-toggle="tab" href="#spesifikasiProduct"><h4>Spesifikasi</h4></a></li>
+        <li class="active"><a data-toggle="tab" href="#spesifikasiProduct"><h4>Spesifikasi</h4></a></li>
+        <li><a data-toggle="tab" href="#deskripsiProduct"><h4>Deskripsi Produk</h4></a></li>
         </ul>
 
         <div class="tab-content box-line-detail">
-          <div id="deskripsiProduct" class="tab-pane fade in active">
+          <div id="deskripsiProduct" class="tab-pane fade">
             <p>
                <?php
                   if($products->productdescription == NULL){
@@ -153,7 +152,7 @@
                 ?>
             </p>
           </div>
-          <div id="spesifikasiProduct" class="tab-pane fade">
+          <div id="spesifikasiProduct" class="tab-pane fade in active">
             <p>
               Tidak ada spesifikasi lebih lanjut untuk produk ini
                <?php

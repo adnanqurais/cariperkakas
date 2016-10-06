@@ -3,6 +3,7 @@
 @section('content')
 <div class="main-area container">
     <input type="hidden" id="token" name="_token" value="<?php echo csrf_token(); ?>">
+<<<<<<< HEAD
 	<div class="row">
 		<div class="col-xs-12">
 			<a href="{{ url('product') }}" type="button" class="btn btn-primary btn-sm btn-block">
@@ -10,6 +11,15 @@
 			</a>
 		</div>
 	</div>
+=======
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="{{ url('product') }}" type="button" class="btn btn-primary btn-sm btn-block">
+                 Lanjut Belanja
+            </a>
+        </div>
+    </div>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
     @if(Session::has('success-delete'))
             <div class="alert alert-success">{{ Session::get('success-delete') }}</div>
     @endif
@@ -88,10 +98,19 @@
         <div class="col-md-4" style="padding-left:25px">
             <form class=" form-inline" style="margin-left:-15px" action="{{ url('cart/getvoucher') }}" method="post">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-              <div class="form-group">
-                <label class="sr-only" >Amount (in dollars)</label>
+            <div class="col-md-12">
+            <br>
+            <h4 class="center-text">Kode Voucher</h4>
+            </div>
+              <div class="form-group col-md-12">
+
                 <div class="input-group">
+
                   <!--<div class="input-group-addon"><i class="fa fa-check"></i></div>-->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
                   <input name="code" type="text" class="form-control input-flat" id="" placeholder="Kode Voucher" value="{{ old('code') }}" <?php if($ccart==0){echo "disabled"; } ?> required>
                   <div class="input-group-addon">- Rp
                     <?php
@@ -109,8 +128,11 @@
                     }
                     ?>
                 </div>
+
                 </div>
+                <button type="submit" class="btn btn-primary btn-flat <?php if($ccart==0){echo "disabled"; } ?>">Cek</button>
               </div>
+<<<<<<< HEAD
                 <button type="submit" class="btn btn-primary <?php if($ccart==0){echo "disabled"; } ?>">Cek</button>
             </form> 
             <div class="row">
@@ -118,6 +140,15 @@
             <br>
             <h4 class="center-text">Shipping</h4>
         </div>
+=======
+                
+            </form> 
+            <div class="row">
+            <div class="col-md-12">
+            <br>
+            <h4 class="center-text">Shipping</h4>
+            </div>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
     </div>
     <div id="shippingprovince">
          <div class="row" id="loadingprov" >
@@ -211,16 +242,25 @@
         <div class="col-md-12">
             <div id="checkoutbtn">
                 <?php if(Session::get('shoptotal')){?>
+<<<<<<< HEAD
                             <a href="checkout/information" type="button" class="btn btn-success btn-block">Checkout</a>
+=======
+                            <a href="checkout/information" type="button" class="btn btn-success btn-block btn-flat">Checkout</a>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
                 <?php } else{?>
-                <a href="checkout/information" type="button" class="btn btn-success btn-block"  disabled>Checkout</a>
+                <a href="checkout/information" type="button" class="btn btn-success btn-block btn-flat"  disabled>Checkout</a>
                 <?php } ?>
             </div>
         </div>
     </div>
     </div>
+<<<<<<< HEAD
 	
 	</div>
+=======
+    
+    </div>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 
     <?php   }   ?>
 </div>

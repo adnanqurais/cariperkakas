@@ -213,11 +213,19 @@
 
 
 <!--Top Menu-->
+<<<<<<< HEAD
 <div id="top-menu" class="top-menu">
 	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; padding-bottom: 0px !important; ">
 
 
 		<div class="col-sm-6 pull-left" style="padding-bottom: 0;">
+=======
+<div id="top-menu" class="top-menu" style="">
+	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; padding-bottom: 0px;">
+
+
+		<div class="col-sm-6 pull-left"  style="padding-bottom: 0px;">
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 			<ul class="list-inline ">
 
 				<li class="dropdown">
@@ -231,7 +239,7 @@
 							</li>
 						</ul>
 					</li>
-					|
+					
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#"> GRATIS PENGIRIMAN
 							<span class="caret"></span></a>
@@ -299,10 +307,17 @@
 						</a>
 						<ul class="dropdown-menu" style="width: auto;">
 							  <div class="shopping-cart" >
+<<<<<<< HEAD
 							    <ul class="shopping-cart-items" id="skrol">
 							    <?php foreach($cart as $row) :?>
 							      <li class="clearfix">
 							        <img src="img/product/thumb/<?php echo ($row->options->has('image') ? $row->options->image : '');?>" alt="item1" />
+=======
+							    <ul class="shopping-cart-items" id="Demo">
+							    <?php foreach($cart as $row) :?>
+							      <li class="clearfix">
+							        <img src="{{asset('img/product/thumb/'.$row->options->image)}}" alt="item1" />
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 							        <span class="item-name"><?php echo $row->name;?></span>
 							        <span class="item-price price_format"><?php echo $row->subtotal;?></span>
 							        <span class="item-quantity">Quantity: <?php echo $row->qty;?></span>
@@ -310,9 +325,14 @@
 							  <?php endforeach;?>
 							    </ul>
 
+<<<<<<< HEAD
 							    <a href="{{ url('cart') }}" class="button">Lihat Semua</a>
 							  </div> <!--end shopping-cart -->
 
+=======
+							    <a href="{{ url('cart') }}" class="btn btn-flat btn-primary btn-block">Lihat Semua</a>
+							  </div> <!--end shopping-cart -->
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 							</ul>
 						</li>
 						<?php if(Session::get('sessionmember')){?>
@@ -395,7 +415,7 @@
 										<!-- Category top Hover-->
 
 										<div class="categorytophover container">
-											<div class="row">
+											<div class="row" style="margin-top: -40px;">
 												<ul class="level-1">
 													<li><a id="catMobileHead" href="#">KATEGORI BELANJA  <span class="caret"></span></a>
 														<?php echo AllMenuCategory();?>
@@ -468,16 +488,16 @@
 																Pesan Berhasil dikirim
 															</div>
 
-															<div class="form-group">
-																<input id="msg_name" type="text" class="form-control input-flat" placeholder="Name" name="msg_name" required>
+															<div class="form-group col-sm-6 col-xs-6">
+																<input id="msg_name" type="text" class="form-control input-flat text-message" placeholder="Name" name="msg_name" required>
 															</div>
-															<div class="form-group">
-																<input id="msg_email" class="form-control input-flat" placeholder="Email Address / Phone Number" name="msg_email" required>
+															<div class="form-group col-sm-6 col-xs-6">
+																<input id="msg_email" class="form-control input-flat text-message" placeholder="Email Address" name="msg_email" required>
 															</div>
-															<div class="form-group">
-																<textarea id="msg_message" class="textarea-quick-message form-control input-flat" placeholder="Message" name="msg_message" required></textarea>
+															<div class="form-group col-sm-12 ">
+																<textarea id="msg_message" class="textarea-quick-message form-control input-flat text-message" placeholder="Message" name="msg_message" required></textarea>
 															</div>
-															<button id="sub" type="submit" class="btn btn-default pull-right">Send Message</button>
+															<button id="sub" type="submit" class="btn pull-right btn-send">Send Message</button>
 														</form>
 													</div>
 
@@ -491,42 +511,27 @@
 													<!--bottom Link-->
 
 													<!--Facebook | Whatsapp | Line -->
-													<div class="col-md-2"><h5>FOLLOW US</h5></div>
-													<div class="col-md-2">
-														<table>
-															<tr>
-																<td><a href="http://www.facebook.com/{{ $config->facebook}}" target="_blank"><img src="{{ asset('/img/bottom/logo-facebook.png') }}" alt="logo-facebook" width="40"></a></td>
-																<td>&nbsp;  <a href="http://www.twitter.com/{{ $config->twitter}}" target="_blank"><img src="{{ asset('/img/bottom/logo-whatsapp.png') }}" alt="logo-whatsapp" width="30"></a> </td>
-																<td>&nbsp;  <a data-toggle="popover" data-content="{{ $config->line}}" ><img src="{{ asset('/img/bottom/logo-line.png') }}" alt="logo-line" width="30"></a>  </td>
-															</tr>
-														</table>
+													<div class="col-md-4"><h5>FOLLOW US</h5>
+													<a href="http://www.facebook.com/{{ $config->facebook}}" target="_blank"><img src="{{ asset('/img/bottom/logo-facebook.png') }}" alt="logo-facebook" width="40"></a>
+													<a href="http://www.twitter.com/{{ $config->twitter}}" target="_blank"><img src="{{ asset('/img/bottom/logo-whatsapp.png') }}" alt="logo-whatsapp" width="30"></a>
+												    <a data-toggle="popover" data-content="{{ $config->line}}" ><img src="{{ asset('/img/bottom/logo-line.png') }}" alt="logo-line" width="30"></a>
 													</div>
 													<!--./Facebook | Whatsapp | Line -->
 
 
 													<!--Master Card | Visa| BCA -->
-													<div class="col-md-2"><h5>PAY METHODS</h5></div>
-													<div class="col-md-2">
-														<table>
-															<tr>
-																<td> <img src="{{ asset('/img/bottom/logo-mastercard.png') }}" alt="logo-mastercard" width="50"></td>
+													<div class="col-md-4"><h5>PAY METHODS</h5>
+													<td> <img src="{{ asset('/img/bottom/logo-mastercard.png') }}" alt="logo-mastercard" width="50"></td>
 																<td> <img src="{{ asset('/img/bottom/logo-visa.png') }}" alt="logo-visa" width="50"></td>
 																<td> <img src="{{ asset('/img/bottom/logo-bca.png') }}" alt="logo-bca" width="50">  </td>
-															</tr>
-														</table>
 													</div>
+
 													<!--./Master Card | Visa| BCA -->
 
 
 													<!--JNE -->
-													<div class="col-md-3"><h5>DELIVERY SERVICE</h5></div>
-													<div class="col-md-1">
-														<table>
-															<tr>
-																<td><img src="{{ asset('/img/bottom/logo-jne.png') }}" alt="logo-jne" width="50"></td>
-															</tr>
-														</table>
-													</div>
+													<div class="col-md-4"><h5>DELIVERY SERVICE</h5>
+													<td><img src="{{ asset('/img/bottom/logo-jne.png') }}" alt="logo-jne" width="50"></td></div>
 													<!--./JNE-->
 													<!--./bottom Link-->
 												</div>
@@ -569,6 +574,12 @@
 		<script src="{{ asset('template/admin/dist/js/app.min.js') }}"></script>
 		<!-- AdminLTE for demo purposes -->
 		<script src="{{ asset('template/admin/dist/js/demo.js') }}"></script>
+		   <script>
+		   	$(function() {
+		    $('#Demo').perfectScrollbar();
+
+			});
+		   </script>
 		<script>
 		    //$(document).ready(function () {
 		    $.ajaxSetup({
@@ -772,7 +783,6 @@
                 var sideBar = $('.sidebar-nav');
                 var pad = content.css("padding-top");
                 var sideBarPad = sideBar.css("padding-top");
-                var promo = $('#toppromo');
 
                 var pad_f = parseInt(pad) - parseInt(44);
                 var pad_f2 = parseInt(sideBarPad) - parseInt(40);
@@ -780,6 +790,7 @@
                 sideBar.css("padding-top", pad_f2);
             }
             $(window).load(function () {
+              var promo = $('#toppromo');
                 // alert($('#top-menu').height());
                 if (!promo.hasClass('in')) {
                     changePadTop();

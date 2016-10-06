@@ -23,15 +23,15 @@
                 <div class="box-header">
                   <!--<h3 class="box-title">Data Table With Full Features</h3>-->
                 </div><!-- /.box-header -->
-                <div class="box-body">                    
-                  @if(Session::has('success-delete'))                    
+                <div class="box-body">
+                  @if(Session::has('success-delete'))
                     <div class="alert alert-info alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h4>	<i class="icon fa fa-check"></i> Alert!</h4>
                         {{ Session::get('success-delete') }}
                     </div>
                   @endif
-                  @if(Session::has('success-create'))                    
+                  @if(Session::has('success-create'))
                     <div class="alert alert-info alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h4>	<i class="icon fa fa-check"></i> Alert!</h4>
@@ -43,35 +43,34 @@
                   </div>
                   <table id="example1" class="table table-bordered table-striped table-rotation">
                     <thead>
-                      <tr>                                               
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Logo</th>                                                                         
-                        <th>Action</th>
+                      <tr>
+                        <th class="col-md-2">ID</th>
+                        <th class="col-md-5">Name</th>
+                        <th class="col-md-3">Logo</th>
+                        <th class="col-md-1">Featured</th>
+                        <th class="col-md-1">Action</th>
                       </tr>
                     </thead>
                     <tbody>
                     @foreach($brands as $brand)
                       <tr>
                         <td data-label="ID">{{ $brand->brandsid }} &nbsp;</td>
-                       
                         <td data-label="Name">{{ $brand->name }} &nbsp;</td>
-                        <td data-label="Logo"><img src="{{ url('img/brand/'.$brand->logo) }}" width="100"> &nbsp;</td>                                  
+                        <td data-label="Logo"><img src="{{ url('img/brand/'.$brand->logo) }}" width="100"> &nbsp;</td>
+                        <td data-label="Featured" style="text-align:center;">
+                          <div class="form-group">
+                            <label>
+                              <input type="checkbox" class="brands-switch" <?php if($brand->featured_status == 1){echo "checked";} ?> onchange="switchStatus({{ $brand->brandsid }})">
+                            </label>
+                          </div>
+                        </td>
                         <td data-label="Action">
                             <!--<a href="{{ url('admin/brands/view/'.$brand->brandsid) }}" class="btn btn-sm btn-primary">View</a>-->
-                            <a href="#" title="Delete" class="btn btn-danger btn-sm" data-toggle="tooltip" onclick="if(confirm('Are you sure?')) location.href='{{ URL::to('admin/brands/delete/' . $brand->brandsid) }}'"><i class="icon ion-android-close"></i></a>
+                            <a href="#" title="Delete" class="btn btn-danger btn-xs" data-toggle="tooltip" onclick="if(confirm('Are you sure?')) location.href='{{ URL::to('admin/brands/delete/' . $brand->brandsid) }}'"><i class="icon ion-android-close"></i></a>
                         </td>
-                      </tr>    
-                    @endforeach                      
-                    </tbody>
-                    <tfoot>
-                      <tr>                                                       
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Logo</th>                                                                         
-                        <th>Action</th>
                       </tr>
-                    </tfoot>
+                    @endforeach
+                    </tbody>
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
@@ -79,4 +78,10 @@
           </div><!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
+      <script>
+          function switchStatus(id) {
+            // alert("it worked");
+            $('.brands-switch').load('{{ url('admin/brands/featured-status/brandsid=')}}' + id);
+          }
+      </script>
 @endsection

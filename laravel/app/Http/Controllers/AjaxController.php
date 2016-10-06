@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Contracts\Auth\Guard;
 class AjaxController extends Controller {
 
-	public function __construct()
-	{
-		$this->middleware('guest');
-	}
+  public function __construct()
+  {
+    $this->middleware('guest');
+  }
 
     public function selectsubcategory(){
         $code=Input::get('code');
@@ -77,7 +77,7 @@ class AjaxController extends Controller {
         }
     }
 
-	public function shippingprovince(){
+  public function shippingprovince(){
     session_start();
     $key = '28d8b48767f82fa8b0c7e847ebadb8e4';
     $curl = curl_init();
@@ -123,7 +123,7 @@ class AjaxController extends Controller {
         }
     }
 
-	public function shippingcity(){
+  public function shippingcity(){
         session_start();
     $province = Input::get('province');
     $provincename = Input::get('provincename');
@@ -291,7 +291,7 @@ class AjaxController extends Controller {
 
     }
 
-	public function shippingcost(){
+  public function shippingcost(){
         session_start();
         $getsubdistrict= Input::get('subdistrict');
         $subdistrictname= Input::get('subdistrictname');
@@ -362,12 +362,12 @@ class AjaxController extends Controller {
 
 
               #foreach($data['rajaongkir']['results'][0]['costs'] as $row){
-		    if(isset($data['rajaongkir']['results'][0]['costs'])){
+        if(isset($data['rajaongkir']['results'][0]['costs'])){
                 $row = $data['rajaongkir']['results'][0]['costs'];
 
                 $i = 0;
                 echo "<div class='row'>";
-                    echo "<div class='col-sm-5 col-sm-offset-7'>";
+                    echo "<div class='col-sm-12'>";
                         while ($i < count($row) && $i < 3){
                           $check = "";
                           if(Session::get('ongkir') && Session::get('ongkir') == $row[$i]['cost'][0]['value']){
@@ -382,24 +382,24 @@ class AjaxController extends Controller {
                 echo "</div>";
                 if($i == 0){
                     echo "<div class='row'>";
-                        echo "<div class='col-sm-5 col-sm-offset-7'>";
+                        echo "<div class='col-sm-12'>";
                             echo "<div class=\"text-300 text-right\">Sorry there's no shipping method available.</div>";
                         echo "</div>";
                     echo "</div>";
                 }
                 echo "<div class='row'>";
-                    echo "<div class='col-sm-5 col-sm-offset-7'>";
+                    echo "<div class='col-sm-12'>";
                         echo "<label><input id='ongkir' type='radio' class='ongkir' name='ongkir' onchange=\"set_ongkir('0,0')\" value='0'/><input id='byReq' type='text' placeholder='Others' style='height:30px; width:auto; margin-left:5px; padding-left:5px;' disabled>" . "</span></label> <br/>";
                     echo "</div>";
                 echo "</div>";
-					    }
-					    else{
+              }
+              else{
                             echo "<div class='row'>";
                                 echo "<div class='col-sm-5 col-sm-offset-7'>";
-						            echo "<div class=\"text-300 text-right\">Sorry there's no shipping method available.</div>";
+                        echo "<div class=\"text-300 text-right\">Sorry there's no shipping method available.</div>";
                                 echo "</div>";
                             echo "</div>";
-					    }
+              }
                 // echo $weight;
               #}
             }
@@ -407,7 +407,7 @@ class AjaxController extends Controller {
         }else{
             echo "<div class='row'>";
                 echo "<div class='col-sm-5 col-sm-offset-7'>";
-				    echo "<div class=\"text-300 text-right\">Sorry there's no shipping method available.</div>";
+            echo "<div class=\"text-300 text-right\">Sorry there's no shipping method available.</div>";
                 echo "</div>";
             echo "</div>";
         }

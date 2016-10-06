@@ -265,7 +265,6 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('admin/voucher') }}"><i class="fa fa-circle-o"></i> Voucher</a></li>
-                <li><a href="{{ url('admin/slider') }}"><i class="fa fa-circle-o"></i> Slider</a></li>
                 <li><a href="{{ url('admin/promo') }}"><i class="fa fa-circle-o"></i> Promo</a></li>
                 <li><a href="{{ url('admin/discount') }}"><i class="fa fa-circle-o"></i> Discount</a></li>
                 <li><a href="{{ url('admin/others') }}"><i class="fa fa-circle-o"></i> Top Promo</a></li>
@@ -278,7 +277,8 @@
             <li class=""><a href="{{ url('admin/users') }}"><i class="fa fa-users"></i> <span>Users</span></i></a></li>
             <li class=""><a href="{{ url('admin/pages') }}"><i class="fa fa-clone"></i> <span>Pages</span></i></a></li>
             <li class=""><a href="{{ url('admin/menu') }}"><i class="fa fa-list-ol"></i> <span>Menu</span></i></a></li>
-              <li class=""><a href="{{ url('admin/bank') }}"><i class="fa fa-university"></i> <span>Bank</span></i></a></li>
+            <li><a href="{{ url('admin/slider') }}"><i class="fa fa-circle-o"></i> Slider</a></li>
+            <li class=""><a href="{{ url('admin/bank') }}"><i class="fa fa-university"></i> <span>Bank</span></i></a></li>
             <li class=""><a href="{{ url('admin/configuration') }}"><i class="fa fa-gear"></i> <span>Web Configuration</span></i></a></li>
           </ul>
         </section>
