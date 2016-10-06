@@ -22,7 +22,7 @@
     .owl-theme .owl-controls {
          margin-top: 0px;
         text-align: center;
-    }
+    }  
 </style>
 
 
