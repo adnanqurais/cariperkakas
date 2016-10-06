@@ -65,7 +65,7 @@ class AdminBrandsController extends Controller {
 
         if(Session::get('sessionadmin')){
             //Brands View
-            $brand = DB::table('brands')->get();
+            $brand = DB::table('brands')->where('brandsid', $brandsid)->first();
             return view('admin/brands-details',
             [
             'brands'=> $brand,
