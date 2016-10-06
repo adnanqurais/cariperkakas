@@ -700,8 +700,38 @@ break {
     background: #fff;
     border-right: 2px solid #ededed;
     padding: 10px;
+    height: 10px;
 }
 .highlight-list .single-top-banner {
     display: table-cell;
     text-align: center;
+}
+.highlight-title {
+    text-align: left;
+}
+.highlight-title {
+    margin: 0 auto;
+    text-align: center;
+}
+.highlight-title .line-behind {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+.highlight-title .line-behind {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 30px 0;
+    font-size: 14px;
+}
+.highlight-title span {
+    font-weight: normal!important;
+    color: #8c8c8c;
+    text-transform: uppercase;
+    display: inline;
+}
+@media(min-width:2080px;){
+  .table-footer{
+    margin-left: -90px;
+  }
 }

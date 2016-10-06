@@ -490,42 +490,27 @@
 													<!--bottom Link-->
 
 													<!--Facebook | Whatsapp | Line -->
-													<div class="col-md-2"><h5>FOLLOW US</h5></div>
-													<div class="col-md-2">
-														<table>
-															<tr>
-																<td><a href="http://www.facebook.com/{{ $config->facebook}}" target="_blank"><img src="{{ asset('/img/bottom/logo-facebook.png') }}" alt="logo-facebook" width="40"></a></td>
-																<td>&nbsp;  <a href="http://www.twitter.com/{{ $config->twitter}}" target="_blank"><img src="{{ asset('/img/bottom/logo-whatsapp.png') }}" alt="logo-whatsapp" width="30"></a> </td>
-																<td>&nbsp;  <a data-toggle="popover" data-content="{{ $config->line}}" ><img src="{{ asset('/img/bottom/logo-line.png') }}" alt="logo-line" width="30"></a>  </td>
-															</tr>
-														</table>
+													<div class="col-md-4"><h5>FOLLOW US</h5>
+													<a href="http://www.facebook.com/{{ $config->facebook}}" target="_blank"><img src="{{ asset('/img/bottom/logo-facebook.png') }}" alt="logo-facebook" width="40"></a>
+													<a href="http://www.twitter.com/{{ $config->twitter}}" target="_blank"><img src="{{ asset('/img/bottom/logo-whatsapp.png') }}" alt="logo-whatsapp" width="30"></a>
+												    <a data-toggle="popover" data-content="{{ $config->line}}" ><img src="{{ asset('/img/bottom/logo-line.png') }}" alt="logo-line" width="30"></a>
 													</div>
 													<!--./Facebook | Whatsapp | Line -->
 
 
 													<!--Master Card | Visa| BCA -->
-													<div class="col-md-2"><h5>PAY METHODS</h5></div>
-													<div class="col-md-2">
-														<table>
-															<tr>
-																<td> <img src="{{ asset('/img/bottom/logo-mastercard.png') }}" alt="logo-mastercard" width="50"></td>
+													<div class="col-md-4"><h5>PAY METHODS</h5>
+													<td> <img src="{{ asset('/img/bottom/logo-mastercard.png') }}" alt="logo-mastercard" width="50"></td>
 																<td> <img src="{{ asset('/img/bottom/logo-visa.png') }}" alt="logo-visa" width="50"></td>
 																<td> <img src="{{ asset('/img/bottom/logo-bca.png') }}" alt="logo-bca" width="50">  </td>
-															</tr>
-														</table>
 													</div>
+
 													<!--./Master Card | Visa| BCA -->
 
 
 													<!--JNE -->
-													<div class="col-md-3"><h5>DELIVERY SERVICE</h5></div>
-													<div class="col-md-1">
-														<table>
-															<tr>
-																<td><img src="{{ asset('/img/bottom/logo-jne.png') }}" alt="logo-jne" width="50"></td>
-															</tr>
-														</table>
-													</div>
+													<div class="col-md-4"><h5>DELIVERY SERVICE</h5>
+													<td><img src="{{ asset('/img/bottom/logo-jne.png') }}" alt="logo-jne" width="50"></td></div>
 													<!--./JNE-->
 													<!--./bottom Link-->
 												</div>

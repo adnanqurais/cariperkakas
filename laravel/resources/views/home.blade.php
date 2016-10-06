@@ -30,25 +30,10 @@
     @foreach($homeslider as $slide)
         <div class="item">
             <img src="{{ url('/img/slide/'.$slide->image) }}" alt="Slide 1"/>
-            <div class="container  text-right"><a href="{{ url($slide->link) }}" class="slide-button  btn btn-warning">Find Out More</a></div>
+            <div class="container text-right"><a href="{{ url($slide->link) }}" class="slide-button  btn btn-warning">Find Out More</a></div>
         </div>
     @endforeach
 </div>
-{{-- <div class="cari-highlight-container">
-    <div class="row">
-        <div class="col-lg-12 col-md-12">
-            <div class="highlight-title">
-                <span>FEATURED BRAND & STORES</span>
-            </div>
-            <div class="highlight-list">
-            <div class="col-lg-12">
-                tesajknhkd
-            </div>
-            
-            </div>
-        </div>
-    </div>
-</div> --}}
 
 <!--Mobile Category-->
 <div class="mobile-category container text-center">
@@ -76,19 +61,14 @@
 
     @if ($category_view[0]->parent == '' || $category_view[0]->parent == '0' || $category_view[0]->parent == ' ')
 
-    <div class="dekstop-category container no-padding desktop-category-border" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
-        <div class="col-md-12" style="padding:0px;">
-            <div class="col-lg-12 col-sm-12 no-padding">
+    <div class="dekstop-category container no-padding desktop-category-border">
+    <h3 class="featured-brand" style="">FEATURED BRAND</h3>
+        <div class="col-md-12" style="padding:0px;" >
+            <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
                 <div id="productSlider" style="float: left; width: 49%;">
-                    <div id="" class="owl-carousel owl-theme category-banner-slider">
+                    <div id="" class="">
                         <?php if(!empty($category_view[0]->slider1)){?>
                         <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider1)){ echo $category_view[0]->slider1;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider1 }}"></div>
-                        <?php } ?>
-                        <?php if(!empty($category_view[0]->slider2)){?>
-                        <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider2)){ echo $category_view[0]->slider2;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider2 }}"></div>
-                        <?php } ?>
-                        <?php if(!empty($category_view[0]->slider3)){?>
-                        <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider3)){ echo $category_view[0]->slider3;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider3 }}"></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -99,9 +79,9 @@
 
                                 <?php if(!empty($products_img['image_small'][$prod_img->productid])){ ?>
                                     <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$prod_img->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
-                                    <img class="lazy grid-img hover" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%"/>
+                                    <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%" />
                                 <?php } else{ ?>
-                                    <img class="lazy grid-img hover" data-original="{{ url('img/no-image.jpg') }}"/>
+                                    <img class="lazy grid-img" data-original="{{ url('img/no-image.jpg') }}"/>
                                 <?php } ?>
                                 <p style="text-transform:capitalize;"><?php echo strtolower($prod_img->producttitle); ?></p>
                                 </a>
@@ -113,19 +93,14 @@
      </div>
     @endif
     @if ($category_view[0]->parent == '' || $category_view[0]->parent == '0' || $category_view[0]->parent == ' ')
-    <div class="dekstop-category container no-padding desktop-category-border" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
-        <div class="col-md-12" style="padding:0px;">
-            <div class="col-lg-12 col-sm-12 no-padding">
+    <div class="dekstop-category container no-padding desktop-category-border" >
+    <h3 class="featured-brand">FEATURED PRODUCT</h3>
+        <div class="col-md-12" style="padding:0px;" >
+            <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
                 <div id="productSlider" style="float: left; width: 49%;">
-                    <div id="" class="owl-carousel owl-theme category-banner-slider">
+                    <div id="" class="">
                         <?php if(!empty($category_view[0]->slider1)){?>
                         <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider1)){ echo $category_view[0]->slider1;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider1 }}"></div>
-                        <?php } ?>
-                        <?php if(!empty($category_view[0]->slider2)){?>
-                        <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider2)){ echo $category_view[0]->slider2;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider2 }}"></div>
-                        <?php } ?>
-                        <?php if(!empty($category_view[0]->slider3)){?>
-                        <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider3)){ echo $category_view[0]->slider3;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider3 }}"></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -136,9 +111,9 @@
 
                                 <?php if(!empty($products_img['image_small'][$prod_img->productid])){ ?>
                                     <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$prod_img->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
-                                    <img class="lazy grid-img hover" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%"/>
+                                    <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%" style="border:5;"/>
                                 <?php } else{ ?>
-                                    <img class="lazy grid-img hover" data-original="{{ url('img/no-image.jpg') }}"/>
+                                    <img class="lazy grid-img" data-original="{{ url('img/no-image.jpg') }}"/>
                                 <?php } ?>
                                 <p style="text-transform:capitalize;"><?php echo strtolower($prod_img->producttitle); ?></p>
                                 </a>
