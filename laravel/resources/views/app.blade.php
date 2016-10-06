@@ -213,11 +213,11 @@
 
 
 <!--Top Menu-->
-<div id="top-menu" class="top-menu" style="padding-bottom: 0px;">
-	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; ">
+<div id="top-menu" class="top-menu" style="">
+	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; padding-bottom: 0px;">
 
 
-		<div class="col-sm-6 pull-left"  style="padding-bottom: -50px;">
+		<div class="col-sm-6 pull-left"  style="padding-bottom: 0px;">
 			<ul class="list-inline ">
 
 				<li class="dropdown">
@@ -258,7 +258,7 @@
 
 						</ul>
 					</div>
-					<div class="col-sm-6" style="text-align:right; padding-bottom: -50px;">
+					<div class="col-sm-6" style="text-align:right; padding-bottom: 0px;">
 						<ul class="list-inline ">
 							<li><a  href="{{ url('page/Panduan-Belanja') }}"> Panduan Cariperkakas.com </a></li>    |
 							<li><a  href="{{ url('payment-confirmation') }}"> Pembayaran </a></li>    |
@@ -310,7 +310,7 @@
 							  <?php endforeach;?>
 							    </ul>
 
-							    <a href="{{ url('cart') }}" class="button">Lihat Semua</a>
+							    <a href="{{ url('cart') }}" class="btn btn-flat btn-primary btn-block">Lihat Semua</a>
 							  </div> <!--end shopping-cart -->
 							</ul>
 						</li>
@@ -394,7 +394,7 @@
 										<!-- Category top Hover-->
 
 										<div class="categorytophover container">
-											<div class="row">
+											<div class="row" style="margin-top: -40px;">
 												<ul class="level-1">
 													<li><a id="catMobileHead" href="#">KATEGORI BELANJA  <span class="caret"></span></a>
 														<?php echo AllMenuCategory();?>
@@ -467,16 +467,16 @@
 																Pesan Berhasil dikirim
 															</div>
 
-															<div class="form-group">
-																<input id="msg_name" type="text" class="form-control input-flat" placeholder="Name" name="msg_name" required>
+															<div class="form-group col-sm-6 col-xs-6">
+																<input id="msg_name" type="text" class="form-control input-flat text-message" placeholder="Name" name="msg_name" required>
 															</div>
-															<div class="form-group">
-																<input id="msg_email" class="form-control input-flat" placeholder="Email Address / Phone Number" name="msg_email" required>
+															<div class="form-group col-sm-6 col-xs-6">
+																<input id="msg_email" class="form-control input-flat text-message" placeholder="Email Address" name="msg_email" required>
 															</div>
-															<div class="form-group">
-																<textarea id="msg_message" class="textarea-quick-message form-control input-flat" placeholder="Message" name="msg_message" required></textarea>
+															<div class="form-group col-sm-12 ">
+																<textarea id="msg_message" class="textarea-quick-message form-control input-flat text-message" placeholder="Message" name="msg_message" required></textarea>
 															</div>
-															<button id="sub" type="submit" class="btn btn-default pull-right">Send Message</button>
+															<button id="sub" type="submit" class="btn pull-right btn-send">Send Message</button>
 														</form>
 													</div>
 
@@ -490,42 +490,27 @@
 													<!--bottom Link-->
 
 													<!--Facebook | Whatsapp | Line -->
-													<div class="col-md-2"><h5>FOLLOW US</h5></div>
-													<div class="col-md-2">
-														<table>
-															<tr>
-																<td><a href="http://www.facebook.com/{{ $config->facebook}}" target="_blank"><img src="{{ asset('/img/bottom/logo-facebook.png') }}" alt="logo-facebook" width="40"></a></td>
-																<td>&nbsp;  <a href="http://www.twitter.com/{{ $config->twitter}}" target="_blank"><img src="{{ asset('/img/bottom/logo-whatsapp.png') }}" alt="logo-whatsapp" width="30"></a> </td>
-																<td>&nbsp;  <a data-toggle="popover" data-content="{{ $config->line}}" ><img src="{{ asset('/img/bottom/logo-line.png') }}" alt="logo-line" width="30"></a>  </td>
-															</tr>
-														</table>
+													<div class="col-md-4"><h5>FOLLOW US</h5>
+													<a href="http://www.facebook.com/{{ $config->facebook}}" target="_blank"><img src="{{ asset('/img/bottom/logo-facebook.png') }}" alt="logo-facebook" width="40"></a>
+													<a href="http://www.twitter.com/{{ $config->twitter}}" target="_blank"><img src="{{ asset('/img/bottom/logo-whatsapp.png') }}" alt="logo-whatsapp" width="30"></a>
+												    <a data-toggle="popover" data-content="{{ $config->line}}" ><img src="{{ asset('/img/bottom/logo-line.png') }}" alt="logo-line" width="30"></a>
 													</div>
 													<!--./Facebook | Whatsapp | Line -->
 
 
 													<!--Master Card | Visa| BCA -->
-													<div class="col-md-2"><h5>PAY METHODS</h5></div>
-													<div class="col-md-2">
-														<table>
-															<tr>
-																<td> <img src="{{ asset('/img/bottom/logo-mastercard.png') }}" alt="logo-mastercard" width="50"></td>
+													<div class="col-md-4"><h5>PAY METHODS</h5>
+													<td> <img src="{{ asset('/img/bottom/logo-mastercard.png') }}" alt="logo-mastercard" width="50"></td>
 																<td> <img src="{{ asset('/img/bottom/logo-visa.png') }}" alt="logo-visa" width="50"></td>
 																<td> <img src="{{ asset('/img/bottom/logo-bca.png') }}" alt="logo-bca" width="50">  </td>
-															</tr>
-														</table>
 													</div>
+
 													<!--./Master Card | Visa| BCA -->
 
 
 													<!--JNE -->
-													<div class="col-md-3"><h5>DELIVERY SERVICE</h5></div>
-													<div class="col-md-1">
-														<table>
-															<tr>
-																<td><img src="{{ asset('/img/bottom/logo-jne.png') }}" alt="logo-jne" width="50"></td>
-															</tr>
-														</table>
-													</div>
+													<div class="col-md-4"><h5>DELIVERY SERVICE</h5>
+													<td><img src="{{ asset('/img/bottom/logo-jne.png') }}" alt="logo-jne" width="50"></td></div>
 													<!--./JNE-->
 													<!--./bottom Link-->
 												</div>
