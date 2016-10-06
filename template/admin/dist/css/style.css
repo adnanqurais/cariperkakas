@@ -1,0 +1,24 @@
+.brands-grid{
+    width:200px;
+    height:auto;
+    border: 1px solid #222D32;
+}
+.brands-grid-header{
+  height:35px;
+  width:100%;
+  padding:0px;
+  background-color:#D2D6DE;
+}
+.brands-grid-body{
+  min-height:100px;
+  width:100%;
+  padding:0px;
+  background-color:#ECF0F5;
+  vertical-align:middle;
+}
+.brands-grid-footer{
+  height:40px;
+  width:100%;
+  padding:0px;
+  background-color:blue;
+}

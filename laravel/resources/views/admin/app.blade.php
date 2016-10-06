@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="{{ asset('template/admin/dist/css/bootstrap-multiselect.css') }}">
     <link rel="stylesheet" href="{{ asset('template/admin/dist/css/select2.css') }}">
 
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ asset('template/admin/dist/css/style.css') }}">
+    
     <!-- jQuery 2.1.4 -->
     <script src="{{ asset('template/admin/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
 
