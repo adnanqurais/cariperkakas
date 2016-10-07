@@ -56,6 +56,17 @@ class FrontController extends Controller {
 			// FEATURED PRODUCT HOME
 			$homeProducts = DB::table('product')
 			->where('product.product_featured_status', 1)->take(4)->get();
+			foreach($homeProducts as $prod){
+                $image_product = DB::table('product_image')->where('productid', '=', $prod->productid)->orderBy('productimageid', 'Asc')->get();
+
+                $i = 0;
+                foreach($image_product as $prodimg){
+                    $i++;
+                    if($i == '1'){
+                        $product_image['image_small'][$prod->productid] = $prodimg->image_small;
+                    }
+                }
+            }
 
 			// FEATURED BRANDS HOME
 			$featuredBrands = DB::table('brands')
@@ -64,6 +75,17 @@ class FrontController extends Controller {
 					foreach ($featuredBrands as $key) {
 						$productFeatBrands[$key->brandsid] = DB::table('product')
 						->where('product.brands', $key->brandsid)->take(4)->get();
+						foreach($productFeatBrands[$key->brandsid] as $prodFeatBrand){
+			                $image_product_feat_brands = DB::table('product_image')->where('productid', '=', $prodFeatBrand->productid)->orderBy('productimageid', 'Asc')->get();
+
+			                $i = 0;
+			                foreach($image_product_feat_brands as $prodimg1){
+			                    $i++;
+			                    if($i == '1'){
+			                        $product_image_brand['image_small'][$prodFeatBrand->productid] = $prodimg1->image_small;
+			                    }
+			                }
+			            }
 					}
 			}
 
@@ -84,9 +106,10 @@ class FrontController extends Controller {
          [
             'config'                    =>  $configuration,
             'category_view'             =>  $cate_view,
-            'subcate'                   =>  $subcate,
+            // 'subcate'                   =>  $subcate,
             'homeProducts'              =>  $homeProducts,
             'products_img'              =>  $product_image,
+						'products_img_brand'        =>  $product_image,
             'brands'                    =>  $brands,
             'homeslider'                =>  $slider,
 						'slider_featured_product'  	=>  $slider_featured_product,

@@ -49,13 +49,37 @@
 <div class="mobile-category container text-center">
 
 
-  <div class="container no-padding desktop-category-border">
+  <div class="">
   <h5 class="featured-brand" style="">FEATURED BRAND</h5>
       <div class="col-md-12" style="padding:0px;" >
-          <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
-              <div id="productSlider" style="float: left;">
+          <div class="col-lg-12 col-sm-12 no-padding">
+              <div id="productSlider" >
                 @foreach($slider_featured_brands as $featBrand)
-                      <div class="item"><img class="img-responsive" src="img/slide/<?php if(!empty($featBrand->image)){ echo $featBrand->image;}else{echo "no-image.jpg";} ?>" alt="{{ $featBrand->image }}"></div>
+                      <div class="item"><img class="img-responsive" src="img/slide/<?php echo $featBrand->image; ?>" alt="{{ $featBrand->image }}"></div>
+                @endforeach
+              </div>
+          </div>
+      </div>
+      <div class="col-md-12" style="padding:0px;" >
+          <div class="col-lg-12 col-sm-12 no-padding">
+              <div id="productSlider2" >
+                @foreach($slider_featured_brands as $featBrand)
+                      <div class="item">
+                        @foreach($homeProducts as $prod_img)
+                                <div class="col-xs-4" >
+                                    <a href="{{ url('product-details/'.$prod_img->productname.'') }}" style="text-decoration: none;">
+
+                                    <?php if(!empty($products_img['image_small'][$prod_img->productid])){ ?>
+                                        <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$prod_img->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
+                                        <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%" style="border:5;"/>
+                                    <?php } else{ ?>
+                                        <img class="lazy grid-img" data-original="{{ url('img/no-image.jpg') }}"/>
+                                    <?php } ?>
+                                    <p style="text-transform:capitalize;"><?php echo strtolower($prod_img->producttitle); ?></p>
+                                    </a>
+                                </div>
+                        @endforeach
+                      </div>
                 @endforeach
               </div>
           </div>
@@ -79,7 +103,7 @@
                   @endforeach
                 </div>
                 <div class="product-grid" style="float: left; width: 49%; text-align: center; max-height: 100px; padding-left: 2%;">
-                    @foreach($homeProducts[$category_view[0]->categoryid] as $prod_img)
+                    @foreach($homeProducts as $prod_img)
                             <div class="col-md-6" >
                                 <a href="{{ url('product-details/'.$prod_img->productname.'') }}" style="text-decoration: none;">
 
@@ -109,7 +133,7 @@
                   @endforeach
                 </div>
                 <div class="product-grid" style="float: left; width: 49%; text-align: center; max-height: 100px; padding-left: 2%;">
-                    @foreach($homeProducts[$category_view[0]->categoryid] as $prod_img)
+                    @foreach($homeProducts as $prod_img)
                             <div class="col-md-6" >
                                 <a href="{{ url('product-details/'.$prod_img->productname.'') }}" style="text-decoration: none;">
 

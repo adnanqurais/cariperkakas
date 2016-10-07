@@ -83,6 +83,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-sm-3 text-left">Map URL</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="Map URL" name="map_url" value="{{ $configuration->map_url }}" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
                            <label for="inputEmail3" class="col-sm-3 text-left">Terms & Condition</label>
                            <div class="col-sm-9">
                              <textarea class="form-group texteditor" name="terms_condition">{{ $configuration->terms_condition }}</textarea>
