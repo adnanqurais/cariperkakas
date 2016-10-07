@@ -70,9 +70,9 @@
                   <td data-label="Image">
                   <?php
                   if(!empty($pay->image)){?>
-                    <img src="{{ url('img/payment/'.$pay->image.'') }}" data-toggle="modal" data-target="#myModal" onclick="getPaymentImage(this)" width:60; height="60"; style="cursor:pointer;">
+                    <img src="{{ url('img/payment/'.$pay->image.'') }}" data-toggle="modal" data-target="#myModal" onclick="getPaymentImage(this)" width:60; height="auto"; style="cursor:pointer;">
                   <?php }else{ ?>
-                    <img src="{{ url('img/no-image_1.jpg') }}" width:"60" height="60">
+                    <img src="{{ url('img/no-image_1.jpg') }}" width:"60" height="auto">
                   <?php } ?>
 
                      &nbsp;</td>

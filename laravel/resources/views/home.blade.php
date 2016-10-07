@@ -22,7 +22,7 @@
     .owl-theme .owl-controls {
          margin-top: 0px;
         text-align: center;
-    }  
+    }
 </style>
 
 
@@ -38,20 +38,19 @@
 <!--Mobile Category-->
 <div class="mobile-category container text-center">
 
-    <h3 class="featured-brand text-center" style="margin-bottom: 20px; letter-spacing:5px; font-weight:600;">SHOP CATEGORY</h3>
-        @if ($category_view[0]->parent == '' || $category_view[0]->parent == '0' || $category_view[0]->parent == ' ')
-        <a href="{{ url('product/category/'.$category_view[0]->categoryname) }}">
-            <div class="col-xs-6" style="text-align: center; margin-bottom: 20px;">
-                <?php if(!empty($category_view[0]->icon)){ ?>
-                <div id="product-image" class="img-circle" style="background-image:url('{{ asset('img/icon-category/'.$category_view[0]->icon.'') }}'); background-repeat: no-repeat; background-position: center; background-size: contain; height:100px; width:100px; border: 2px solid {{ $category_view[0]->color }}; margin: 0px auto;"></div>
-                 <?php } else { ?>
-                <div class="img-circle" href="{{ url('product/category/'.$category_view[0]->categoryname.'') }}" style="height:100px; width:100px; border: 2px solid {{ $category_view[0]->color }}; margin: 0px auto; color: <?php echo $category_view[0]->color;?>; font-size:40px; display:table;" ><p style="display: table-cell; vertical-align: middle;"><?php echo substr($category_view[0]->categorytitle,0,1); ?></p></div>
-    <?php } ?>
-                <p style="font-size: 11pt">{{ $category_view[0]->categorytitle }}</p>
-            </div>
-        </a>
-        @endif
 
+  <div class="container no-padding desktop-category-border">
+  <h5 class="featured-brand" style="">FEATURED BRAND</h5>
+      <div class="col-md-12" style="padding:0px;" >
+          <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
+              <div id="productSlider" style="float: left;">
+                @foreach($slider_featured_brands as $featBrand)
+                      <div class="item"><img class="img-responsive" src="img/slide/<?php if(!empty($featBrand->image)){ echo $featBrand->image;}else{echo "no-image.jpg";} ?>" alt="{{ $featBrand->image }}"></div>
+                @endforeach
+              </div>
+          </div>
+      </div>
+   </div>
 
 </div>
 
@@ -66,11 +65,9 @@
         <div class="col-md-12" style="padding:0px;" >
             <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
                 <div id="productSlider" style="float: left; width: 49%;">
-                    <div id="" class="">
-                        <?php if(!empty($category_view[0]->slider1)){?>
-                        <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider1)){ echo $category_view[0]->slider1;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider1 }}"></div>
-                        <?php } ?>
-                    </div>
+                  @foreach($slider_featured_brands as $featBrand)
+                        <div class="item"><img class="img-responsive" src="img/slide/<?php if(!empty($featBrand->image)){ echo $featBrand->image;}else{echo "no-image.jpg";} ?>" alt="{{ $featBrand->image }}"></div>
+                  @endforeach
                 </div>
                 <div class="product-grid" style="float: left; width: 49%; text-align: center; max-height: 100px; padding-left: 2%;">
                     @foreach($homeProducts[$category_view[0]->categoryid] as $prod_img)
@@ -98,11 +95,9 @@
         <div class="col-md-12" style="padding:0px;" >
             <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
                 <div id="productSlider" style="float: left; width: 49%;">
-                    <div id="" class="">
-                        <?php if(!empty($category_view[0]->slider1)){?>
-                        <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider1)){ echo $category_view[0]->slider1;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider1 }}"></div>
-                        <?php } ?>
-                    </div>
+                  @foreach($slider_featured_product as $featProduct)
+                        <div class="item"><img class="img-responsive" src="img/slide/<?php if(!empty($featProduct->image)){ echo $featProduct->image;}else{echo "no-image.jpg";} ?>" alt="{{ $featProduct->image }}"></div>
+                  @endforeach
                 </div>
                 <div class="product-grid" style="float: left; width: 49%; text-align: center; max-height: 100px; padding-left: 2%;">
                     @foreach($homeProducts[$category_view[0]->categoryid] as $prod_img)

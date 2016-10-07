@@ -308,11 +308,19 @@ class AdminController extends Controller {
             $position=Input::get('position');
             $link=Input::get('link');
             $now=new DateTime();
+            $enab=Input::get('enable');
+            if(isset($enab)){
+                $enable=1;
+            }else{
+                $enable=0;
+            }
+
             $q= DB::table('slider')
             ->where('sliderid','=',$id)
             ->update([
                 'position' => $position,
                 'link' => $link,
+                'enable' => $enable,
                 'updated_at' => $now
             ]);
 

@@ -30,36 +30,56 @@ class FrontController extends Controller {
 				// dd($cate_view );
         // exit();
         // $allProduct = DB::table('product')->leftJoin('product_category', 'product.category', '=','product_category.categoryid')->where('product.enable', '=', 1 )->get();
-        foreach ($cate_view as $c){
-            // $homeProducts = DB::table('product')->leftjoin('product_category', 'product.category', '=', 'product_category.categoryid')->take(4)->get();
-			$homeProducts[$c->categoryid] = DB::table('product')
-			->where('product.category', $c->categoryid)->take(4)->get();
+      //   foreach ($cate_view as $c){
+      //       // $homeProducts = DB::table('product')->leftjoin('product_category', 'product.category', '=', 'product_category.categoryid')->take(4)->get();
+			// $homeProducts[$c->categoryid] = DB::table('product')
+			// ->where('product.category', $c->categoryid)->take(4)->get();
+			//
+      //       $subcate[$c->categoryid] = DB::table('product_category')
+      //       ->where('product_category.parent', $c->categoryid)
+      //       ->where('enable', '=', 1)->take(6)->get();
+			//
+      //       foreach($homeProducts[$c->categoryid] as $prod){
+      //           $image_product = DB::table('product_image')->where('productid', '=', $prod->productid)->orderBy('productimageid', 'Asc')->get();
+			//
+      //           $i = 0;
+      //           foreach($image_product as $prodimg){
+      //               $i++;
+      //               if($i == '1'){
+      //                   $product_image['image_small'][$prod->productid] = $prodimg->image_small;
+      //               }
+      //           }
+      //       }
+			//
+      //   }
 
-            $subcate[$c->categoryid] = DB::table('product_category')
-            ->where('product_category.parent', $c->categoryid)
-            ->where('enable', '=', 1)->take(6)->get();
+			// FEATURED PRODUCT HOME
+			$homeProducts = DB::table('product')
+			->where('product.product_featured_status', 1)->take(4)->get();
 
-            foreach($homeProducts[$c->categoryid] as $prod){
-                $image_product = DB::table('product_image')->where('productid', '=', $prod->productid)->orderBy('productimageid', 'Asc')->get();
-
-                $i = 0;
-                foreach($image_product as $prodimg){
-                    $i++;
-                    if($i == '1'){
-                        $product_image['image_small'][$prod->productid] = $prodimg->image_small;
-                    }
-                }
-            }
-
-        }
+			// FEATURED BRANDS HOME
+			$featuredBrands = DB::table('brands')
+			->where('brands.featured_status', 1)->get();
+			if($featuredBrands != null ){
+					foreach ($featuredBrands as $key) {
+						$productFeatBrands[$key->brandsid] = DB::table('product')
+						->where('product.brands', $key->brandsid)->take(4)->get();
+					}
+			}
 
         //Brands slider
         $brands = DB::table('brands')->get();
         //Cart
         $content = Cart::content();
 
-        //slider
-        $slider = DB::table('slider')->get();
+        //main slider
+        $slider = DB::table('slider')->where('enable',1)->where('position',"main")->get();
+				$slider_featured_product = DB::table('slider')->where('enable',1)->where('position',"featuredProducts")->get();
+				$slider_featured_brands = DB::table('slider')->where('enable',1)->where('position',"featuredBrands")->get();
+
+				// var_dump($slider_featured_brands);
+				// exit();
+
         return view('home',
          [
             'config'                    =>  $configuration,
@@ -69,6 +89,8 @@ class FrontController extends Controller {
             'products_img'              =>  $product_image,
             'brands'                    =>  $brands,
             'homeslider'                =>  $slider,
+						'slider_featured_product'  	=>  $slider_featured_product,
+						'slider_featured_brands'    =>  $slider_featured_brands,
             'cart'                      =>  $content
         ]);
 	}
