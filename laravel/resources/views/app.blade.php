@@ -275,7 +275,7 @@
 					<div class="navbar-header">
 						<a href="#menu-toggle" id="mobile-toggle-btn" class="menu-toggle mobile-toggle btn btn-default pull-left  hidden-lg hidden-md" ><i class="icon ion-android-menu"></i></a>
 
-						<a class="navbar-brand" href="{{ url('/') }}" style="padding-top:10px; padding-bottom:10px;"><img class="logo" src="{{ asset('/img/logo.png') }}" alt="logo"></a>
+						<a class="navbar-brand" href="{{ url('/') }}" style="padding-top:10px; padding-bottom:10px;"><img class="logo img-responsive" src="{{ asset('/img/logo.png') }}" alt="logo"></a>
 
 						<a href="{{ url('cart') }}" class="mobile-bag navbar-brand pull-right"><i style="font-size: 32;" class="icon ion-bag"></i><span class="mobile-bag-badge badge"><small><?php echo Cart::count(false);  ?></small></span></a>
 						<a href="#" class="mobile-search navbar-brand pull-right" data-toggle="collapse" data-target="#searchcollapse"><i style="font-size: 20px; color: #999;" class="icon ion-search"></i></a>
