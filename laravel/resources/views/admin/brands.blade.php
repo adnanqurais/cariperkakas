@@ -41,6 +41,22 @@
                   <div class="text-right" style="margin-bottom:20px;">
                       <a href="{{ url('admin/brands/add') }}" class="btn btn-primary"><i class="icon ion-android-add"></i> Add Brands</a>
                   </div>
+                  <div class="brands-grid">
+                    <div class="brands-grid-header">
+                      {{ $brands[0]->brandsid }}
+                    </div>
+                    <div class="brands-grid-body">
+                        <img src="{{ url('img/brand/'.$brands[0]->logo) }}" width="100%">
+                    </div>
+                    <div class="brands-grid-footer">
+                      <div class="form-group">
+                        <label>
+                          <span>Featured</span>
+                          <input type="checkbox" class="brands-switch" <?php if($brands[0]->featured_status == 1){echo "checked";} ?> onchange="switchStatus({{ $brands[0]->brandsid }})">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                   <table id="example1" class="table table-bordered table-striped table-rotation">
                     <thead>
                       <tr>
@@ -65,8 +81,8 @@
                           </div>
                         </td>
                         <td data-label="Action">
-                            <!--<a href="{{ url('admin/brands/view/'.$brand->brandsid) }}" class="btn btn-sm btn-primary">View</a>-->
-                            <a href="#" title="Delete" class="btn btn-danger btn-xs" data-toggle="tooltip" onclick="if(confirm('Are you sure?')) location.href='{{ URL::to('admin/brands/delete/' . $brand->brandsid) }}'"><i class="icon ion-android-close"></i></a>
+                            <!-- <a href="{{ url('admin/brands/view/'.$brand->brandsid) }}" class="btn btn-sm btn-primary"><i class="icon ion-eye"></i></a> -->
+                            <a href="#" title="Delete" class="btn btn-danger btn-sm" data-toggle="tooltip" onclick="if(confirm('Are you sure?')) location.href='{{ URL::to('admin/brands/delete/' . $brand->brandsid) }}'"><i class="icon ion-android-close"></i></a>
                         </td>
                       </tr>
                     @endforeach

@@ -8,7 +8,7 @@
     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
     <li class="active">Contact Us</li>
   </ul>
-  <iframe height="300px" width="100%" src="https://www.google.com/maps/embed/v1/place?q=Elven+Digital+Indonesia,+ruko+de+mansion,+Jalan+Jalur+Sutera+Timur,+Kunciran,+Tangerang+City,+Banten,+Indonesia&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" name="iframe_a"></iframe>
+  <!-- <iframe height="300px" width="100%" src="https://www.google.com/maps/embed/v1/place?q=Elven+Digital+Indonesia,+ruko+de+mansion,+Jalan+Jalur+Sutera+Timur,+Kunciran,+Tangerang+City,+Banten,+Indonesia&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" name="iframe_a"></iframe> -->
   <div style="padding: 20px 0px;">
     <!--Address-->
     <div class="adrss col-md-6" >

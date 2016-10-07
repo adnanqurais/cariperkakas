@@ -70,17 +70,17 @@
                   <td data-label="Image">
                   <?php
                   if(!empty($pay->image)){?>
-                    <img src="{{ url('img/payment/'.$pay->image.'') }}" data-toggle="modal" data-target="#myModal" onclick="getPaymentImage(this)" width:60; height="60"; style="cursor:pointer;">
+                    <img src="{{ url('img/payment/'.$pay->image.'') }}" data-toggle="modal" data-target="#myModal" onclick="getPaymentImage(this)" width:60; height="auto"; style="cursor:pointer;">
                   <?php }else{ ?>
-                    <img src="{{ url('img/no-image_1.jpg') }}" width:"60" height="60">
+                    <img src="{{ url('img/no-image_1.jpg') }}" width:"60" height="auto">
                   <?php } ?>
 
                      &nbsp;</td>
                   <td data-label="Create at">{{ $pay->created_at }} &nbsp;</td>
                   <td data-label="Action">
                       <div class="btn-group">
-                         <a href="#" title="Confirmation Payment" class="btn btn-primary btn-sm" data-toggle="tooltip" onclick="if(confirm('Are you sure confirmation this payment?')) location.href='{{ URL::to('admin/payment/confirm/' . $pay->paymentid) }}'"><i class="icon ion-android-done"></i></a>
-                         <a href="#" title="Reject" class="btn btn-danger btn-sm" data-toggle="tooltip" onclick="if(confirm('Are you sure?')) location.href='{{ URL::to('admin/payment/reject/' . $pay->paymentid) }}'"><i class="icon ion-android-close"></i></a>&nbsp;
+                         <a href="#" title="Confirmation Payment" class="btn btn-primary btn-sm" onclick="if(confirm('Are you sure confirmation this payment?')) location.href='{{ URL::to('admin/payment/confirm/' . $pay->paymentid) }}'"><i class="icon ion-android-done"></i></a>&nbsp;
+                         <a href="#" title="Reject" class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure?')) location.href='{{ URL::to('admin/payment/reject/' . $pay->paymentid) }}'"><i class="icon ion-android-close"></i></a>&nbsp;
                       </div>
                   </td>
                 </tr>
