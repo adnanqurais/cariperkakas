@@ -20,36 +20,55 @@ $(document).ready(function() {
       singleItem : true
       });
 
-      //Main Slide
-      $("#dekstop-slide").owlCarousel({
+      // Main Slide
+      // $("#dekstop-slide").owlCarousel({
 
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : true,
-          navigationText: [
-          "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-          "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      ],
+      // autoPlay: 10000, //Set AutoPlay to 3 seconds
+      // stopOnHover : true,
+      // navigation : true,
+      //     navigationText: [
+      //     "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
+      //     "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
+      // ],
+      // slideSpeed : 300,
+      // pagination : false,
+      // paginationSpeed : 400,
+      // singleItem : true,
+      // });
+      $('#dekstop-slide').owlCarousel({
+          autoplay:true,
+          autoplayTimeout:5000,
+          autoplayHoverPause:false,
+          center: true,
+          items:1,
+          loop:true,
+          margin:10,
+          stopOnHover : true,
+          // nav : true,
+          // navText: ["<i class='icon ion-ios-arrow-left' style='font-size:70px;'></i>",
+          //          "<i class='icon ion-ios-arrow-right' style='font-size:70px;'></i>"
+          //          ],
+          autoHeight:true,
       slideSpeed : 300,
       pagination : false,
       paginationSpeed : 400,
-      singleItem : true
+      singleItem : true,
       });
 
       //Product Slide
-      $("#productSlider").owlCarousel({
+      // $("#productSlider").owlCarousel({
 
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : true,
-      navigationText: [
-          "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-          "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      ],
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem : true
-      });
+      // autoPlay: 10000, //Set AutoPlay to 3 seconds
+      // stopOnHover : true,
+      // navigation : true,
+      // navigationText: [
+      //     "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
+      //     "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
+      // ],
+      // slideSpeed : 300,
+      // paginationSpeed : 400,
+      // singleItem : true
+      // });
 
 
       //BRAND SLIDER
