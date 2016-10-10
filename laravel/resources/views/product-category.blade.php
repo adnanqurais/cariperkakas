@@ -50,6 +50,16 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+    .level-1 li ul.level-2 {
+    display: block;
+    list-style: none;
+        padding: 0;
+        -webkit-transition: all 300ms ease;
+        -webkit-transition:all 300ms ease-in-out;
+        -moz-transition:all 300ms ease-in-out;
+        -o-transition:all 300ms ease-in-out;    
+        transition:all 300ms ease-in-out;
+    }
 </style>
 
 

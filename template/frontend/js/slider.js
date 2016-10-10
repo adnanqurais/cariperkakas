@@ -23,33 +23,37 @@ $(document).ready(function() {
       //Main Slide
       $("#dekstop-slide").owlCarousel({
 
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : true,
-          navigationText: [
-          "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-          "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      ],
+      autoplay:true,
+      autoplayTimeout:5000,
+      autoplayHoverPause:true,
+      // nav : true,
+      //     navText: [
+      //     "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
+      //     "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
+      // ],
       slideSpeed : 300,
       pagination : false,
       paginationSpeed : 400,
-      singleItem : true
+      singleItem : true,
+      loop:true,
+      animation: 'fadeIn',
+      items:1,
       });
 
       //Product Slide
-      $("#productSlider").owlCarousel({
+      // $("#productSlider").owlCarousel({
 
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : true,
-      navigationText: [
-          "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-          "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      ],
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem : true
-      });
+      // autoPlay: 10000, //Set AutoPlay to 3 seconds
+      // stopOnHover : true,
+      // navigation : true,
+      // navigationText: [
+      //     "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
+      //     "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
+      // ],
+      // slideSpeed : 300,
+      // paginationSpeed : 400,
+      // singleItem : true
+      // });
 
 
       //BRAND SLIDER

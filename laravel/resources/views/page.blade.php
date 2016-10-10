@@ -5,17 +5,17 @@
          
     <!--row-->
     <div>
-        <div class="col-md-12">
+        {{-- <div class="col-md-12">
             <ul class="breadcrumb">
                 <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
                 <li class="active">Halaman</li>
             </ul>   
             <!--col-->
-        </div>
+        </div> --}}
 
         <div class="col-lg-3">
 
-            <ul class="categorymenumobile mobile-menu-page nav nav-pills nav-stacked" style="background-color:#f5f5f5; margin: auto 0px;">
+            {{-- <ul class="categorymenumobile mobile-menu-page nav nav-pills nav-stacked" style="background-color:#f5f5f5; margin: auto 0px;">
                  <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu
                     <span class="caret"></span></a>
@@ -32,7 +32,7 @@
                           <li><a href="{{ url('page/'.$all->name) }}">{{ $all->title }}</a></li>  
                         @endforeach
              
-            </ul>
+            </ul> --}}
         </div>
         <!--./Col-->
      
