@@ -41,10 +41,6 @@
                   <div class="text-right" style="margin-bottom:20px;">
                       <a href="{{ url('admin/brands/add') }}" class="btn btn-primary"><i class="icon ion-android-add"></i> Add Brands</a>
                   </div>
-                  <!-- <div class="row">
-                    <div class="col-sm-6">
-                    </div>
-                  </div> -->
                   <table id="example1" class="table table-bordered table-striped table-rotation">
                     <thead>
                       <tr>

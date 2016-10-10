@@ -308,11 +308,19 @@ class AdminController extends Controller {
             $position=Input::get('position');
             $link=Input::get('link');
             $now=new DateTime();
+            $enab=Input::get('enable');
+            if(isset($enab)){
+                $enable=1;
+            }else{
+                $enable=0;
+            }
+
             $q= DB::table('slider')
             ->where('sliderid','=',$id)
             ->update([
                 'position' => $position,
                 'link' => $link,
+                'enable' => $enable,
                 'updated_at' => $now
             ]);
 
@@ -625,6 +633,8 @@ class AdminController extends Controller {
             $email=Input::get('email');
             $telephone=Input::get('telephone');
             $address=Input::get('address');
+            $mapURL=Input::get('map_url');
+            $terms_condition=Input::get('terms_condition');
 
             $checkoutheader=Input::get('checkoutheader');
             $checkoutfooter=Input::get('checkoutfooter');
@@ -640,6 +650,8 @@ class AdminController extends Controller {
                 'email' => $email,
                 'telephone' => $telephone,
                 'address' => $address,
+                'map_url' => $mapURL,
+                'terms_condition' => $terms_condition,
                 'checkoutmail_header' => $checkoutheader,
                 'checkoutmail_footer' => $checkoutfooter,
                 'registermail_header' => $registerheader,

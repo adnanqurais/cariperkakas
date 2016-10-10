@@ -213,17 +213,25 @@ transition: all 300ms ease;
 
 .footer{
     color: white;
+<<<<<<< HEAD
     background-color: #1DB7EB;
+=======
+>>>>>>> master
     letter-spacing: 1px;
     padding: 1%;
+    background-color: #1DB7EB;
 }
 
 @media screen and (max-width: 900px) {
   .footer{
       color: white;
+<<<<<<< HEAD
       background-color: #1DB7EB;
+=======
+>>>>>>> master
       letter-spacing: 1px;
       padding: 3%;
+      background-color: #1DB7EB;
   }
 }
 .no-padding-left{
@@ -434,12 +442,24 @@ break {
   width: 100%;
   height: 100%;
   display: block;
+<<<<<<< HEAD
   border: 2px;
   border-color: transparent;
 }
 
 .product-frame:hover{
   border: 2px solid #1DB7EB;
+=======
+  border: 2px solid;
+  border-color: transparent;
+}
+.border-frame{
+
+}
+
+.product-frame:hover{
+  border: 2px solid #1DB7EB;;
+>>>>>>> master
 }
 .product-general-detail{
   text-align: left;

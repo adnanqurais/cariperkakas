@@ -19,10 +19,18 @@
         -o-transition:all 300ms ease-in-out;
         transition:all 300ms ease-in-out;
     }
+    .title-menu:hover{
+        padding-left: 20px;
+        -webkit-transition: all 1000ms ease;
+        -moz-transition: all 1000ms ease;
+        -ms-transition: all 1000ms ease;
+        -o-transition: all 1000ms ease;
+        transition: all 1000ms ease;
+    }
     .owl-theme .owl-controls {
-         margin-top: 0px;
+        margin-top: 0px;
         text-align: center;
-    }  
+    }
 </style>
 
 
@@ -40,6 +48,7 @@
 <!--Mobile Category-->
 <div class="mobile-category container text-center">
 
+<<<<<<< HEAD
     <h3 class="featured-brand text-center" style="margin-bottom: 20px; letter-spacing:5px; font-weight:600;">SHOP CATEGORY</h3>
 <<<<<<< HEAD
 
@@ -58,7 +67,45 @@
             </div>
         </a>
         @endif
+=======
+>>>>>>> master
 
+  <div class="">
+  <h5 class="featured-brand" style="">FEATURED BRAND</h5>
+      <div class="col-md-12" style="padding:0px;" >
+          <div class="col-lg-12 col-sm-12 no-padding">
+              <div id="productSlider" >
+                @foreach($slider_featured_brands as $featBrand)
+                      <div class="item"><img class="img-responsive" src="img/slide/<?php echo $featBrand->image; ?>" alt="{{ $featBrand->image }}"></div>
+                @endforeach
+              </div>
+          </div>
+      </div>
+      <div class="col-md-12" style="padding:0px;" >
+          <div class="col-lg-12 col-sm-12 no-padding">
+              <div id="productSlider2" >
+                @foreach($slider_featured_brands as $featBrand)
+                      <div class="item">
+                        @foreach($homeProducts as $prod_img)
+                                <div class="col-xs-4" >
+                                    <a href="{{ url('product-details/'.$prod_img->productname.'') }}" style="text-decoration: none;">
+
+                                    <?php if(!empty($products_img['image_small'][$prod_img->productid])){ ?>
+                                        <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$prod_img->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
+                                        <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%" style="border:5;"/>
+                                    <?php } else{ ?>
+                                        <img class="lazy grid-img" data-original="{{ url('img/no-image.jpg') }}"/>
+                                    <?php } ?>
+                                    <p style="text-transform:capitalize;"><?php echo strtolower($prod_img->producttitle); ?></p>
+                                    </a>
+                                </div>
+                        @endforeach
+                      </div>
+                @endforeach
+              </div>
+          </div>
+      </div>
+   </div>
 
 </div>
 
@@ -67,6 +114,7 @@
 <!--<div class="jscroll" style="height:600px; overflow:hidden;">-->
 
     @if ($category_view[0]->parent == '' || $category_view[0]->parent == '0' || $category_view[0]->parent == ' ')
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div class="dekstop-category container no-padding desktop-category-border" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
     <?php if(!empty($category_view[0]->icon)){ ?>
@@ -99,23 +147,25 @@
 
     <div class="dekstop-category container no-padding desktop-category-border">
     <h3 class="featured-brand" style="">FEATURED BRAND</h3>
+=======
+    <div class="dekstop-category container no-padding desktop-category-border" >
+    <h3 class="featured-brand">FEATURED PRODUCT</h3>
+>>>>>>> master
         <div class="col-md-12" style="padding:0px;" >
             <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
                 <div id="productSlider" style="float: left; width: 49%;">
-                    <div id="" class="">
-                        <?php if(!empty($category_view[0]->slider1)){?>
-                        <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider1)){ echo $category_view[0]->slider1;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider1 }}"></div>
-                        <?php } ?>
-                    </div>
+                  @foreach($slider_featured_brands as $featBrand)
+                        <div class="item"><img class="img-responsive" src="img/slide/<?php if(!empty($featBrand->image)){ echo $featBrand->image;}else{echo "no-image.jpg";} ?>" alt="{{ $featBrand->image }}"></div>
+                  @endforeach
                 </div>
                 <div class="product-grid" style="float: left; width: 49%; text-align: center; max-height: 100px; padding-left: 2%;">
-                    @foreach($homeProducts[$category_view[0]->categoryid] as $prod_img)
+                    @foreach($homeProducts as $prod_img)
                             <div class="col-md-6" >
                                 <a href="{{ url('product-details/'.$prod_img->productname.'') }}" style="text-decoration: none;">
 
                                 <?php if(!empty($products_img['image_small'][$prod_img->productid])){ ?>
                                     <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$prod_img->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
-                                    <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%" />
+                                    <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" max-width="100%" max-height="100%" style="border:5;"/>
                                 <?php } else{ ?>
                                     <img class="lazy grid-img" data-original="{{ url('img/no-image.jpg') }}"/>
                                 <?php } ?>
@@ -134,15 +184,21 @@
         <div class="col-md-12" style="padding:0px;" >
             <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
                 <div id="productSlider" style="float: left; width: 49%;">
+<<<<<<< HEAD
                     <div id="" class="">
                         <?php if(!empty($category_view[0]->slider1)){?>
                         <div class="item"><img class="img-responsive" src="img/product/banner/product-category/slider/<?php if(!empty($category_view[0]->slider1)){ echo $category_view[0]->slider1;}else{echo "no-image.jpg";} ?>" alt="{{ $category_view[0]->slider1 }}"></div>
 >>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
                         <?php } ?>
                     </div>
+=======
+                  @foreach($slider_featured_product as $featProduct)
+                        <div class="item"><img class="img-responsive" src="img/slide/<?php if(!empty($featProduct->image)){ echo $featProduct->image;}else{echo "no-image.jpg";} ?>" alt="{{ $featProduct->image }}"></div>
+                  @endforeach
+>>>>>>> master
                 </div>
                 <div class="product-grid" style="float: left; width: 49%; text-align: center; max-height: 100px; padding-left: 2%;">
-                    @foreach($homeProducts[$category_view[0]->categoryid] as $prod_img)
+                    @foreach($homeProducts as $prod_img)
                             <div class="col-md-6" >
                                 <a href="{{ url('product-details/'.$prod_img->productname.'') }}" style="text-decoration: none;">
 

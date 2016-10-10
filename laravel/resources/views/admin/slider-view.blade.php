@@ -61,7 +61,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 text-left">Public</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" name="enable" checked="1"> Enable
+                                <input type="checkbox" name="enable" value="1" <?php if($slider->enable == 1 ){ echo "checked";}?>> Enable
                             </div>
                         </div>
 

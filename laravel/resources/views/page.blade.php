@@ -5,6 +5,7 @@
          
     <!--row-->
     <div>
+<<<<<<< HEAD
         {{-- <div class="col-md-12">
             <ul class="breadcrumb">
                 <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
@@ -12,6 +13,9 @@
             </ul>   
             <!--col-->
         </div> --}}
+=======
+
+>>>>>>> master
 
         <div class="col-lg-3">
 
@@ -27,12 +31,15 @@
                 </li>
             </ul>
                 
+<<<<<<< HEAD
             <ul class="dekstop-menu-page nav nav-pills nav-stacked">
                         @foreach($allpages as $all)
                           <li><a href="{{ url('page/'.$all->name) }}">{{ $all->title }}</a></li>  
                         @endforeach
              
             </ul> --}}
+=======
+>>>>>>> master
         </div>
         <!--./Col-->
      
