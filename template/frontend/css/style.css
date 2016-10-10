@@ -4,10 +4,10 @@ body{
      font-family: 'Lato';
 }
 .top-menu{
-    box-shadow: 0 0 14px #1DB7EB;
+/*     box-shadow: 0 0 14px #1DB7EB;
     /* padding: 10px 0 10px 0; */
-    border-bottom-color: #17B7EB;
-    border-top: 2px solid #17B7EB;
+/*     border-bottom-color: #17B7EB;
+    border-top: 2px solid #17B7EB; */
 }
 
 .top-promo{

@@ -92,7 +92,7 @@
 
         }
 
-        $html .= '<div style="padding:5px 25px 0px 5px;">';
+        $html .= '<div style="padding:0px 25px">';
 
 
         $html .= '<button id="topPromoBtn" type="button" class="btn btn-primary pull-right" style="margin-right: -15px;z-index: 999;position: relative;" data-toggle="collapse" data-target="#toppromo"><i class="fa fa-times"></i></button>';

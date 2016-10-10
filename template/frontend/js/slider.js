@@ -33,6 +33,8 @@ $(document).ready(function() {
         pagination : false,
         paginationSpeed : 400,
         singleItem : true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
     });
     $('#top-promo').owlCarousel({
         autoplay:true,
@@ -48,6 +50,23 @@ $(document).ready(function() {
         pagination : false,
         paginationSpeed : 400,
         singleItem : true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            375:{
+                items:1,
+                loop:true
+            },
+            600:{
+                items:1,
+            },
+            1000:{
+                items:1,
+                loop:true
+            }
+        },
     });
 
     $('#productSlider').owlCarousel({
@@ -77,19 +96,30 @@ $(document).ready(function() {
         responsive:{
             0:{
                 items:1,
-                nav:true
+
             },
             600:{
                 items:3,
                 nav:false
             },
             1000:{
+                items:4,
+                loop:true
+            },
+            1200:{
                 items:5,
-                nav:true,
-                loop:false
+                loop:true
+            },
+            1400:{
+                items:5,
+                loop:true
+            },
+            1600:{
+                items:5,
+                loop:true
             }
         },
-        navigation : false,
+        nav : false,
         pagination : false
     });
 
