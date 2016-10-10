@@ -57,16 +57,19 @@ class FrontController extends Controller {
 			$homeProducts = DB::table('product')
 			->where('product.product_featured_status', 1)->take(4)->get();
 			foreach($homeProducts as $prod){
-                $image_product = DB::table('product_image')->where('productid', '=', $prod->productid)->orderBy('productimageid', 'Asc')->get();
+          $image_product = DB::table('product_image')->where('productid', '=', $prod->productid)->orderBy('productimageid', 'Asc')->get();
 
-                $i = 0;
-                foreach($image_product as $prodimg){
-                    $i++;
-                    if($i == '1'){
-                        $product_image['image_small'][$prod->productid] = $prodimg->image_small;
-                    }
-                }
-            }
+          $i = 0;
+          foreach($image_product as $prodimg){
+              $i++;
+              if($i == '1'){
+                  $product_image['image_small'][$prod->productid] = $prodimg->image_small;
+              }
+          }
+      }
+			if($homeProducts == null){
+					$product_image = "";
+			}
 
 			// FEATURED BRANDS HOME
 			$featuredBrands = DB::table('brands')
@@ -87,6 +90,10 @@ class FrontController extends Controller {
 			                }
 			            }
 					}
+			}
+			if($featuredBrands == null){
+					$productFeatBrands = "";
+					$product_image_brand = "";
 			}
 
         //Brands slider
