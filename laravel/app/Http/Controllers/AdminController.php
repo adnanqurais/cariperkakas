@@ -633,6 +633,8 @@ class AdminController extends Controller {
             $email=Input::get('email');
             $telephone=Input::get('telephone');
             $address=Input::get('address');
+            $mapURL=Input::get('map_url');
+            $terms_condition=Input::get('terms_condition');
 
             $checkoutheader=Input::get('checkoutheader');
             $checkoutfooter=Input::get('checkoutfooter');
@@ -648,6 +650,8 @@ class AdminController extends Controller {
                 'email' => $email,
                 'telephone' => $telephone,
                 'address' => $address,
+                'map_url' => $mapURL,
+                'terms_condition' => $terms_condition,
                 'checkoutmail_header' => $checkoutheader,
                 'checkoutmail_footer' => $checkoutfooter,
                 'registermail_header' => $registerheader,

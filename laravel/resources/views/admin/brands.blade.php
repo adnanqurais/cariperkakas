@@ -41,22 +41,6 @@
                   <div class="text-right" style="margin-bottom:20px;">
                       <a href="{{ url('admin/brands/add') }}" class="btn btn-primary"><i class="icon ion-android-add"></i> Add Brands</a>
                   </div>
-                  <div class="brands-grid">
-                    <div class="brands-grid-header">
-                      {{ $brands[0]->brandsid }}
-                    </div>
-                    <div class="brands-grid-body">
-                        <img src="{{ url('img/brand/'.$brands[0]->logo) }}" width="100%">
-                    </div>
-                    <div class="brands-grid-footer">
-                      <div class="form-group">
-                        <label>
-                          <span>Featured</span>
-                          <input type="checkbox" class="brands-switch" <?php if($brands[0]->featured_status == 1){echo "checked";} ?> onchange="switchStatus({{ $brands[0]->brandsid }})">
-                        </label>
-                      </div>
-                    </div>
-                  </div>
                   <table id="example1" class="table table-bordered table-striped table-rotation">
                     <thead>
                       <tr>
