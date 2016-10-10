@@ -47,13 +47,11 @@
 
 <!--Mobile Category-->
 <div class="mobile-category container text-center">
-
-
   <div class="">
   <h5 class="featured-brand" style="">FEATURED BRAND</h5>
       <div class="col-md-12" style="padding:0px;" >
           <div class="col-lg-12 col-sm-12 no-padding">
-              <div id="productSlider" >
+              <div id="productSliderMobile" >
                 @foreach($slider_featured_brands as $featBrand)
                       <div class="item"><img class="img-responsive" src="img/slide/<?php echo $featBrand->image; ?>" alt="{{ $featBrand->image }}"></div>
                 @endforeach
@@ -62,7 +60,7 @@
       </div>
       <div class="col-md-12" style="padding:0px;" >
           <div class="col-lg-12 col-sm-12 no-padding">
-              <div id="productSlider2" >
+              <div id="productSlider1" >
                 @foreach($slider_featured_brands as $featBrand)
                       <div class="item">
                         @foreach($homeProducts as $prod_img)
@@ -94,12 +92,12 @@
 
     @if ($category_view[0]->parent == '' || $category_view[0]->parent == '0' || $category_view[0]->parent == ' ')
     <div class="dekstop-category container no-padding desktop-category-border" >
-    <h3 class="featured-brand">FEATURED PRODUCT</h3>
+    <h3 class="featured-brand">FEATURED BRANDS</h3>
         <div class="col-md-12" style="padding:0px;" >
-            <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
+            <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color;?>;">
                 <div id="productSlider" style="float: left; width: 49%;">
                   @foreach($slider_featured_brands as $featBrand)
-                        <div class="item"><img class="img-responsive" src="img/slide/<?php if(!empty($featBrand->image)){ echo $featBrand->image;}else{echo "no-image.jpg";} ?>" alt="{{ $featBrand->image }}"></div>
+                        <div class="item"><img class="img-responsive" width="100%" height="auto" src="img/slide/<?php if(!empty($featBrand->image)){ echo $featBrand->image;}else{echo "no-image.jpg";} ?>" alt="{{ $featBrand->image }}"></div>
                   @endforeach
                 </div>
                 <div class="product-grid" style="float: left; width: 49%; text-align: center; max-height: 100px; padding-left: 2%;">
@@ -124,10 +122,10 @@
     @endif
     @if ($category_view[0]->parent == '' || $category_view[0]->parent == '0' || $category_view[0]->parent == ' ')
     <div class="dekstop-category container no-padding desktop-category-border" >
-    <h3 class="featured-brand">FEATURED PRODUCT</h3>
+    <h3 class="featured-brand">FEATURED PRODUCTS</h3>
         <div class="col-md-12" style="padding:0px;" >
-            <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color?>;">
-                <div id="productSlider" style="float: left; width: 49%;">
+            <div class="col-lg-12 col-sm-12 no-padding" style="border-top: 2px solid <?php echo $category_view[0]->color;?>;">
+                <div id="brandSlider" style="float: left; width: 49%;">
                   @foreach($slider_featured_product as $featProduct)
                         <div class="item"><img class="img-responsive" src="img/slide/<?php if(!empty($featProduct->image)){ echo $featProduct->image;}else{echo "no-image.jpg";} ?>" alt="{{ $featProduct->image }}"></div>
                   @endforeach
@@ -154,8 +152,10 @@
     @endif
 <!--</div>-->
 <script>
-    //$(document).ready(function() {
-    //  $('#lazied').unveil(20);
-    //});
+    $(document).ready(function() {
+     // $('#lazied').unveil(20);
+    });
+    //   // Product Slide
+      
 </script>
 @endsection

@@ -1,161 +1,103 @@
 $(document).ready(function() {
-      //Main Slide
-      $("#owl-example").owlCarousel({
+    //Main Slide
+    $("#owl-example").owlCarousel({
+        autoPlay: 10000, //Set AutoPlay to 3 seconds
+        stopOnHover : true,
+        navigation : false,
+        slideSpeed : 300,
+        pagination : false,
+        singleItem : true
+    });
 
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : false,
-      slideSpeed : 300,
-      pagination : false,
-      singleItem : true
-      });
+    $("#owl-example1").owlCarousel({
+        autoPlay: 10000, //Set AutoPlay to 3 seconds
+        stopOnHover : true,
+        navigation : false,
+        slideSpeed : 300,
+        pagination : false,
+        singleItem : true
+    });
 
-      $("#owl-example1").owlCarousel({
+    // Main Slide
+    $('#dekstop-slide').owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:false,
+        center: true,
+        items:1,
+        loop:true,
+        margin:10,
+        stopOnHover : true,
+        autoHeight:true,
+        slideSpeed : 300,
+        pagination : false,
+        paginationSpeed : 400,
+        singleItem : true,
+    });
+    $('#top-promo').owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:false,
+        center: true,
+        items:1,
+        loop:true,
+        margin:10,
+        stopOnHover : true,
+        autoHeight:true,
+        slideSpeed : 300,
+        pagination : false,
+        paginationSpeed : 400,
+        singleItem : true,
+    });
 
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : false,
-      slideSpeed : 300,
-      pagination : false,
-      singleItem : true
-      });
+    $('#productSlider').owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
+        singleItem : true,
+        loop:true,
+        center: true,
+        items: 1
+    });
 
-      // Main Slide
-      // $("#dekstop-slide").owlCarousel({
+    $('#brandSlider').owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
+        singleItem : true,
+        loop:true,
+        center: true,
+        items: 1
+    });
+    //BRAND SLIDER
+    $('#owl-brands').owlCarousel({
+        loop:true,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:false,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:3,
+                nav:false
+            },
+            1000:{
+                items:5,
+                nav:true,
+                loop:false
+            }
+        },
+        navigation : false,
+        pagination : false
+    });
 
-      // autoPlay: 10000, //Set AutoPlay to 3 seconds
-      // stopOnHover : true,
-      // navigation : true,
-      //     navigationText: [
-      //     "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-      //     "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      // ],
-      // slideSpeed : 300,
-      // pagination : false,
-      // paginationSpeed : 400,
-      // singleItem : true,
-      // });
-      $('#dekstop-slide').owlCarousel({
-          autoplay:true,
-          autoplayTimeout:5000,
-          autoplayHoverPause:false,
-          center: true,
-          items:1,
-          loop:true,
-          margin:10,
-          stopOnHover : true,
-          // nav : true,
-          // navText: ["<i class='icon ion-ios-arrow-left' style='font-size:70px;'></i>",
-          //          "<i class='icon ion-ios-arrow-right' style='font-size:70px;'></i>"
-          //          ],
-          autoHeight:true,
-      slideSpeed : 300,
-      pagination : false,
-      paginationSpeed : 400,
-      singleItem : true,
-      });
-
-      // Product Slide
-      $("#productSlider").owlCarousel({
-      items:1,
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : true,
-      navigationText: [
-          "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-          "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      ],
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem : true
-      });
-      $("#productSlider2").owlCarousel({
-      items:1,
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : true,
-      navigationText: [
-          "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-          "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      ],
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem : true
-      });
-
-      // Product Slide
-      $("#productSlider2").owlCarousel({
-      items:3,
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : true,
-      navigationText: [
-          "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-          "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      ],
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem : true
-      });
-      $("#productSlider2").owlCarousel({
-      items:1,
-      autoPlay: 10000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      navigation : true,
-      navigationText: [
-          "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-          "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      ],
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem : false
-      });
-
-      // //Product Slide MObile
-      // $("#productSliderMobile").owlCarousel({
-      //   autoplay:true,
-      //   autoplayTimeout:5000,
-      //   items:1,
-      //   loop:true,
-      // // stopOnHover : true,
-      // // navigation : true,
-      // // navigationText: [
-      // //     "<i class='icon ion-ios-arrow-left' style=\"font-size:70px;\"></i>",
-      // //     "<i class='icon ion-ios-arrow-right' style=\"font-size:70px;\"></i>"
-      // // ],
-      // slideSpeed : 300,
-      // paginationSpeed : 400,
-      // singleItem : true
-      // });
-
-      //BRAND SLIDER
-      var owl = $("#owl-brands");
-      owl.owlCarousel({
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
-      stopOnHover : true,
-      itemsCustom : [
-            [0, 1],
-            [450, 2],
-            [600, 3],
-            [700, 3],
-            [1000, 4],
-            [1200, 5],
-            [1400, 5],
-            [1600, 5]
-          ],
-      navigationText: [
-          "<i class='icon ion-ios-arrow-left'></i>",
-          "<i class='icon ion-ios-arrow-right'></i>"
-          ],
-      navigation : false,
-      pagination : false
-      });
-
-      //Zoom image Product details
-      $("#mobile-productdetail-image").owlCarousel({
-          navigation : false, // Show next and prev buttons
-          slideSpeed : 300,
-          pagination : false,
-          singleItem:true
-      });
- });
+    //Zoom image Product details
+    $("#mobile-productdetail-image").owlCarousel({
+        navigation : false,
+        slideSpeed : 300,
+        pagination : false,
+        singleItem:true,
+    });
+});
