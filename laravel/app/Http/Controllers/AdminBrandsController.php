@@ -78,13 +78,13 @@ class AdminBrandsController extends Controller {
     public function postbrandsdetails(){
 
         if(Session::get('sessionadmin')){
-
+                $name=Input::get('brandsid');
                 $name=Input::get('name');
-                $ena=Input::get('enable');
-                if(empty($ena)){
-                    $enable="";
+                $enab=Input::get('enable');
+                if(isset($enab)){
+                    $enable=1;
                 }else{
-                    $enable=Input::get('enable');
+                    $enable=0;
                 }
 
                 $featured=Input::get('$featured');

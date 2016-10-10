@@ -203,7 +203,7 @@ Route::get('admin/product/featured/status/productid={id}', 'AdminProductControll
 /*Brands Page*/
 Route::get('admin/brands', 'AdminBrandsController@getbrands');
 Route::get('admin/brands/view/{brandsid}', 'AdminBrandsController@getbrandsdetails');
-Route::get('admin/brands/view', 'AdminBrandsController@postbrandsdetails');
+Route::post('admin/brands/view/', 'AdminBrandsController@postbrandsdetails');
 Route::get('admin/brands/delete/{brandsid}', 'AdminBrandsController@getbrandsdelete');
 Route::get('admin/brands/add', 'AdminBrandsController@getbrandsadd');
 Route::post('admin/brands/add', 'AdminBrandsController@postbrandsadd');

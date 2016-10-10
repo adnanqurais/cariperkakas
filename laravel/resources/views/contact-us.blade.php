@@ -8,7 +8,7 @@
     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
     <li class="active">Contact Us</li>
   </ul>
-  <!-- <iframe height="300px" width="100%" src="{{$config->map_url}}" name="iframe_a"></iframe> -->
+  <iframe height="300px" width="100%" src="{{$config->map_url}}" name="iframe_a"></iframe>
   <div style="padding: 20px 0px;">
     <!--Address-->
     <div class="adrss col-md-6" >

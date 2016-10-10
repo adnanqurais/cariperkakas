@@ -65,7 +65,7 @@
                           </div>
                         </td>
                         <td data-label="Action">
-                            <!-- <a href="{{ url('admin/brands/view/'.$brand->brandsid) }}" class="btn btn-sm btn-primary"><i class="icon ion-eye"></i></a> -->
+                            <a href="{{ url('admin/brands/view/'.$brand->brandsid) }}" class="btn btn-sm btn-primary"><i class="icon ion-eye"></i></a>
                             <a href="#" title="Delete" class="btn btn-danger btn-sm" data-toggle="tooltip" onclick="if(confirm('Are you sure?')) location.href='{{ URL::to('admin/brands/delete/' . $brand->brandsid) }}'"><i class="icon ion-android-close"></i></a>
                         </td>
                       </tr>

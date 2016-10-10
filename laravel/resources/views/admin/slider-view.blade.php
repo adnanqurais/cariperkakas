@@ -35,9 +35,9 @@
                             <label  class="col-sm-3 text-left">Position</label>
                             <div class="col-sm-9">
                                 <select id="position" name="position" class="form-control">
-                                    <option value="main"<?php if($slider->sliderid == "main"){ echo "selected"; } ?>>Main</option>
-                                    <option value="featuredProducts" <?php if($slider->sliderid == "featuredProducts"){ echo "selected"; } ?>>Featured Products</option>
-                                    <option value="featuredBrands" <?php if($slider->sliderid == "featuredBrands"){ echo "selected"; } ?>>Featured Brands</option>
+                                    <option value="main"<?php if($slider->position == "main"){ echo "selected"; } ?>>Main</option>
+                                    <option value="featuredProducts" <?php if($slider->position == "featuredProducts"){ echo "selected"; } ?>>Featured Products</option>
+                                    <option value="featuredBrands" <?php if($slider->position == "featuredBrands"){ echo "selected"; } ?>>Featured Brands</option>
                                 </select>
                             </div>
                         </div>
@@ -51,10 +51,15 @@
                             <label for="inputEmail3" class="col-sm-3 text-left">Image</label>
                             <div  class="col-sm-9">
                                 <span id="file">
-                                    <div class="btn btn-primary btn-file">
-                                        <input type="file" name="image" class="form-control" accept="image/*" onchange="$('#file_name').html(this.value);">
-                                        <i class="fa fa-search"></i> Browse File
+                                    <div class="row" style="margin-bottom:20px;">
+                                        <div class="col-md-12 text-center">
+                                            <img id="preview" class="img-responsive" src="{{ url('img/slide/'.$slider->image) }}"  max-width="100%" height="auto">
+                                        </div>
                                     </div>
+                                    <div class="btn btn-primary btn-file btn-sm">
+                                        <input type="file" id="image" name="image" class="form-control"> Change Image
+                                    </div>
+                                    <div id="cancel-change" class="btn btn-danger btn-file btn-sm" onclick="cancelChange()" disabled>Cancel</div>
                                 </span>
                             </div>
                         </div>
@@ -73,7 +78,7 @@
                 <div class="box-footer">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="{{ url('admin/product') }}"class="btn btn-default">Back</a>
+                        <a href="{{ url('admin/slider') }}"class="btn btn-default">Back</a>
                     </div>
                 </div>
                 </form>
@@ -82,8 +87,35 @@
           </div><!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
+      <script>
+        $("#image").change(function(){
+            readURL(this);
+            // alert(this.value);
+            $('#cancel-change').removeAttr("disabled");
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
+                reader.onload = function (e) {
+                    $('#preview').attr('src', e.target.result);
+                }
 
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 
-
+        function cancelChange(){
+          var temp = "{{ url('img/slide/'.$slider->image) }}";
+          $('#preview').attr('src', temp);
+          $('#image').val('');
+          $('#cancel-change').attr("disabled", "disabled");
+        }
+        // $("#cancel-change").click(function(){
+        //     var canChange = {{ $slider->image }};
+        //     alert(canChange);
+        //     // readURL(this);
+        //     // $('#cancel-change').attr("disabled", "disabled");
+        // });
+      </script>
 @endsection

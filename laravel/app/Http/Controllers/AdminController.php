@@ -315,18 +315,36 @@ class AdminController extends Controller {
                 $enable=0;
             }
 
-            $q= DB::table('slider')
-            ->where('sliderid','=',$id)
-            ->update([
-                'position' => $position,
-                'link' => $link,
-                'enable' => $enable,
-                'updated_at' => $now
-            ]);
+            if (Input::file('image')->isValid()) {
 
-            if($q){
-                return redirect('admin/slider')->with('success-update','Slider has Updated');
+              $destinationPath = 'img/slide/'; // upload path
+
+              $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+              $fileName = rand(11111,99999).'.'.$extension; // renameing image
+
+                Image::make(Input::file('image')->getRealPath())->resize(1583, null, function ($constraint) { $constraint->aspectRatio();})->save($destinationPath . $fileName);
+
+
+                $q= DB::table('slider')
+                ->where('sliderid','=',$id)
+                ->update([
+                    'position' => $position,
+                    'link' => $link,
+                    'enable' => $enable,
+                    'image' => $fileName,
+                    'updated_at' => $now
+                ]);
+
+                if($q){
+                    return redirect('admin/slider')->with('success-update','Slider has Updated');
+                }
+
+            }else{
+
+                return redirect()->back();
+
             }
+
 
 
         }else{

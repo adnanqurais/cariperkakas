@@ -36,7 +36,7 @@
                                 <select id="position" name="position" class="form-control">
                                     <option value="main">Main</option>
                                     <option value="featuredProducts">Featured Products</option>
-                                    <option value="featuredBrands">Featured Brands</option>  
+                                    <option value="featuredBrands">Featured Brands</option>
                                 </select>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 text-left">Image</label>
+                            <label class="col-sm-3 text-left">Image</label>
                             <div  class="col-sm-9">
                                 <span id="file">
                                     <div class="btn btn-primary btn-file">
