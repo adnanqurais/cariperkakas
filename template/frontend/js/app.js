@@ -1,7 +1,7 @@
  $(document).ready(function() {
 
       //Product Detail Image
-        $("#zoom_img").elevateZoom({gallery:'gal1', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'});
+        $("#zoom_img").elevateZoom({gallery:'gal1', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true});
         //pass the images to Fancybox
         $("#zoom_img").bind("click", function(e) { var ez = $('#zoom_img').data('elevateZoom');	$.fancybox(ez.getGalleryList()); return false; });
 

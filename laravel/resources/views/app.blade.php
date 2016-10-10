@@ -213,11 +213,19 @@
 
 
 <!--Top Menu-->
+<<<<<<< HEAD
+<div id="top-menu" class="top-menu">
+	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; padding-bottom: 0px !important; ">
+
+
+		<div class="col-sm-6 pull-left" style="padding-bottom: 0;">
+=======
 <div id="top-menu" class="top-menu" style="">
 	<div class="clearfix col-lg-11 col-md-12 col-sm-12 col-centered" style="z-index: 999; padding-bottom: 0px;">
 
 
 		<div class="col-sm-6 pull-left"  style="padding-bottom: 0px;">
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 			<ul class="list-inline ">
 
 				<li class="dropdown">
@@ -299,10 +307,17 @@
 						</a>
 						<ul class="dropdown-menu" style="width: auto;">
 							  <div class="shopping-cart" >
+<<<<<<< HEAD
+							    <ul class="shopping-cart-items" id="skrol">
+							    <?php foreach($cart as $row) :?>
+							      <li class="clearfix">
+							        <img src="img/product/thumb/<?php echo ($row->options->has('image') ? $row->options->image : '');?>" alt="item1" />
+=======
 							    <ul class="shopping-cart-items" id="Demo">
 							    <?php foreach($cart as $row) :?>
 							      <li class="clearfix">
 							        <img src="{{asset('img/product/thumb/'.$row->options->image)}}" alt="item1" />
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 							        <span class="item-name"><?php echo $row->name;?></span>
 							        <span class="item-price price_format"><?php echo $row->subtotal;?></span>
 							        <span class="item-quantity">Quantity: <?php echo $row->qty;?></span>
@@ -310,8 +325,14 @@
 							  <?php endforeach;?>
 							    </ul>
 
+<<<<<<< HEAD
+							    <a href="{{ url('cart') }}" class="button">Lihat Semua</a>
+							  </div> <!--end shopping-cart -->
+
+=======
 							    <a href="{{ url('cart') }}" class="btn btn-flat btn-primary btn-block">Lihat Semua</a>
 							  </div> <!--end shopping-cart -->
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
 							</ul>
 						</li>
 						<?php if(Session::get('sessionmember')){?>
@@ -533,6 +554,7 @@
 		<script type="text/javascript" src="{{ asset('template/frontend/js/jquery.dcverticalmegamenu.1.3.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('template/frontend/js/jquery.price_format.2.0.js') }}"></script>
         <script type="text/javascript" src="{{ asset('template/frontend/js/jquery.unveil.js') }}"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<!-- App Java Scripts -->
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="{{ asset('template/frontend/js/owl.carousel.js') }}"></script>
@@ -810,6 +832,11 @@
                 menuContent.css("display", "none");
             }
         }
+   </script>
+   <script>
+   	$(function() {
+    $('#skrol').perfectScrollbar();
+	});
    </script>
     </body>
 </html>

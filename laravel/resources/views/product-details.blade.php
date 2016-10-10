@@ -8,7 +8,11 @@
 
 <div class="main-area container" style="letter-spacing:1px;">
   <div class="row">
+<<<<<<< HEAD
+    {{-- <div class="col-md-12">
+=======
 {{--     <div class="col-md-12">
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
       <ul class="breadcrumb">
           <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
           <li class="active">Detail Produk</li>
@@ -23,16 +27,27 @@
               <!-- <div class="o">
               </div> -->
                 <?php if(!empty($products_img_primary->image_small)){ ?>
+<<<<<<< HEAD
+                  <img id="zoom_img" class="img-responsive" src="{{ url('img/product/small/'.$products_img_primary->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$products_img_primary->image_large.'') }}" />
+                <?php } else{?>
+                  <img class="grid-img" src="{{ url('img/no-image.jpg') }}" style="border: 2px solid #ddd"/>
+=======
                   <img id="zoom_img" class="img-responsive img-product" src="{{ url('img/product/small/'.$products_img_primary->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$products_img_primary->image_large.'') }}"/>
                 <?php } else{?>
                   <img class="grid-img" src="{{ url('img/no-image.jpg') }}" style="border: 0px solid #ddd"/>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
                 <?php } ?>
             </div><!--./Dekstop-product-image-->
             <div id="gal1" class="col-md-12">
               <div class="row">
                 @foreach($products_img as $prod_img)
+<<<<<<< HEAD
+                <a class="col-md-2 hidden-sm hidden-xs" href="#" data-image="{{ url('img/product/small/'.$prod_img->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$prod_img->image_large.'') }}" >
+                    <img id="zoom_img" class="img-responsive" src="{{ url('img/product/thumb/'.$prod_img->image_thumb.'')}}" style="border: 2px solid #ddd;"/>
+=======
                 <a class="col-md-3 hidden-sm hidden-xs" href="#" data-image="{{ url('img/product/small/'.$prod_img->image_small.'') }}" data-zoom-image="{{ url('img/product/large/'.$prod_img->image_large.'') }}" >
                     <img id="zoom_img" class="img-responsive" src="{{ url('img/product/thumb/'.$prod_img->image_thumb.'')}}" style="border: 1px solid #ddd; margin-left: 5px;"/>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
                 </a>
                 @endforeach
               </div>

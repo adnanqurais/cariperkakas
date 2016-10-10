@@ -35,9 +35,9 @@
                             <label  class="col-sm-3 text-left">Position</label>
                             <div class="col-sm-9">
                                 <select id="position" name="position" class="form-control">
-                                    <option value="main"<?php if($slider->sliderid){ echo "selected"; } ?>>Main</option>
-                                    <option value="featuredProducts" <?php if($slider->sliderid){ echo "selected"; } ?>>Featured Products</option>
-                                    <option value="featuredBrands" <?php if($slider->sliderid){ echo "selected"; } ?>>Featured Brands</option>
+                                    <option value="main"<?php if($slider->sliderid == "main"){ echo "selected"; } ?>>Main</option>
+                                    <option value="featuredProducts" <?php if($slider->sliderid == "featuredProducts"){ echo "selected"; } ?>>Featured Products</option>
+                                    <option value="featuredBrands" <?php if($slider->sliderid == "featuredBrands"){ echo "selected"; } ?>>Featured Brands</option>
                                 </select>
                             </div>
                         </div>

@@ -34,27 +34,34 @@
                         <div class="form-group">
                             <label  class="col-sm-3 text-left">Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" placeholder="Name" name="name" >
+                                <input type="text" class="form-control" placeholder="Name" name="brandsname" value="{{ $brands->name }}">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label  class="col-sm-3 text-left">Name</label>
+                            <label  class="col-sm-3 text-left">Logo</label>
+                            <!-- <div class="col-sm-9">
+                                <input type="file" class="form-control" name="brand" required>
+                            </div> -->
                             <div class="col-sm-9">
-                                <input type="file" class="form-control" name="image" required>
+                                <div style="width:auto; height:auto;">
+                                  <img src="{{ url('img/brand/'.$brands->logo) }}"  width="250px" height="auto">
+                                </div>
+                                <a href="{{ url('#') }}" class="btn btn-info btn-xs">Change</a>
                             </div>
+
                         </div>
 
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 text-left"></label>
+                            <label for="inputEmail3" class="col-sm-3 text-left">Enable</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" name="enable" checked="1"> Enable
+                                <input type="checkbox" name="enable" checked="1">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 text-left">Featured</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" name="featured"> Enable
+                                <input type="checkbox" name="featured" <?php if($brands->featured_status == 1){echo "checked";} ?>>
                             </div>
                         </div>
                       </div><!--./row-->

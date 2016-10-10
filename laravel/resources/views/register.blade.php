@@ -4,8 +4,13 @@
 
 <div class="main-area container ">
     <div class="col-md-6 col-md-push-3 col-sm-12">
+<<<<<<< HEAD
+         <h3 class="text-center">Pendaftaran User Baru</h3>
+
+=======
          <h3 class="text-center">PENDAFTARAN</h3>
           <img src="{{ asset('/img/logo.png') }}" alt="logo" style="height: 52px; width: 250px; display: block; margin: 0 auto;" align="center">
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
          <!-- NOTIFICATION LIST START -->
           @if(Session::has('emailalready'))
               <div class="alert alert-warning">{{ Session::get('emailalready') }}</div>
@@ -40,7 +45,11 @@
           <div class="form-group">
             <input type="checkbox"> <b>Saya setuju dengan <a href="#" data-toggle="modal" data-target="#t_and_c_m" id="btn-t-c">terms & condition</a> Cariperkakas.com</b>
           </div>
+<<<<<<< HEAD
+          <button type="submit" class="btn btn-primary btn-block" pull-right>Daftar</button>
+=======
           <button type="submit" class="btn btn-primary btn-block btn-flat" pull-right>Daftar</button>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
         </form>
           <hr>
         <!-- <center> -->
@@ -48,12 +57,21 @@
         <!-- </center> -->
   </div>
 </div>
+<<<<<<< HEAD
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a type="button" class="close hide-t-c" aria-hidden="true">×</a>
+=======
 <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  style="margin-top: 250px;"
      aria-hidden="false">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
                 <a type="button" class="close hide-t-c" aria-hidden="false" data-dismiss="modal">×</a>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
                 <h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
             </div>
             <div class="modal-body">
@@ -63,7 +81,11 @@
                    2015, it was the most-starred project on GitHub.</p>
             </div>
             <div class="modal-footer">
+<<<<<<< HEAD
+                <button type="button" class="btn btn-primary hide-t-c" aria-hidden="true" data-dismiss="modal">I Agree</button>
+=======
                 <button type="button" class="btn btn-primary hide-t-c" aria-hidden="false" data-dismiss="modal">I Agree</button>
+>>>>>>> 6e1fafa366c27e6e6394b28a02ffa266b761c99c
             </div>
         </div>
     </div>
