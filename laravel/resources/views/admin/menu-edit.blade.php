@@ -6,12 +6,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Add Slider
+            Edit Menu
             <!--<small>advanced tables</small>-->
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li class="active">Add Slider </li>
+            <li class="active">Edit Menu </li>
           </ol>
         </section>
 
@@ -24,8 +24,10 @@
                   <!--<h3 class="box-title">Data Table With Full Features</h3>-->
                 </div><!-- /.box-header -->
 
-                <form class="form-horizontal" action="{{ url('admin/slider/add') }}" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{ url('admin/menu/edit') }}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                <input type="hidden" name="menuid" value="{{ $menu->menuid }}">
+
                 <div class="box-body">
                     <div class="col-md-6">
                       <div class="row">
@@ -34,36 +36,23 @@
                             <label  class="col-sm-3 text-left">Position</label>
                             <div class="col-sm-9">
                                 <select id="position" name="position" class="form-control">
-                                    <option value="main">Main</option>
-                                    <option value="featuredProducts">Featured Products</option>
-                                    <option value="featuredBrands">Featured Brands</option>
+                                    <option value="bottom1" <?php if($menu->position == "bottom1"){echo "selected";}?>>Bottom1</option>
+                                    <option value="bottom2" <?php if($menu->position == "bottom2"){echo "selected";}?>>Bottom2</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 text-left">Link</label>
+                            <label class="col-sm-3 text-left">Url</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" placeholder="Link" name="link" required>
+                                <input type="text" class="form-control" placeholder="Url" name="url" value="{{ $menu->url }}" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 text-left">Image</label>
-                            <div  class="col-sm-9">
-                                <span id="file">
-                                    <div class="btn btn-primary btn-file">
-                                        <input type="file" name="image" class="form-control" accept="image/*" onchange="$('#file_name').html(this.value);">
-                                        <i class="fa fa-search"></i> Browse File
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 text-left">Public</label>
+                            <label class="col-sm-3 text-left">Title</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" name="enable" checked="1"> Enable
+                                <input type="text" class="form-control" placeholder="Title" name="title" value="{{ $menu->title }}" required>
                             </div>
                         </div>
-
                       </div><!--./row-->
                     </div><!--./Col-->
 
@@ -72,7 +61,7 @@
                 <div class="box-footer">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="{{ url('admin/slider') }}"class="btn btn-default">Back</a>
+                        <a href="{{ url('admin/menu') }}"class="btn btn-default">Back</a>
                     </div>
                 </div>
                 </form>

@@ -49,7 +49,7 @@ class AdminBrandsController extends Controller {
 
         if(Session::get('sessionadmin')){
             //Brands
-            $brand = DB::table('brands')->get();
+            $brand = DB::table('brands')->orderBy('brandsid','asc')->get();
             return view('admin/brands',
             [
             'brands'=> $brand,
@@ -78,31 +78,34 @@ class AdminBrandsController extends Controller {
     public function postbrandsdetails(){
 
         if(Session::get('sessionadmin')){
+                $brandsid=Input::get('brandsid');
+                $name=Input::get('brandsname');
+                $enab=Input::get('enable');
+                // var_dump($enab);
+                // exit();
 
-                $name=Input::get('name');
-                $ena=Input::get('enable');
-                if(empty($ena)){
-                    $enable="";
+                if($enab == "on"){
+                    $enable=1;
                 }else{
-                    $enable=Input::get('enable');
+                    $enable=0;
                 }
 
-                $featured=Input::get('$featured');
-                if(isset($featured)){
-                    $feat=0;
-                }else{
+                $featured=Input::get('featured');
+                if($featured == "on"){
                     $feat=1;
+                }else{
+                    $feat=0;
                 }
 
                 if(empty(Input::file('image'))){//No update logo
 
-                       $q=DB::table('brands')->update([
+                       $q=DB::table('brands')->where('brandsid',$brandsid)->update([
                         'name'            => $name,
                         'featured_status' => $feat,
                         'enable'          => $enable
                        ]);
 
-                        return redirect('brands')->with('success-update', 'Success update Brands');
+                        return redirect('admin/brands')->with('success-update', 'Success update Brands');
 
                 }else{
                     if (Input::file('image')->isValid()) {
@@ -112,14 +115,14 @@ class AdminBrandsController extends Controller {
 
                       Input::file('image')->move($destinationPath, $fileName); // uploading file to given path    //
 
-                       $q=DB::table('brands')->update([
+                       $q=DB::table('brands')->where('brandsid',$brandsid)->update([
                         'name'            => $name,
                         'enable'          => $enable,
                         'featured_status' => $feat,
                         'logo'            => $fileName
                        ]);
 
-                        return redirect('brands')->with('success-update', 'Success update Brands');
+                        return redirect('admin/brands')->with('success-update', 'Success update Brands');
 
                     }
 

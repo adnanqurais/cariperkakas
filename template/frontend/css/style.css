@@ -4,10 +4,17 @@ body{
      font-family: 'Lato';
 }
 .top-menu{
+<<<<<<< HEAD
+    /*box-shadow: 0 0 14px #1DB7EB;*/
+    /* padding: 10px 0 10px 0; */
+    /*border-bottom-color: #17B7EB;
+    border-top: 2px solid #17B7EB;*/
+=======
 /*     box-shadow: 0 0 14px #1DB7EB;
     /* padding: 10px 0 10px 0; */
 /*     border-bottom-color: #17B7EB;
     border-top: 2px solid #17B7EB; */
+>>>>>>> master
 }
 
 .top-promo{
@@ -583,7 +590,7 @@ break {
 
 .shopping-cart {
   width: 350px !important;
-  overflow-y: hidden; 
+  overflow-y: hidden;
   float: right;
   background: white;
   width: 100%;

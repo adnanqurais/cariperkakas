@@ -315,18 +315,36 @@ class AdminController extends Controller {
                 $enable=0;
             }
 
-            $q= DB::table('slider')
-            ->where('sliderid','=',$id)
-            ->update([
-                'position' => $position,
-                'link' => $link,
-                'enable' => $enable,
-                'updated_at' => $now
-            ]);
+            if (Input::file('image')->isValid()) {
 
-            if($q){
-                return redirect('admin/slider')->with('success-update','Slider has Updated');
+              $destinationPath = 'img/slide/'; // upload path
+
+              $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+              $fileName = rand(11111,99999).'.'.$extension; // renameing image
+
+                Image::make(Input::file('image')->getRealPath())->resize(1583, null, function ($constraint) { $constraint->aspectRatio();})->save($destinationPath . $fileName);
+
+
+                $q= DB::table('slider')
+                ->where('sliderid','=',$id)
+                ->update([
+                    'position' => $position,
+                    'link' => $link,
+                    'enable' => $enable,
+                    'image' => $fileName,
+                    'updated_at' => $now
+                ]);
+
+                if($q){
+                    return redirect('admin/slider')->with('success-update','Slider has Updated');
+                }
+
+            }else{
+
+                return redirect()->back();
+
             }
+
 
 
         }else{
@@ -380,7 +398,53 @@ class AdminController extends Controller {
         }else{
             return redirect('admin/login');
         }
+    }
 
+    public function deleteOthers($othersid)
+    {
+        if(Session::get('sessionadmin')){
+            $promotion = DB::table('promotion')->where('promotionid',$othersid)->delete();
+            return Redirect()->back()->with('success-delete', 'Success deleting data');
+        }else{
+            return redirect('admin/login');
+        }
+    }
+
+    public function getEditOthers()
+    {
+        $id=Input::get('id');
+        $promotionEdit = DB::table('promotion')->where('promotionid',$id)->first();
+        echo '<table class="table table-bordered table-striped table-rotation">
+          <thead>
+            <tr>
+              <th>Desktop Caption</th>
+              <th>Mobile Caption</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>';
+              echo '<tr>'.
+                '<td><input type="text" class="form-control" name="desktopcaption" value="'.$promotionEdit->dekstopcaption.'"></td>'.
+                '<td><input type="text" class="form-control" name="mobilecaption" value="'.$promotionEdit->mobilecaption.'"></td>'.
+                '<td data-label="Name"><input type="text" class="form-control" name="link" value="'.$promotionEdit->link.'"></td>'.
+              '</tr>';
+          echo '</tbody>
+        </table>';
+        echo '<button type="button" class="btn btn-primary" onclick="postTopPromo('.$promotionEdit->promotionid.')" data-dismiss="modal">Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+    }
+
+    public function postEditOthers()
+    {
+        $id=Input::get('id');
+        $desktopcaption=Input::get('desktopcaption');
+        $mobilecaption=Input::get('mobilecaption');
+        $link=Input::get('link');
+        DB::table('promotion')->where('promotionid',$id)->update([
+          'dekstopcaption' => $desktopcaption,
+          'mobilecaption'  => $mobilecaption,
+          'link'           => $link
+        ]);
     }
 
     public function getusers(){
@@ -595,6 +659,34 @@ class AdminController extends Controller {
             'position' => $position,
             'url' => $url,
             'title' => $title,
+            ]);
+            return redirect('admin/menu')->with('success-create', 'Success create new menu');
+        }else{
+        return redirect('admin/login');
+        }
+    }
+    public function getMenuEdit($menuid)
+    {
+        if(Session::get('sessionadmin')){
+            //Menu
+            $menu = DB::table('menu')->where('menuid', $menuid)->first();
+            return view('admin/menu-edit',[
+              'menu' => $menu,
+            ]);
+        }else{
+        return redirect('admin/login');
+        }
+    }
+    public function postMenuEdit(){
+        if(Session::get('sessionadmin')){
+            $position=Input::get('position');
+            $menuid=Input::get('menuid');
+            $url=Input::get('url');
+            $title=Input::get('title');
+            DB::table('menu')->where('menuid',$menuid)->update([
+              'position' => $position,
+              'url' => $url,
+              'title' => $title,
             ]);
             return redirect('admin/menu')->with('success-create', 'Success create new menu');
         }else{

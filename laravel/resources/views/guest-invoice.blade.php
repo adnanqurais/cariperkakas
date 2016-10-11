@@ -87,10 +87,14 @@
                         <td data-label="Status" ><span class="text-danger">
                             <?php
                             if($new->status==0){?>
-                            <div class="label label-warning">Belum lunas</div>
+                            <div class="label label-warning">Pending</div>
                             <?php }elseif($new->status==1){  ?>
-                            <div class="label label-success">Lunas</div>
+                            <div class="label label-success">Processing</div>
                             <?php }elseif($new->status==2){  ?>
+                            <div class="label label-danger">Delivering</div>
+                            <?php }elseif($new->status==3){  ?>
+                            <div class="label label-danger">Completed</div>
+                            <?php }elseif($new->status==4){  ?>
                             <div class="label label-danger">Cancelled</div>
                             <?php } ?>
 

@@ -7,8 +7,13 @@
 {{--   <ul class="breadcrumb">
     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
     <li class="active">Contact Us</li>
+<<<<<<< HEAD
+  </ul>
+  <iframe height="300px" width="100%" src="{{$config->map_url}}" name="iframe_a"></iframe>
+=======
   </ul> --}}
   <!-- <iframe height="300px" width="100%" src="{{$config->map_url}}" name="iframe_a"></iframe> -->
+>>>>>>> master
   <div style="padding: 20px 0px;">
     <!--Address-->
     <div class="adrss col-md-6" >
