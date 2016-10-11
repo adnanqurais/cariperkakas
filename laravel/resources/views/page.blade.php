@@ -26,9 +26,16 @@
      
         <!--col-->
         <div class="col-lg-9">
+
             
             @foreach($pages as $pagetitle)
-
+            <div>
+                <h2 align="middle">
+                    <?php
+                    echo nl2br($pagetitle->title, false);
+                ?>
+                </h2><br>
+            </div>
             <div id="{{ $pagetitle->name }}" draggable>
                 <?php
                     echo nl2br($pagetitle->content, false);

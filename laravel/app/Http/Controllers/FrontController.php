@@ -112,9 +112,11 @@ class FrontController extends Controller {
         return view('home',
          [
             'config'                    =>  $configuration,
+            'featuredBrands'             =>$featuredBrands,
             'category_view'             =>  $cate_view,
             // 'subcate'                   =>  $subcate,
             'homeProducts'              =>  $homeProducts,
+            'productFeatBrands'         =>  $productFeatBrands,
             'products_img'              =>  $product_image,
 						'products_img_brand'        =>  $product_image,
             'brands'                    =>  $brands,

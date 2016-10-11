@@ -48,7 +48,7 @@
         <!-- </center> -->
   </div>
 </div>
-<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  style="margin-top: 250px;"
+<div class="modal" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  style="margin-top: 250px;"
      aria-hidden="false">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
