@@ -259,7 +259,7 @@
 					</div>
 					<div class="col-sm-6" style="text-align:right; padding-bottom: 0px;">
 						<ul class="list-inline ">
-							<li><a  href="{{ url('page/Panduan-Belanja') }}"> Panduan Cariperkakas.com </a></li>    |
+							<li><a  href="{{ url('page/panduan-belanja-cari-perkakas') }}"> Panduan Cariperkakas.com </a></li>    |
 							<li><a  href="{{ url('payment-confirmation') }}"> Pembayaran </a></li>    |
 							<li><a  href="{{ url('account/invoice') }}"> Status Pesanan</a></li>    |
 							<li><a  href="{{ url('contact-us') }}"> Contact Us</a></li>

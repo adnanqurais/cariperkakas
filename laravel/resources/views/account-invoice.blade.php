@@ -41,10 +41,6 @@
     
 </style>
 <div class="main-area container">
-        <ul class="breadcrumb">
-            <li><a href="#"><i class="icon ion-ios-home"></i></a></li>
-            <li class="active">Akun</li>
-        </ul>    
     <!--row-->
     <div class="row">
         <?php if(Session::get('sessionmember')){?>

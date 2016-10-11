@@ -4,10 +4,10 @@
 
 <div class="main-area container">
 
-  <ul class="breadcrumb">
+{{--   <ul class="breadcrumb">
     <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
     <li class="active">Contact Us</li>
-  </ul>
+  </ul> --}}
   <!-- <iframe height="300px" width="100%" src="{{$config->map_url}}" name="iframe_a"></iframe> -->
   <div style="padding: 20px 0px;">
     <!--Address-->

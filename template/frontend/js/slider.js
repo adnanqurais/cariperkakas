@@ -9,13 +9,15 @@ $(document).ready(function() {
         singleItem : true
     });
 
+    //Mobile version Top Promo
     $("#owl-example1").owlCarousel({
         autoPlay: 10000, //Set AutoPlay to 3 seconds
         stopOnHover : true,
         navigation : false,
         slideSpeed : 300,
         pagination : false,
-        singleItem : true
+        singleItem : true,
+        items:1,
     });
 
     // Main Slide
@@ -35,6 +37,23 @@ $(document).ready(function() {
         singleItem : true,
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            375:{
+                items:1,
+                loop:true
+            },
+            600:{
+                items:1,
+            },
+            1000:{
+                items:1,
+                loop:true
+            }
+        },
     });
     $('#top-promo').owlCarousel({
         autoplay:true,
@@ -55,7 +74,7 @@ $(document).ready(function() {
             0:{
                 items:1,
             },
-            375:{
+            360:{
                 items:1,
                 loop:true
             },
@@ -75,7 +94,29 @@ $(document).ready(function() {
         singleItem : true,
         loop:true,
         center: true,
-        items: 1
+        items: 1,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+    });
+
+    $('#productSliderMobile').owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
+        singleItem : true,
+        loop:true,
+        center: true,
+        items: 1,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+    });
+    $('#productSlider1').owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
+        singleItem : true,
+        loop:true,
+        items: 2,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
     });
 
     $('#brandSlider').owlCarousel({
@@ -84,8 +125,31 @@ $(document).ready(function() {
         singleItem : true,
         loop:true,
         center: true,
-        items: 1
+        items: 1,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
     });
+    $('#productBrandsSliderMobile').owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
+        singleItem : true,
+        loop:true,
+        center: true,
+        items: 1,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+    });
+
+    $('#productBrandsSlider1').owlCarousel({
+        autoplay:true,
+        autoplayTimeout:5000,
+        singleItem : true,
+        loop:true,
+        items: 2,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+    });
+
     //BRAND SLIDER
     $('#owl-brands').owlCarousel({
         loop:true,
