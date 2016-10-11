@@ -77,7 +77,7 @@ class AdminPagesController extends Controller {
           $by=Session::get('adminid');
           $now= new DateTime();
           DB::table('pages')->insert([
-          'name'          => $name,
+          'name'          => "page/".$name,
           'title'         => $title,
           'enable'        => $enable,
           'content'       => $content,

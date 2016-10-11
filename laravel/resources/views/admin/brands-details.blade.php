@@ -61,14 +61,19 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 text-left">Enable</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" name="enable" checked="1">
+                                <input type="checkbox" name="enable" <?php if($brands->enable == 1){echo "checked";} ?>>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 text-left">Featured</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" name="featured" <?php if($brands->featured_status == 1){echo "checked";} ?>>
+                                <input type="checkbox" id="featured" name="featured" <?php if($brands->featured_status == 1){echo "checked";} ?>>
                             </div>
+                            <!-- <script>
+                                $('#featured').change(function(){
+                                    alert("ahahahahah");
+                                });
+                            </script> -->
                         </div>
                       </div><!--./row-->
 

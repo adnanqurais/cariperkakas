@@ -32,6 +32,13 @@
                         {{ Session::get('success-update') }}
                     </div>
                   @endif
+                  @if(Session::has('success-delete'))
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4>	<i class="icon fa fa-check"></i> Alert!</h4>
+                        {{ Session::get('success-delete') }}
+                    </div>
+                  @endif
                     <div class="col-md-12">
                       <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#viewTopPromo">Top Promotion</a></li>
@@ -51,6 +58,7 @@
                                     <th>Desktop Caption</th>
                                     <th>Mobile Caption</th>
                                     <th>Link</th>
+                                    <th>Action</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -59,6 +67,12 @@
                                       <td data-label="Code">{{ $p->dekstopcaption }} &nbsp;</td>
                                       <td data-label="Name">{{ $p->mobilecaption }} &nbsp;</td>
                                       <td data-label="Name">{{ $p->link }} &nbsp;</td>
+                                      <td>
+                                        <div class="btn-group">
+                                          <a href="" class="btn btn-sm btn-info" data-toggle="modal" data-target="#myModal" title="Edit" onclick="editPromoTop({{$p->promotionid}})"><i class="fa fa-pencil-square-o"></i></a>
+                                          <a href="#" title="Delete" class="btn btn-danger btn-sm" data-toggle="tooltip" onclick="if(confirm('Are you sure?')) location.href='{{ URL::to('admin/delete/others/' . $p->promotionid) }}'"><i class="icon ion-android-close"></i></a>
+                                        </div>
+                                      </td>
                                     </tr>
                                   <?php endforeach; ?>
                                 </tbody>
@@ -70,7 +84,7 @@
 
                         <div id="addTopPromo" class="tab-pane fade">
                           <form class="form-horizontal" action="{{ url('admin/others') }}" method="post" enctype="multipart/form-data">
-                          <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                          <input type="hidden" id="token" name="_token" value="<?php echo csrf_token(); ?>">
                             <div class="col-md-6" style="padding-top:20px;">
                               <div class="row">
                                  <div class="form-group">
@@ -123,7 +137,63 @@
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div id="modalBody" class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function editPromoTop(id) {
+    var token       = $('#token').val();
+    var dataString  = '_token=' + token + '&id=' + id;
+    $.ajax({
+        type: "GET",
+        url: "{{ url('admin/others/edit/') }}",
+        data: dataString,
+        success: function(data) {
+            //alert(data);
+            $('#modalBody').html(data);
+        }
+    });
+}
+function postTopPromo(id){
+  var token = $('#token').val();
+  var desktopcaption = $('input[name="desktopcaption"]').val();
+  var mobilecaption = $('input[name="mobilecaption"]').val();
+  var link = $('input[name="link"]').val();
+  if(link == ''){
+    var link = "#";
+  }
+  var dataString  = '_token=' + token + '&desktopcaption=' + desktopcaption + '&mobilecaption=' + mobilecaption + '&link=' + link + '&id=' + id;
+  $.ajax({
+      type: "POST",
+      url: "{{ url('admin/others/edit/post') }}",
+      data: dataString,
+      success: function(data) {
+          //alert(data);
+          $('#viewTopPromo').load(location.href + ' #viewTopPromo ');
+      }
+  });
+}
+</script>
 
 @endsection

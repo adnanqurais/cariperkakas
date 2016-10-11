@@ -43,7 +43,7 @@ class AdminPromoController extends Controller {
   {
       $this->middleware('guest');
   }
-  // 
+  //
    public function getPromo(){
         if(Session::get('sessionadmin')){
             $promoList = DB::table('promo')->get();
@@ -63,7 +63,7 @@ class AdminPromoController extends Controller {
 
             $promo_req_type = DB::table('promo_requirement_type')->get();
             $promo_rew_type = DB::table('promo_reward_type')->get();
-        
+
 
             return view('admin/promotion-add',[
                 'products'              => $products,
@@ -105,7 +105,7 @@ class AdminPromoController extends Controller {
             $products   = implode(';', Input::get('product'));
             $brands     = implode(';', Input::get('brand'));
             $catgeories = implode(';', Input::get('category'));
-        
+
             //var_dump($promotionName);
             //var_dump($promotionCategory);
             //var_dump($minRequirement);
@@ -118,7 +118,7 @@ class AdminPromoController extends Controller {
             //echo implode(',',$products);
             //echo implode(',',$brands);
             //echo implode(',',$catgeories);
-        
+
             DB::table('promo')->insert([
                 'enable'                => $enable,
                 'promo_title'           => $promotionName,
@@ -170,10 +170,10 @@ class AdminPromoController extends Controller {
             $promo_reward_type = DB::table('promo_reward_type')->get();
             return view('admin/promotion-detail',[
                 'promolist'         => $promolist,
-				'product'           => $product,
+		            'product'           => $product,
                 'product_category'  => $product_category,
                 'product_brands'    => $product_brands,
-				'promo_req'         => $promo_req,
+		            'promo_req'         => $promo_req,
                 'promo_reward_type' => $promo_reward_type,
             ]);
 
@@ -208,14 +208,6 @@ class AdminPromoController extends Controller {
                 $enable=0;
             }
 
-            //echo "CUMMING SOON";
-            //echo $name." ";
-            //echo $promotionCategory." ";
-            //echo $minRequirement." ";
-            //echo $rewardValue." ";
-            //echo $fromDate." ";
-            //echo $untilDate." ";
-            //echo $rewardType." ";
 			if($productReward == 0){
                $productRewardImp = 0;
             }else{

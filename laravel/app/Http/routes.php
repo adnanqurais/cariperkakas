@@ -146,6 +146,9 @@ Route::post('admin/slider/view', 'AdminController@postsliderview');
 /*Promotion Others */
 Route::get('admin/others', 'AdminController@getothers');
 Route::post('admin/others', 'AdminController@postothers');
+Route::get('admin/delete/others/{othersid}', 'AdminController@deleteOthers');
+Route::get('admin/others/edit', 'AdminController@getEditOthers');
+Route::post('admin/others/edit/post', 'AdminController@postEditOthers');
 
 /*Category Page*/
 Route::get('admin/category', 'AdminCategoryController@getcategory');
@@ -230,6 +233,8 @@ Route::post('admin/pages/view', 'AdminPagesController@postpagesdetails');
 Route::get('admin/menu', 'AdminController@getmenu');
 Route::get('admin/menu/add', 'AdminController@getmenuadd');
 Route::post('admin/menu/add', 'AdminController@postmenuadd');
+Route::get('admin/menu/edit/{menuid}', 'AdminController@getMenuEdit');
+Route::post('admin/menu/edit', 'AdminController@postMenuEdit');
 Route::get('admin/menu/delete/{menuid}', 'AdminController@getmenudelete');
 /*Configuration Page*/
 Route::get('admin/configuration', 'AdminController@getconfiguration');

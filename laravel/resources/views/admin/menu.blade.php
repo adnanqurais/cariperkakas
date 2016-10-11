@@ -24,7 +24,7 @@
                   <!--<h3 class="box-title">Data Table With Full Features</h3>-->
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                   @if(Session::has('success-create'))                    
+                   @if(Session::has('success-create'))
                     <div class="alert alert-success alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
@@ -32,7 +32,7 @@
                     </div>
                   @endif
 
-                  @if(Session::has('success-delete'))                    
+                  @if(Session::has('success-delete'))
                     <div class="alert alert-info alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
@@ -44,34 +44,34 @@
                   </div>
                   <table id="example1" class="table table-bordered table-striped table-rotation">
                     <thead>
-                      <tr>                                                       
+                      <tr>
                         <th>ID</th>
                         <th>Position</th>
-                        <th>Url</th>                      
-                        <th>Title</th>                                    
+                        <th>Url</th>
+                        <th>Title</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                     @foreach($menu as $m)
                       <tr>
-                        <td data-label="ID">{{ $m->menuid }} &nbsp;</td>                      
-                        <td data-label="Position">{{ $m->position }} &nbsp;</td>    
-                        <td data-label="Link">{{ $m->url }} &nbsp;</td>      
-                        <td data-label="Created at">{{ $m->title }} &nbsp;</td>                                    
+                        <td data-label="ID">{{ $m->menuid }} &nbsp;</td>
+                        <td data-label="Position">{{ $m->position }} &nbsp;</td>
+                        <td data-label="Link">{{ $m->url }} &nbsp;</td>
+                        <td data-label="Created at">{{ $m->title }} &nbsp;</td>
                         <td data-label="Action">
-                            <!--<a href="{{ url('admin/slider/view/'.$m->menuid.'') }}" class="btn btn-sm btn-primary">View</a>-->                            
+                            <a href="{{ url('admin/menu/edit/'.$m->menuid.'') }}" class="btn btn-sm btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>                            
                             <a href="#" title="Delete" class="btn btn-danger btn-sm" data-toggle="tooltip" onclick="if(confirm('Are you sure?')) location.href='{{ URL::to('admin/menu/delete/' . $m->menuid) }}'"><i class="icon ion-android-close"></i></a>&nbsp;
                         </td>
-                      </tr>    
-                    @endforeach                      
+                      </tr>
+                    @endforeach
                     </tbody>
                     <tfoot>
-                      <tr>                                                             
+                      <tr>
                         <th>ID</th>
                         <th>Position</th>
-                        <th>Url</th>                      
-                        <th>Title</th>                                    
+                        <th>Url</th>
+                        <th>Title</th>
                         <th>Action</th>
                       </tr>
                     </tfoot>
