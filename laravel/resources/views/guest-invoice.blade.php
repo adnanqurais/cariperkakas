@@ -90,9 +90,9 @@
                             <?php }elseif($new->status==1){  ?>
                             <div class="label label-success">Processing</div>
                             <?php }elseif($new->status==2){  ?>
-                            <div class="label label-danger">Delivering</div>
+                            <div class="label label-success">Delivering</div>
                             <?php }elseif($new->status==3){  ?>
-                            <div class="label label-danger">Completed</div>
+                            <div class="label label-success">Completed</div>
                             <?php }elseif($new->status==4){  ?>
                             <div class="label label-danger">Cancelled</div>
                             <?php } ?>
@@ -100,7 +100,7 @@
                         </span></td>
                         <td data-label="Pengiriman" ><span class="text-success">
                             <?php
-                            if($new->status==2){?>
+                            if($new->status==4){?>
                             <div class="label label-danger">Cancelled</div>
                             <?php }else{ ?>
                             <?php if(empty($new->delivery_date)){?>
