@@ -8,7 +8,6 @@
     
     <div class="col-md-6 col-md-push-3 col-sm-12">
         <h3 class="text-center">MASUK</h3>
-        <img src="{{ asset('/img/logo.png') }}" alt="logo" style="height: 52px; width: 250px; display: block; margin: 0 auto;" align="center">
         {{ Session::get('KeyLogin')}}
          <form action="{{ url('login') }}" method="post">
           <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">

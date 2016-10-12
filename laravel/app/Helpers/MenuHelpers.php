@@ -143,8 +143,8 @@
 				// $html .= '</div>';
 
 				$html .= '<div id="owl-example1" class="owl-example owl-carousel" style="width:auto;">';
-							foreach ($toppromo as $key1) {
-								$html .= '<div class="text-promo-mobile" >';
+						foreach ($toppromo as $key1) {
+						$html .= '<div class="text-promo-mobile" >';
 				      	$html .= '<p class="" style="margin-left: -15px;">'.$key1->dekstopcaption.' &nbsp;<a href="'.$key1->link.'">disini</a></p>';
 				        $html .= '</div>';
 

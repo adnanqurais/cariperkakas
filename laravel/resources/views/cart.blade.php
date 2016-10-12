@@ -85,7 +85,7 @@
         </tbody>
     </table>
         </div>
-        <div class="col-md-4" style="padding-left:25px">
+        <div class="col-md-4" style="padding-left:25px; overflow-x:hidden;">
             <form class=" form-inline" style="margin-left:-15px" action="{{ url('cart/getvoucher') }}" method="post">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <div class="col-md-12">

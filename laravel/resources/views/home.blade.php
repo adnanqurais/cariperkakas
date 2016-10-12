@@ -68,11 +68,11 @@
 
                                 <?php if(!empty($products_img_brand['image_small'][$prodFeatBrand->productid])){ ?>
                                 <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img_brand['image_small'][$prodFeatBrand->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
-                                <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img_brand['image_small'][$prodFeatBrand->productid].' ') }}" max-width="100%" max-height="100%" style="border:5;"/>
+                                <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img_brand['image_small'][$prodFeatBrand->productid].' ') }}" max-width="100%" max-height="100%" style="border:5; margin-top: 10px;"/>
                                 <?php } else{ ?>
                                 <img class="lazy grid-img" data-original="{{ url('img/no-image.jpg') }}"/>
                                 <?php } ?>
-                                <p style="text-transform:capitalize;"><?php echo strtolower($prodFeatBrand->producttitle); ?></p>
+                                <p style="text-transform:capitalize; line-height: 20px;"><?php echo strtolower($prodFeatBrand->producttitle); ?></p>
                             </a>
                         </div>
                         @endforeach
@@ -99,11 +99,11 @@
                         <a href="{{ url('product-details/'.$prod_img->productname.'') }}" style="text-decoration: none;">
                             <?php if(!empty($products_img['image_small'][$prod_img->productid])){ ?>
                             <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img['image_small'][$prod_img->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
-                            <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" width="100%" height="100%" style="border:5;"/>
+                            <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img['image_small'][$prod_img->productid].' ') }}" width="100%" height="100%" style="border:5; margin-top: 10px;"/>
                             <?php } else{ ?>
                             <img class="lazy grid-img" data-original="{{ url('img/no-image.jpg') }}"/>
                             <?php } ?>
-                            <p style="text-transform:capitalize;"><?php echo strtolower($prod_img->producttitle); ?></p>
+                            <p style="text-transform:capitalize; line-height: 20px;"><?php echo strtolower($prod_img->producttitle); ?></p>
                         </a>
                     </div>
                 @endforeach

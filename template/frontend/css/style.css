@@ -370,7 +370,7 @@ p{
 .web-header{
   position: fixed !important;
   top: 0;
-  z-index: 9999;
+  z-index: 1000;
   background: #FFF;
   width: 100%;
 }
