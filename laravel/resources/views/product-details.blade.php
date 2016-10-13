@@ -58,7 +58,10 @@
             ?></span>
             <div class="col-xs-12 hidden-md hidden-lg">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of e3b4196... produk detail
 =======
 >>>>>>> parent of e3b4196... produk detail
                 <div id="mobile-productdetail-image" class="owl-carousel owl-theme">
@@ -67,7 +70,10 @@
                 @endforeach
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of e3b4196... produk detail
 =======
 >>>>>>> parent of e3b4196... produk detail
             </div>
