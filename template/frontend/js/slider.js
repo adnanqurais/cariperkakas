@@ -189,13 +189,9 @@ $(document).ready(function() {
 
     //Zoom image Product details
     $("#mobile-productdetail-image").owlCarousel({
-        autoplay:true,
-        autoplayTimeout:5000,
-        singleItem : true,
-        loop:true,
-        center: true,
-        items: 1,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
+        navigation : false,
+        slideSpeed : 300,
+        pagination : false,
+        singleItem:true,
     });
 });
