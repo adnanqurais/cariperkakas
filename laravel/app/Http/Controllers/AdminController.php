@@ -315,7 +315,7 @@ class AdminController extends Controller {
                 $enable=0;
             }
 
-            if (Input::file('image')->isValid()) {
+            if (Input::hasFile('image')) {
 
               $destinationPath = 'img/slide/'; // upload path
 
@@ -341,7 +341,18 @@ class AdminController extends Controller {
 
             }else{
 
-                return redirect()->back();
+                $q= DB::table('slider')
+                ->where('sliderid','=',$id)
+                ->update([
+                    'position' => $position,
+                    'link' => $link,
+                    'enable' => $enable,
+                    'updated_at' => $now
+                ]);
+
+                if($q){
+                    return redirect('admin/slider')->with('success-update','Slider has Updated');
+                }
 
             }
 
