@@ -57,19 +57,13 @@
 
             ?></span>
             <div class="col-xs-12 hidden-md hidden-lg">
-            <?php if (count($products_img)==1) { ?>
-              <div class="">
-                @foreach($products_img as $prod_img)
-                  <div class="item"><img class="img-responsive" src="{{ url('img/product/small/'.$prod_img->image_small.'') }}" alt="1" style="padding: 0px 10px; margin:0px auto;"></div>
-                @endforeach
-                </div>
-            <?php} else {?>
+
                 <div id="mobile-productdetail-image" class="owl-carousel owl-theme">
                 @foreach($products_img as $prod_img)
                   <div class="item"><img class="img-responsive" src="{{ url('img/product/small/'.$prod_img->image_small.'') }}" alt="1" style="padding: 0px 10px; margin:0px auto;"></div>
                 @endforeach
                 </div>
-                <?php } ?>
+
             </div>
             @if($prod_variation == NULL)
                 <h3 id="priceVar" class="clearfix" style="font-weight:800; margin-top:4px;"><span id="test" class="price_format">{{ $products->price}}</span></h3>

@@ -4,17 +4,14 @@ body{
      font-family: 'Lato';
 }
 .top-menu{
-<<<<<<< HEAD
     /*box-shadow: 0 0 14px #1DB7EB;*/
     /* padding: 10px 0 10px 0; */
     /*border-bottom-color: #17B7EB;
     border-top: 2px solid #17B7EB;*/
-=======
 /*     box-shadow: 0 0 14px #1DB7EB;
     /* padding: 10px 0 10px 0; */
 /*     border-bottom-color: #17B7EB;
     border-top: 2px solid #17B7EB; */
->>>>>>> master
 }
 
 .top-promo{
@@ -179,7 +176,9 @@ transition: all 300ms ease;
     padding: 10px;
 
 }
-
+/* .owl-item{
+    margin-top: -10px; 
+} */
 .dekstop-category{
    margin-top:50px;
    margin-bottom: 50px;
