@@ -13,6 +13,7 @@
 =======
   </ul> --}}
   <!-- <iframe height="300px" width="100%" src="{{$config->map_url}}" name="iframe_a"></iframe> -->
+>>>>>>> master
   <div style="padding: 20px 0px;">
     <!--Address-->
     <div class="adrss col-md-6" >
@@ -37,25 +38,26 @@
       <!--Quick Message-->
       <div class="col-md-5 col-sm-12"  id="sendmessage">
         <h5><strong>QUICK MESSAGE</strong></h5>
-            <form id="form-message" method="GET" action="{{ url('sendmessage') }}">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-              <div id="send-contact-success" style="display: none;" class="alert alert-success">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                Pesan Berhasil dikirim
-              </div>
+        <form id="form-message" method="GET" action="{{ url('sendmessage') }}">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-              <div class="form-group col-sm-6 col-xs-6">
-                <input id="msg_name" type="text" class="form-control input-flat text-message" placeholder="Name" name="msg_name" required>
-              </div>
-              <div class="form-group col-sm-6 col-xs-6">
-                <input id="msg_email" class="form-control input-flat text-message" placeholder="Email Address" name="msg_email" required>
-              </div>
-              <div class="form-group col-sm-12 ">
-                <textarea id="msg_message" class="textarea-quick-message form-control input-flat text-message" placeholder="Message" name="msg_message" required></textarea>
-              </div>
-              <button id="sub" type="submit" class="btn pull-right btn-default">Send Message</button>
-            </form>
+          <div id="send-contact-success" style="display: none;" class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            Pesan Berhasil dikirim
+          </div>
+
+          <div class="form-group">
+            <input id="msg_name" type="text" class="form-control input-flat" placeholder="Name" name="msg_name" required>
+          </div>
+          <div class="form-group">
+            <input id="msg_email" class="form-control input-flat" placeholder="Email Address / Phone Number" name="msg_email" required>
+          </div>
+          <div class="form-group">
+            <textarea id="msg_message" class="textarea-quick-message form-control input-flat" placeholder="Message" name="msg_message" required></textarea>
+          </div>
+          <button id="sub" type="submit" class="btn btn-default pull-right">Send Message</button>
+        </form>
       </div>
       <!--./Quick Message-->
     </div>

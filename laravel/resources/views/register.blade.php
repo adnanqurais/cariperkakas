@@ -5,6 +5,7 @@
 <div class="main-area container ">
     <div class="col-md-6 col-md-push-3 col-sm-12">
          <h3 class="text-center">PENDAFTARAN</h3>
+          <img src="{{ asset('/img/logo.png') }}" alt="logo" style="height: 52px; width: 250px; display: block; margin: 0 auto;" align="center">
          <!-- NOTIFICATION LIST START -->
           @if(Session::has('emailalready'))
               <div class="alert alert-warning">{{ Session::get('emailalready') }}</div>
@@ -48,6 +49,7 @@
   </div>
 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
     <div class="modal-dialog modal-md" style="margin:10% auto;">
 =======
@@ -55,6 +57,11 @@
      aria-hidden="false">
     <div class="modal-dialog modal-md">
 >>>>>>> parent of 903b4f9... perubahan sedikit
+=======
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  style="margin-top: 250px;"
+     aria-hidden="false">
+    <div class="modal-dialog modal-md">
+>>>>>>> parent of 739e9fa... rabu
         <div class="modal-content">
             <div class="modal-header">
                 <a type="button" class="close hide-t-c" aria-hidden="false" data-dismiss="modal">×</a>

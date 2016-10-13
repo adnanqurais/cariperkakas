@@ -34,7 +34,3 @@
                 $("#wrapper").toggleClass("toggled");
             });
         });
-$(function() {
-  $('#scrol').perfectScrollbar();
-
-});

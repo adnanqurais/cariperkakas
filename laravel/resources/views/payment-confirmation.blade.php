@@ -9,6 +9,7 @@
     
 <div class="col-md-6 col-md-push-3">
     <h3 class="text-center">KONFIRMASI PEMBAYARAN</h3>
+    <img src="{{ asset('/img/logo.png') }}" alt="logo" style="height: 52px; width: 250px; display: block; margin: 0 auto;" align="center"><br>
       @if(Session::has('idnotfound'))
             <div class="alert alert-danger">{{ Session::get('idnotfound') }}</div>
        @endif

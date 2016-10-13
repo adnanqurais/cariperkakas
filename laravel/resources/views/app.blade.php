@@ -296,7 +296,7 @@
 						</a>
 						<ul class="dropdown-menu" style="width: auto;">
 							  <div class="shopping-cart" >
-							    <ul class="shopping-cart-items" id="scrol">
+							    <ul class="shopping-cart-items" id="Demo">
 							    <?php foreach($cart as $row) :?>
 							      <li class="clearfix">
 							        <img src="{{asset('img/product/thumb/'.$row->options->image)}}" alt="item1" />
@@ -551,7 +551,7 @@
 		<script src="{{ asset('template/admin/dist/js/demo.js') }}"></script>
 		   <script>
 		   	$(function() {
-		    $('#scrol').perfectScrollbar();
+		    $('#Demo').perfectScrollbar();
 
 			});
 		   </script>

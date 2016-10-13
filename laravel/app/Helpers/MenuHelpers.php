@@ -142,9 +142,15 @@
 				// 	  $html .='</div>';
 				// $html .= '</div>';
 
+<<<<<<< HEAD
 				$html .= '<div id="owl-example1" class="owl-example owl-carousel owl-item" style="width:auto;">';
 						foreach ($toppromo as $key1) {
 						$html .= '<div class="text-promo-mobile" >';
+=======
+				$html .= '<div id="owl-example1" class="owl-example owl-carousel" style="width:auto;">';
+							foreach ($toppromo as $key1) {
+								$html .= '<div class="text-promo-mobile" >';
+>>>>>>> parent of 739e9fa... rabu
 				      	$html .= '<p class="" style="margin-left: -15px;">'.$key1->dekstopcaption.' &nbsp;<a href="'.$key1->link.'">disini</a></p>';
 				        $html .= '</div>';
 
