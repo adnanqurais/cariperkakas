@@ -49,7 +49,6 @@
     <div>
         <!--./Col-->
         <!--col-->
-        <h3 align="middle">TELUSURI PESANAN</h3>
         <div class="col-md-7 col-md-push-3">
             <form id="trackOrder" class="form-horizontal" role="form">
                 <div class="col-sm-8">

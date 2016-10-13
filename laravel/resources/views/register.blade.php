@@ -47,8 +47,14 @@
         <!-- </center> -->
   </div>
 </div>
+<<<<<<< HEAD
 <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
     <div class="modal-dialog modal-md" style="margin:10% auto;">
+=======
+<div class="modal" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  style="margin-top: 250px;"
+     aria-hidden="false">
+    <div class="modal-dialog modal-md">
+>>>>>>> parent of 903b4f9... perubahan sedikit
         <div class="modal-content">
             <div class="modal-header">
                 <a type="button" class="close hide-t-c" aria-hidden="false" data-dismiss="modal">×</a>
@@ -66,5 +72,4 @@
         </div>
     </div>
 </div>
-
 @endsection

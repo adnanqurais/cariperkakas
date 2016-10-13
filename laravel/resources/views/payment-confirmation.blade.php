@@ -61,7 +61,7 @@
         <p class="help-block">Lampirkan bukti pembayaran.</p>
         </div>
       
-        <button type="submit" class="btn btn-primary pull-right btn-flat">Kirim</button>
+        <button type="submit" class="btn btn-primary pull-right">Kirim</button>
     </form>
     </div>  
 </div><!--./container-->

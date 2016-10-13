@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="col-md-12" style="padding:0px;" >
-            <div class="col-lg-12 col-sm-12 no-padding" style="border-left:1px solid #1DB7EB; border-bottom: 1px solid #1DB7EB; border-right: 1px solid #1DB7EB; line-height: 10px;">
+            <div class="col-lg-12 col-sm-12 no-padding">
                 <div id="productBrandsSlider1" >
                     @foreach($featuredBrands as $key)
                         @foreach($productFeatBrands[$key->brandsid] as $prodFeatBrand)
@@ -81,7 +81,7 @@
             </div>
         </div>
     </div>
-    <div class="" style="margin-top: 50px;">
+    <div class="">
         <h5 class="featured-brand" style="">FEATURED PRODUCTS</h5>
         <div class="col-md-12" style="padding:0px;" >
             <div class="col-lg-12 col-sm-12 no-padding">
@@ -92,7 +92,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12" style="border-left:1px solid #1DB7EB; border-bottom: 1px solid #1DB7EB; border-right: 1px solid #1DB7EB; line-height: 10px; ">
+        <div class="col-md-12">
+            
             <div id="productSlider1" >
                 @foreach($homeProducts as $prod_img)
                     <div class="item">
@@ -132,6 +133,7 @@
                         @foreach($productFeatBrands[$key->brandsid] as $prodFeatBrand)
                                 <div class="col-md-6" >
                                     <a href="{{ url('product-details/'.$prodFeatBrand->productname.'') }}" style="text-decoration: none;">
+
                                     <?php if(!empty($products_img_brand['image_small'][$prodFeatBrand->productid])){ ?>
                                         <!-- <div id="productView" class="col-md-12" style="background-image:url('{{ asset('img/product/small/'.$products_img_brand['image_small'][$prodFeatBrand->productid]) }}');background-repeat: no-repeat; background-position: center; background-size: contain;"></div> -->
                                         <img class="lazy grid-img" src="{{ url('img/no-image.jpg') }}" data-original="{{ url('img/product/small/'.$products_img_brand['image_small'][$prodFeatBrand->productid].' ') }}" max-width="100%" max-height="100%" style="border:5;"/>
