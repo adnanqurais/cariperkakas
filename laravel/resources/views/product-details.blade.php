@@ -51,31 +51,19 @@
             @endif
             <h3 style="font-weight:900;">{{ $products->producttitle}}</h3>
             <div><span>Brand :&nbsp;</span><span>{{ $products->name}} &nbsp;</span> | <span>Kategori :</span><span style="display: none;"></div>
-            
+
             <?php
                 $cateExpl = explode(",", $products->category);
 
             ?></span>
             <div class="col-xs-12 hidden-md hidden-lg">
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of e3b4196... produk detail
-=======
->>>>>>> parent of e3b4196... produk detail
                 <div id="mobile-productdetail-image" class="owl-carousel owl-theme">
                 @foreach($products_img as $prod_img)
                   <div class="item"><img class="img-responsive" src="{{ url('img/product/small/'.$prod_img->image_small.'') }}" alt="1" style="padding: 0px 10px; margin:0px auto;"></div>
                 @endforeach
                 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of e3b4196... produk detail
-=======
->>>>>>> parent of e3b4196... produk detail
             </div>
             @if($prod_variation == NULL)
                 <h3 id="priceVar" class="clearfix" style="font-weight:800; margin-top:4px;"><span id="test" class="price_format">{{ $products->price}}</span></h3>
@@ -127,7 +115,7 @@
               </div>
             </form>
 
-          
+
 
         </div><!--./Product Info-->
     </div><!--./rows-->
